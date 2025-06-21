@@ -1,8 +1,9 @@
-body{background-color: #ffffff;
-font-family: Verdana, Geneva, Tahoma, sans-serif;}
+body{background-color: #404040;
+font-family: Arial, Helvetica, sans-serif;}
+
 
 .common {
-    /* background-color: #ccc; */
+    background-color: #555;
     border: 2px solid #000;
     position: absolute;
 }
