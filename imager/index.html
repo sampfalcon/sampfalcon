@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Samuel Christensen | Mechanical Engineering</title>
+<style>
+    /* Utilitarian, McMaster-Carr & Technical Documentation Aesthetic */
+    :root {
+      --bg: #ffffff;
+      --panel-bg: #f8f9fa;
+      --border: #d1d5db;
+      --border-dark: #374151;
+      --text: #111827;
+      --text-muted: #4b5563;
+      --text-subtle: #6b7280;
+      --header-bg: #1e293b;
+      --header-text: #f8fafc;
+      --accent: #0f766e;
+      --accent-hover: #115e59;
+      --highlight: #fef08a;
+      --tag-bg: #e5e7eb;
+      --tag-text: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    /* Top Technical Header */
+    header {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      border-bottom: 2px solid #0f172a;
+      padding: 10px 20px;
+    }
+
+    .header-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      font-size: 12px;
+      color: #94a3b8;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    /* Navigation Tabs */
+    nav.tab-bar {
+      display: flex;
+      gap: 4px;
+    }
+
+    .tab-btn {
+      background: #334155;
+      color: #cbd5e1;
+      border: 1px solid #475569;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      border-radius: 2px;
+      transition: none;
+    }
+
+    .tab-btn:hover {
+      background: #475569;
+      color: #ffffff;
+    }
+
+    .tab-btn.active {
+      background: #ffffff;
+      color: #0f172a;
+      border-color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 24px 20px 48px 20px;
+    }
+
+    .page-section {
+      display: none;
+    }
+    .page-section.active {
+      display: block;
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    h2 {
+      font-size: 18px;
+      border-bottom: 2px solid var(--border-dark);
+      padding-bottom: 4px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    /* Utilitarian Utility Classes */
+    .table-box {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      margin-bottom: 20px;
+    }
+    .table-box th, .table-box td {
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 13px;
+    }
+    .table-box th {
+      background: var(--panel-bg);
+      font-weight: 600;
+      color: var(--text);
+      border-bottom: 2px solid var(--border);
+    }
+
+    /* ================= LANDING / ABOUT PAGE ================= */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 680px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .photo-container {
+      border: 1px solid var(--border);
+      background: var(--panel-bg);
+      padding: 6px;
+      text-align: center;
+    }
+
+    .photo-container img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid var(--border);
+      background: #e2e8f0;
+    }
+
+    .photo-caption {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-family: ui-monospace, monospace;
+    }
+
+    .about-details {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start; /* Stops table from stretching vertically to match paragraph height */
+      gap: 24px;
+    }
+
+    .about-details > div {
+      flex: 1; /* Bio text takes main width */
+    }
+
+    .contact-table {
+      width: 280px;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      background: var(--panel-bg);
+      margin-top: 0;
+      font-size: 12px;
+      border-collapse: collapse;
+    }
+    .contact-table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.3;
+      word-break: break-word;
+    }
+    .contact-table td:first-child {
+      font-weight: 600;
+      width: 82px;
+      color: var(--text-muted);
+      font-family: ui-monospace, monospace;
+      background: #f1f5f9;
+      border-right: 1px solid var(--border);
+    }
+
+    @media (max-width: 860px) {
+      .about-details {
+        flex-direction: column;
+      }
+      .contact-table {
+        width: 100%;
+      }
+    }
+
+    /* ================= PORTFOLIO PAGE ================= */
+    .filter-bar {
+      background: var(--panel-bg);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-label {
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-family: ui-monospace, monospace;
+      color: var(--text-muted);
+      margin-right: 6px;
+    }
+
+    .filter-btn {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      border-radius: 2px;
+    }
+    .filter-btn:hover {
+      background: #e2e8f0;
+    }
+    .filter-btn.active {
+      background: var(--header-bg);
+      color: #ffffff;
+      border-color: var(--header-bg);
+    }
+
+    .portfolio-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .portfolio-item {
+      border: 1px solid var(--border);
+      background: #ffffff;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 720px) {
+      .portfolio-item {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Multi-Image Technical Thumbnail Gallery (Option 1) */
+    .portfolio-media {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .portfolio-img-box {
+      border: 1px solid var(--border);
+      background: var(--panel-bg);
+      padding: 4px;
+      height: 175px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .portfolio-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .portfolio-caption {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background: var(--panel-bg);
+      border: 1px solid var(--border);
+      padding: 3px 6px;
+      line-height: 1.25;
+      min-height: 22px;
+    }
+
+    .portfolio-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+    }
+
+    .portfolio-thumb {
+      border: 1px solid var(--border);
+      background: var(--panel-bg);
+      padding: 2px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      opacity: 0.65;
+    }
+
+    .portfolio-thumb:hover {
+      opacity: 0.9;
+      border-color: var(--text-muted);
+    }
+
+    .portfolio-thumb.active {
+      opacity: 1;
+      border: 2px solid var(--header-bg);
+      padding: 1px;
+    }
+
+    .portfolio-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .thumb-fallback {
+      width: 100%;
+      height: 100%;
+      background: #e2e8f0;
+      font-size: 9px;
+      font-family: ui-monospace, monospace;
+      color: var(--text);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .portfolio-placeholder-img {
+      width: 100%;
+      height: 100%;
+      background: #f1f5f9;
+      border: 1px dashed #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      font-size: 11px;
+      color: var(--text-subtle);
+      font-family: ui-monospace, monospace;
+    }
+
+    .portfolio-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-header {
+      margin-bottom: 6px;
+    }
+
+    .portfolio-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .portfolio-meta {
+      font-size: 12px;
+      color: var(--text-subtle);
+      font-family: ui-monospace, monospace;
+      margin-top: 2px;
+    }
+
+    .tag-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin: 8px 0 10px 0;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 11px;
+      font-family: ui-monospace, monospace;
+      padding: 2px 6px;
+      border-radius: 2px;
+      font-weight: 500;
+    }
+
+    .portfolio-desc {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .portfolio-specs {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: ui-monospace, monospace;
+    }
+
+    /* ================= RESUME PAGE ================= */
+    .resume-controls {
+      background: var(--panel-bg);
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .resume-presets {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .btn-action {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      border-radius: 2px;
+    }
+    .btn-action:hover {
+      background: #e2e8f0;
+    }
+    .btn-export {
+      background: #005030;
+      color: #ffffff;
+      border: 1px solid #003620;
+      padding: 6px 16px;
+      font-weight: 700;
+    }
+    .btn-export:hover {
+      background: #003e25;
+    }
+
+    .resume-document {
+      border: 1px solid var(--border);
+      background: #ffffff;
+      padding: 28px 32px;
+    }
+
+    .resume-doc-header {
+      border-bottom: 2px solid var(--text);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .resume-name {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+    }
+
+    .resume-contact {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: ui-monospace, monospace;
+      margin-top: 4px;
+    }
+
+    .resume-sec-title {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--text);
+      margin: 18px 0 10px 0;
+      padding-bottom: 2px;
+    }
+
+    .resume-item {
+      margin-bottom: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .resume-checkbox-col {
+      padding-top: 3px;
+    }
+
+    .resume-checkbox {
+      cursor: pointer;
+    }
+
+    .resume-content-col {
+      flex: 1;
+    }
+
+    .resume-item.excluded {
+      display: none;
+    }
+
+    .resume-row-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .resume-sub {
+      font-size: 12px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .resume-bullets {
+      list-style-type: disc;
+      margin-left: 18px;
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+    .resume-bullets li {
+      margin-bottom: 3px;
+    }
+
+    @page {
+      size: letter portrait;
+      margin: 0; /* Removes browser default headers (timestamp, title) and footers (URL, page numbers) */
+    }
+
+    /* Print Stylesheet */
+    @media print {
+      header, footer, .resume-controls, .resume-checkbox-col, .tab-bar, #page-resume > h2 {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10pt !important;
+        line-height: 1.35 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .page-section {
+        display: none !important;
+      }
+      #page-resume {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .resume-document {
+        border: none !important;
+        padding: 0.5in 0.6in !important; /* Document margins */
+        box-shadow: none !important;
+        margin: 0 !important;
+      }
+      .resume-item.excluded {
+        display: none !important;
+      }
+      a {
+        text-decoration: none !important;
+        color: #000000 !important;
+      }
+    }
+
+    /* Minimalist Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 20px;
+      margin-top: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-subtle);
+      font-family: ui-monospace, monospace;
+    }
+    .footer-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+  
+    .portfolio-placeholder-img {
+      width: 100%;
+      height: 100%;
+      background: #f1f5f9;
+      border: 1px dashed #94a3b8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      font-size: 11px;
+      color: #334155;
+      font-family: ui-monospace, monospace;
+    }
+    .portfolio-placeholder-img strong {
+      color: #0f172a;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+    
+
+    /* ================= PHOTOGRAPHY PORTFOLIO GALLERY ================= */
+    .btn-photo-album {
+      margin-top: 8px;
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--border-dark);
+      color: var(--text);
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      cursor: pointer;
+      border-radius: 2px;
+      text-align: center;
+      display: block;
+    }
+    .btn-photo-album:hover {
+      background: var(--header-bg);
+      color: #ffffff;
+    }
+
+    .photos-toolbar {
+      background: var(--panel-bg);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12px;
+      font-family: ui-monospace, monospace;
+      color: var(--text-muted);
+    }
+
+    .photo-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .photo-card {
+      border: 1px solid var(--border);
+      background: #ffffff;
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .photo-card:hover {
+      border-color: var(--border-dark);
+      background: var(--panel-bg);
+    }
+
+    .photo-card-frame {
+      width: 100%;
+      height: 170px;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-card-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-card-meta {
+      margin-top: 6px;
+      font-size: 11px;
+      font-family: ui-monospace, monospace;
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .photo-card-source {
+      font-size: 10px;
+      color: var(--text-subtle);
+    }
+
+    /* Utilitarian Lightbox Viewer */
+    .lightbox-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox-backdrop.open {
+      display: flex;
+    }
+    .lightbox-box {
+      background: #ffffff;
+      border: 2px solid var(--header-bg);
+      padding: 12px;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .lightbox-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      font-family: ui-monospace, monospace;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .lightbox-close {
+      background: var(--panel-bg);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      font-size: 11px;
+      font-family: ui-monospace, monospace;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .lightbox-close:hover {
+      background: #e2e8f0;
+    }
+    .lightbox-img-wrap {
+      overflow: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0f172a;
+      max-height: 78vh;
+    }
+    .lightbox-img-wrap img {
+      max-width: 100%;
+      max-height: 76vh;
+      object-fit: contain;
+      display: block;
+    }
+    </style>
+</head>
+<body>
+<!-- Top Utilitarian Navigation -->
+<header>
+<div class="header-inner">
+<div>
+<div class="brand-title">Samuel Christensen</div>
+<div class="brand-subtitle">Mechanical Engineering · BYU · Class of 2028</div>
+</div>
+<nav class="tab-bar">
+<button class="tab-btn active" data-target="page-about">About</button>
+<button class="tab-btn" data-target="page-portfolio">Portfolio</button>
+<button class="tab-btn" data-target="page-resume">Resume</button>
+<button class="tab-btn" data-target="page-photos">Photos</button></nav>
+</div>
+</header>
+<main>
+<!-- ================= 1. ABOUT / LANDING PAGE ================= -->
+<section class="page-section active" id="page-about">
+<h2>About Me</h2>
+<div class="about-layout">
+<!-- Picture of Samuel -->
+<div class="photo-container"><img alt="Samuel Christensen" onerror="if(this.src.indexOf('IMG_9610.jpg')===-1){this.src='imager/IMG_9610.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/profile.jpg"/><div class="portfolio-placeholder-img" style="display:none; height:260px;"><strong>Samuel Christensen</strong><span>Mechanical Engineering</span></div><div class="photo-caption">Samuel Christensen</div><button class="btn-photo-album" id="open-photo-album-btn" type="button">View Photo Album →</button></div>
+<!-- Utilitarian About Narrative -->
+<div class="about-details">
+<div>
+<p>
+              I am a junior studying Mechanical Engineering at Brigham Young University (graduating in 2028, 3.03 Major GPA). My technical work focuses on rocket propulsion integration, high-pressure oxidizer plumbing, two-phase fluid mechanics, and production CAD modeling.
+            </p>
+<p>
+              Currently, I serve as President of BYU Rocketry (130 student members), overseeing club finances, grant proposals, and flight review requirements for our CAPSTONE two-stage rocket campaign and IREC competition teams. Previously, I was Head of Systems Integration for BYU Rocketry Propulsion Research, directing 25 student researchers on BYU's first flight-ready 550 lbf SRAD hybrid rocket motor across 8 static hotfires and flight tank structural qualification tests.
+            </p>
+<p>
+              In industry, I work as a Systems Engineering Intern &amp; Project Consultant with KADMOS Energy Inc., where I designed and patented a high-efficiency two-phase separator for a small modular nuclear reactor (SMR) and engineered a full-scale 33-foot water-air test loop. Prior experience includes two internships at Procter &amp; Gamble ($40M process optimization and R&amp;D consumer modeling) and 3D modeling for a $2.5M test reactor flow demonstrator at MicroNuclear LLC.
+            </p>
+</div>
+<!-- Contact & Quick Reference Table -->
+<table class="contact-table">
+<tbody>
+<tr>
+<td>Location</td>
+<td>Provo, UT</td>
+</tr>
+<tr>
+<td>Email</td>
+<td><a href="mailto:Samuel.christensen240@gmail.com">Samuel.christensen240@gmail.com</a><br/><a href="mailto:sampfalc@byu.edu">sampfalc@byu.edu</a></td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>(801) 900-8994</td>
+</tr>
+<tr>
+<td>LinkedIn</td>
+<td><a href="https://linkedin.com/in/samuel-christensen240" rel="noopener noreferrer" target="_blank">in/samuel-christensen240</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td><a href="https://github.com/sampfalcon/sampfalcon" rel="noopener noreferrer" target="_blank">github.com/sampfalcon</a></td>
+</tr>
+<tr>
+<td>Languages</td>
+<td>English (Native), Spanish (Advanced Written &amp; Spoken)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- ================= 2. PORTFOLIO PAGE ================= -->
+<section class="page-section" id="page-portfolio">
+<h2>Project Portfolio</h2>
+<!-- Filter Bar -->
+<div class="filter-bar"><span class="filter-label">Filter Tag:</span><button class="filter-btn active" data-filter="all" type="button">All Projects (26)</button><button class="filter-btn" data-filter="aerospace" type="button">Aerospace &amp; Propulsion</button><button class="filter-btn" data-filter="nuclear" type="button">Nuclear &amp; Fluids</button><button class="filter-btn" data-filter="mechanical" type="button">Mechanical &amp; Hardware</button><button class="filter-btn" data-filter="cad" type="button">CAD &amp; Manufacturing</button><button class="filter-btn" data-filter="leadership" type="button">Leadership &amp; Outreach</button></div>
+<!-- Chronological / Priority Portfolio List -->
+<div class="portfolio-list" id="portfolio-list-container"><article class="portfolio-item" data-keywords="kadmos,loop,separator,venturi,nuclear,two-phase,twophase,cpvc,33ft" data-tags="nuclear fluids testing cad" id="proj-kadmos-loop"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="33ft TEST LOOP" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/kadmos_loop.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[33ft TEST LOOP]</strong><span class="ph-sub">Full-Scale Water-Air Loop</span></div></div><div class="portfolio-caption">Fig 1.1: Full-scale 33ft vertical water-air test loop</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 1.1: Full-scale 33ft vertical water-air test loop" data-fallback="imager/View%20from%20rock%20canyon.JPG" data-label="33ft TEST LOOP" data-src="imager/kadmos_loop.jpg" data-sub="Full-Scale Water-Air Loop" title="Fig 1.1: Full-scale 33ft vertical water-air test loop" type="button"><img alt="33ft TEST LOOP" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/kadmos_loop.jpg"/><div class="thumb-fallback" style="display:none;">Fig 1.1</div></button><button class="portfolio-thumb" data-cap="Fig 1.2: Patented SMR two-phase separator assembly" data-fallback="imager/Aura.JPG" data-label="SEPARATOR CAD" data-src="imager/kadmos_separator.jpg" data-sub="6 Prototype Iterations" title="Fig 1.2: Patented SMR two-phase separator assembly" type="button"><img alt="SEPARATOR CAD" data-fallback="imager/Aura.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/kadmos_separator.jpg"/><div class="thumb-fallback" style="display:none;">Fig 1.2</div></button><button class="portfolio-thumb" data-cap="Fig 1.3: Multi-channel pressure &amp; rotameter DAQ" data-fallback="imager/belay.jpg" data-label="LABVIEW DAQ" data-src="imager/kadmos_daq.jpg" data-sub="Flow &amp; Pressure Monitoring" title="Fig 1.3: Multi-channel pressure &amp; rotameter DAQ" type="button"><img alt="LABVIEW DAQ" data-fallback="imager/belay.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/kadmos_daq.jpg"/><div class="thumb-fallback" style="display:none;">Fig 1.3</div></button><button class="portfolio-thumb" data-cap="Fig 1.4: Two-phase air-water delivery manifold" data-fallback="imager/rocks.jpg" data-label="VENTURI &amp; MANIFOLD" data-src="imager/kadmos_venturi.jpg" data-sub="Two-Phase Delivery System" title="Fig 1.4: Two-phase air-water delivery manifold" type="button"><img alt="VENTURI &amp; MANIFOLD" data-fallback="imager/rocks.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/kadmos_venturi.jpg"/><div class="thumb-fallback" style="display:none;">Fig 1.4</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Kadmos Loop — Small Modular Reactor Two-Phase Flow Separator &amp; 33ft Test Loop</div><div class="portfolio-meta">KADMOS Energy Inc. · Systems Engineering Intern &amp; Project Consultant · May 2026 – Present</div></div><div class="tag-strip"><span class="tag">Nuclear</span><span class="tag">Two-Phase Flow</span><span class="tag">Patent</span><span class="tag">LabVIEW DAQ</span><span class="tag">Fluid Dynamics</span></div><p class="portfolio-desc">Designed and patented a high-efficiency steam-water two-phase separator for a small modular nuclear reactor (SMR). Self-taught fundamentals of two-phase flow, Buckingham Pi scaling analysis, and interfacial mechanics to direct a 6-person university research team through 6 prototype iterations and 3 delivery systems. Set system requirements, supervised Schedule 80 CPVC construction, and programmed the NI LabVIEW DAQ monitoring suite for a full-scale 33-foot water-air validation test loop measuring phase carryover, volumetric flow rates, and differential pressure drops.</p><div class="portfolio-specs">Specifications: Patented Separator Design · 33ft Vertical Test Loop · 6 Iterative Prototypes · Multi-Channel LabVIEW DAQ</div></div></article><article class="portfolio-item" data-keywords="block2,block_2,hotfire,static,hybrid,srad,620,550,thrust,plume" data-tags="aerospace propulsion fluids testing" id="proj-srad-block2-campaign"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="BLOCK 2 HOTFIRE" data-fallback="imager/MilkyWay.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/block2_hotfire.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[BLOCK 2 HOTFIRE]</strong><span class="ph-sub">620 lbf Peak Thrust</span></div></div><div class="portfolio-caption">Fig 2.1: Block 2 static hotfire achieving 620 lbf peak thrust</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 2.1: Block 2 static hotfire achieving 620 lbf peak thrust" data-fallback="imager/MilkyWay.JPG" data-label="BLOCK 2 HOTFIRE" data-src="imager/block2_hotfire.jpg" data-sub="620 lbf Peak Thrust" title="Fig 2.1: Block 2 static hotfire achieving 620 lbf peak thrust" type="button"><img alt="BLOCK 2 HOTFIRE" data-fallback="imager/MilkyWay.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/block2_hotfire.jpg"/><div class="thumb-fallback" style="display:none;">Fig 2.1</div></button><button class="portfolio-thumb" data-cap="Fig 2.2: Vertically integrated motor &amp; feed plumbing on stand" data-fallback="imager/Aurora.JPG" data-label="TEST INTEGRATION" data-src="imager/block2_stand.jpg" data-sub="Vertical Test Stand Setup" title="Fig 2.2: Vertically integrated motor &amp; feed plumbing on stand" type="button"><img alt="TEST INTEGRATION" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/block2_stand.jpg"/><div class="thumb-fallback" style="display:none;">Fig 2.2</div></button><button class="portfolio-thumb" data-cap="Fig 2.3: Thrust and chamber pressure telemetry trace" data-fallback="imager/ymount.JPG" data-label="THRUST CURVE" data-src="imager/block2_data.jpg" data-sub="Chamber &amp; Feed Pressure" title="Fig 2.3: Thrust and chamber pressure telemetry trace" type="button"><img alt="THRUST CURVE" data-fallback="imager/ymount.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/block2_data.jpg"/><div class="thumb-fallback" style="display:none;">Fig 2.3</div></button><button class="portfolio-thumb" data-cap="Fig 2.4: Pre-fire checklist &amp; safety instrumentation check" data-fallback="imager/View%20from%20rock%20canyon.JPG" data-label="TEST OPERATIONS" data-src="imager/block2_team.jpg" data-sub="Propulsion Research Team" title="Fig 2.4: Pre-fire checklist &amp; safety instrumentation check" type="button"><img alt="TEST OPERATIONS" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/block2_team.jpg"/><div class="thumb-fallback" style="display:none;">Fig 2.4</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">SRAD Hybrid Block 2 Test Campaign</div><div class="portfolio-meta">BYU Rocketry Propulsion Research · Head of Systems Integration · Sept 2025 – Present</div></div><div class="tag-strip"><span class="tag">Aerospace</span><span class="tag">Propulsion</span><span class="tag">Static Hotfire</span><span class="tag">Fluid Systems</span><span class="tag">620 lbf Peak</span></div><p class="portfolio-desc">While I was Systems Integration Lead on BYU’s Propulsion Research Team, I worked to ensure we were ready for hotfire testing, and oversaw several test fires. While we ran into issues during the test campaign, we eventually met our peak thrust goal of 500 lbf, and then exceeded it by 20%, with one test hitting 620 lbf peak thrust. I learned so much about procedures, fluid systems, safety systems, redundancy, and project management through the duration of this test campaign.</p><div class="portfolio-specs">Specifications: 620 lbf Peak Thrust (20% Over Target) · 8 Static Hotfires · NOx-Paraffin Hybrid Motor · Full Redundancy &amp; Safety Systems</div></div></article><article class="portfolio-item" data-keywords="pipsqueak,air,cylinder,machining,lathe,mill,manufacturing" data-tags="mechanical cad" id="proj-pipsqueak-engine"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="PIPSQUEAK ENGINE" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/pipsqueak_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[PIPSQUEAK ENGINE]</strong><span class="ph-sub">Single-Cylinder Pneumatic</span></div></div><div class="portfolio-caption">Fig 3.1: Completed air-powered single-cylinder engine assembly</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 3.1: Completed air-powered single-cylinder engine assembly" data-fallback="imager/telephone%20pole.JPG" data-label="PIPSQUEAK ENGINE" data-src="imager/pipsqueak_1.jpg" data-sub="Single-Cylinder Pneumatic" title="Fig 3.1: Completed air-powered single-cylinder engine assembly" type="button"><img alt="PIPSQUEAK ENGINE" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/pipsqueak_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 3.1</div></button><button class="portfolio-thumb" data-cap="Fig 3.2: Precision machined flywheel, piston, and cylinder block" data-fallback="imager/rocks.jpg" data-label="MACHINED PARTS" data-src="imager/pipsqueak_2.jpg" data-sub="Piston, Cylinder &amp; Flywheel" title="Fig 3.2: Precision machined flywheel, piston, and cylinder block" type="button"><img alt="MACHINED PARTS" data-fallback="imager/rocks.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/pipsqueak_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 3.2</div></button><button class="portfolio-thumb" data-cap="Fig 3.3: Component inspection &amp; pneumatic run test" data-fallback="imager/Rope.JPG" data-label="TOLERANCE CHECK" data-src="imager/pipsqueak_3.jpg" data-sub="Process Sheet &amp; DFM" title="Fig 3.3: Component inspection &amp; pneumatic run test" type="button"><img alt="TOLERANCE CHECK" data-fallback="imager/Rope.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/pipsqueak_3.jpg"/><div class="thumb-fallback" style="display:none;">Fig 3.3</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Air-Powered Engine (Pipsqueak Engine)</div><div class="portfolio-meta">BYU Mechanical Engineering · Manufacturing Processes · Fall 2025</div></div><div class="tag-strip"><span class="tag">Mechanical</span><span class="tag">Machining</span><span class="tag">DFM</span><span class="tag">Pneumatics</span><span class="tag">Lathe &amp; Mill</span></div><p class="portfolio-desc">For my manufacturing processes class, we built an air-powered single cylinder engine in order to learn about different manufacturing processes. I learned about DFM and got practice machining components.</p><div class="portfolio-specs">Processes: Manual Lathe Turning · Vertical Milling · Precision Bore Tolerancing · Pneumatic Valve Timing · DFM</div></div></article><article class="portfolio-item" data-keywords="hydrostatic,hydro,dead_weight,deadweight,strain,proof,tank_crack,profilometer" data-tags="aerospace fluids testing mechanical" id="proj-block2-hydrostatic"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="DEAD WEIGHT TESTER" data-fallback="imager/rocks.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/hydro_test_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[DEAD WEIGHT TESTER]</strong><span class="ph-sub">Distilled Water Rebuild</span></div></div><div class="portfolio-caption">Fig 4.1: Rebuilt distilled water dead weight hydrostatic tester</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 4.1: Rebuilt distilled water dead weight hydrostatic tester" data-fallback="imager/rocks.jpg" data-label="DEAD WEIGHT TESTER" data-src="imager/hydro_test_1.jpg" data-sub="Distilled Water Rebuild" title="Fig 4.1: Rebuilt distilled water dead weight hydrostatic tester" type="button"><img alt="DEAD WEIGHT TESTER" data-fallback="imager/rocks.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/hydro_test_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 4.1</div></button><button class="portfolio-thumb" data-cap="Fig 4.2: Strain gauge instrumentation over surface defect &amp; bare wall" data-fallback="imager/ymount.JPG" data-label="STRAIN GAUGE DAQ" data-src="imager/hydro_test_2.jpg" data-sub="Bare Wall vs Defect" title="Fig 4.2: Strain gauge instrumentation over surface defect &amp; bare wall" type="button"><img alt="STRAIN GAUGE DAQ" data-fallback="imager/ymount.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/hydro_test_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 4.2</div></button><button class="portfolio-thumb" data-cap="Fig 4.3: Optical profilometer scan &amp; elastic deformation curve" data-fallback="imager/Aurora.JPG" data-label="PROFILOMETRY" data-src="imager/hydro_test_3.jpg" data-sub="Defect Depth Topology" title="Fig 4.3: Optical profilometer scan &amp; elastic deformation curve" type="button"><img alt="PROFILOMETRY" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/hydro_test_3.jpg"/><div class="thumb-fallback" style="display:none;">Fig 4.3</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Block 2 Hydrostatic Testing &amp; Dead Weight Tester Rebuild</div><div class="portfolio-meta">BYU Rocketry Propulsion Research · Tank Qualification Lead · 2026</div></div><div class="tag-strip"><span class="tag">Aerospace</span><span class="tag">Hydrostatic Testing</span><span class="tag">Strain Gauges</span><span class="tag">DAQ</span><span class="tag">Pressure Vessels</span></div><p class="portfolio-desc">I rebuilt a distilled water dead weight tester in order to perform hydrostatic proof-testing on our block 2 flight tank. I then set up the DAQ and strain gauge system in order to track the elastic deformation of the tank walls as pressure increased, one on the bare surface and one over a surface defect. While the defect experienced higher deformation, it all was within elastic limits.</p><div class="portfolio-specs">Instrumentation: Rebuilt Distilled Water Dead Weight Tester · Dual Strain Gauge Rosette DAQ · 1.5x MEOP Proof Test · Optical Profilometry</div></div></article><article class="portfolio-item" data-keywords="sauceathon,oshcut,osh,opensauce,gocart,kart,hackathon,pedal" data-tags="mechanical cad" id="proj-sauceathon-2026"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="SAUCEATHON KART" data-fallback="imager/rolling%20sunset.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/sauceathon_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[SAUCEATHON KART]</strong><span class="ph-sub">24-Hour OSH-Cut Build</span></div></div><div class="portfolio-caption">Fig 5.1: Completed pedal-powered racing go-cart at OSH-Cut</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 5.1: Completed pedal-powered racing go-cart at OSH-Cut" data-fallback="imager/rolling%20sunset.jpg" data-label="SAUCEATHON KART" data-src="imager/sauceathon_1.jpg" data-sub="24-Hour OSH-Cut Build" title="Fig 5.1: Completed pedal-powered racing go-cart at OSH-Cut" type="button"><img alt="SAUCEATHON KART" data-fallback="imager/rolling%20sunset.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/sauceathon_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 5.1</div></button><button class="portfolio-thumb" data-cap="Fig 5.2: Rapid CAD &amp; sheet metal fabrication during the 24-hour sprint" data-fallback="imager/Aura.JPG" data-label="SHEET METAL DFM" data-src="imager/sauceathon_2.jpg" data-sub="Laser Cut &amp; Press Brake" title="Fig 5.2: Rapid CAD &amp; sheet metal fabrication during the 24-hour sprint" type="button"><img alt="SHEET METAL DFM" data-fallback="imager/Aura.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/sauceathon_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 5.2</div></button><button class="portfolio-thumb" data-cap="Fig 5.3: Team of 4 on the starting grid at Sauceathon 2026" data-fallback="imager/belay.jpg" data-label="RACE DAY" data-src="imager/sauceathon_3.jpg" data-sub="5th Place Finish" title="Fig 5.3: Team of 4 on the starting grid at Sauceathon 2026" type="button"><img alt="RACE DAY" data-fallback="imager/belay.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/sauceathon_3.jpg"/><div class="thumb-fallback" style="display:none;">Fig 5.3</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">2026 “Sauceathon” OSH-Cut Hackathon</div><div class="portfolio-meta">OpenSauce &amp; OSH-Cut · Engineering Team Lead · 2026</div></div><div class="tag-strip"><span class="tag">Mechanical</span><span class="tag">Hackathon</span><span class="tag">Sheet Metal DFM</span><span class="tag">Rapid Prototyping</span><span class="tag">5th Place</span></div><p class="portfolio-desc">I was selected to participate in “Sauceathon 2026”, an engineering hackathon. Hosted by OpenSauce and OSH-cut, I spent 24 hours in a state-of-the-art manufacturing facility with unlimited budget and the simple challenge: make a light, compact, pedal powered go-cart to race at the end of the 24 hours. I managed a team of 4 and we got 5th place despite a crash mid-race. I had fun, got to meet several engineering you-tubers, and learned a lot about DFM. I also got a whole 1.5 hours of sleep!</p><div class="portfolio-specs">Challenge: 24-Hour Build · Pedal-Powered Racing Go-Cart · Laser-Cut &amp; Bent Sheet Metal DFM · 5th Place Finish</div></div></article><article class="portfolio-item" data-keywords="tour,byu_engineering,host,outreach,video,eb" data-tags="leadership outreach" id="proj-byu-tour-host"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="BYU ENG TOUR" data-fallback="imager/IMG_9610.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/byu_tour_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[BYU ENG TOUR]</strong><span class="ph-sub">Recorded Campus Walkthrough</span></div></div><div class="portfolio-caption">Fig 6.1: Hosting the official BYU Engineering building video tour</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 6.1: Hosting the official BYU Engineering building video tour" data-fallback="imager/IMG_9610.jpg" data-label="BYU ENG TOUR" data-src="imager/byu_tour_1.jpg" data-sub="Recorded Campus Walkthrough" title="Fig 6.1: Hosting the official BYU Engineering building video tour" type="button"><img alt="BYU ENG TOUR" data-fallback="imager/IMG_9610.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/byu_tour_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 6.1</div></button><button class="portfolio-thumb" data-cap="Fig 6.2: Highlighting student machine shops and instrumentation labs" data-fallback="imager/View%20from%20rock%20canyon.JPG" data-label="LAB SHOWCASE" data-src="imager/byu_tour_2.jpg" data-sub="ERL &amp; Prototyping Facilities" title="Fig 6.2: Highlighting student machine shops and instrumentation labs" type="button"><img alt="LAB SHOWCASE" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/byu_tour_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 6.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">BYU Engineering Building Recorded Tour Host</div><div class="portfolio-meta">BYU College of Engineering · University Outreach · 2026</div></div><div class="tag-strip"><span class="tag">Leadership</span><span class="tag">Outreach</span><span class="tag">Technical Communication</span><span class="tag">BYU Engineering</span></div><p class="portfolio-desc">I was asked to host a recorded tour of the BYU Engineering building, as part of a university outreach program. I had a great time working with the videographers and directors, while adding information and experience where I could. <a href="https://www.linkedin.com/posts/byu-engineering_just-got-admitted-to-byu-learning-a-activity-7496310740790857728-lmBN?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAChk4yMBp3bgGNKUkfTcC13hBRu9TH8neu0" rel="noopener noreferrer" target="_blank">Watch the Recorded BYU Engineering Tour on LinkedIn →</a></p><div class="portfolio-specs">Role: Featured Student Host · Engineering Research Lab &amp; Prototyping Facility Walkthrough · BYU Admissions Outreach</div></div></article><article class="portfolio-item" data-keywords="ring,skateboard,memorial,cnc,wood" data-tags="mechanical cad" id="proj-skateboard-rings"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="SKATEBOARD RINGS" data-fallback="imager/Rope.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/skateboard_rings_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[SKATEBOARD RINGS]</strong><span class="ph-sub">Finished Maple Ply Rings</span></div></div><div class="portfolio-caption">Fig 7.1: Finished memorial rings preserving laminated skateboard plies</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 7.1: Finished memorial rings preserving laminated skateboard plies" data-fallback="imager/Rope.JPG" data-label="SKATEBOARD RINGS" data-src="imager/skateboard_rings_1.jpg" data-sub="Finished Maple Ply Rings" title="Fig 7.1: Finished memorial rings preserving laminated skateboard plies" type="button"><img alt="SKATEBOARD RINGS" data-fallback="imager/Rope.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/skateboard_rings_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 7.1</div></button><button class="portfolio-thumb" data-cap="Fig 7.2: CNC router toolpath cutting ring blanks from skateboard deck" data-fallback="imager/belay.jpg" data-label="CNC ROUTING" data-src="imager/skateboard_rings_2.jpg" data-sub="Deck Fixturing &amp; Cutout" title="Fig 7.2: CNC router toolpath cutting ring blanks from skateboard deck" type="button"><img alt="CNC ROUTING" data-fallback="imager/belay.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/skateboard_rings_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 7.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Memorial Skateboard Rings (CNC Router)</div><div class="portfolio-meta">Personal Manufacturing Project · CNC Routing &amp; Finishing · Jan 2026</div></div><div class="tag-strip"><span class="tag">Mechanical</span><span class="tag">CNC Router</span><span class="tag">CAM Toolpaths</span><span class="tag">Woodworking</span></div><p class="portfolio-desc">My uncle unexpectedly passed away in January, 2026. He was an avid skateboarder who did a lot of community outreach, so to help memorialize him, I used a CNC router to cut out several rings of one of his old boards. These rings were then sanded and finished, then given to friends and family.</p><div class="portfolio-specs">Manufacturing: Multi-Ply Maple Skateboard Deck · CNC Contour Profiling · Hand-Turned Sanding &amp; Sealed Finish</div></div></article><article class="portfolio-item" data-keywords="valve,servo,nox,fluids,gear,sintered,ball_valve,plumbing" data-tags="aerospace fluids mechanical cad" id="proj-servo-nox-valve"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="SERVO RUN VALVE" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/servo_valve_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[SERVO RUN VALVE]</strong><span class="ph-sub">Sintered Gear Actuation</span></div></div><div class="portfolio-caption">Fig 8.1: Final servo-actuated 1/2" high-pressure NOx run valve</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap='Fig 8.1: Final servo-actuated 1/2" high-pressure NOx run valve' data-fallback="imager/Aurora.JPG" data-label="SERVO RUN VALVE" data-src="imager/servo_valve_1.jpg" data-sub="Sintered Gear Actuation" title='Fig 8.1: Final servo-actuated 1/2" high-pressure NOx run valve' type="button"><img alt="SERVO RUN VALVE" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/servo_valve_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 8.1</div></button><button class="portfolio-thumb" data-cap="Fig 8.2: Early actuator prototype vs sintered metal gear iteration" data-fallback="imager/Aura.JPG" data-label="VALVE ITERATIONS" data-src="imager/servo_valve_2.jpg" data-sub="CAD &amp; Gear Train" title="Fig 8.2: Early actuator prototype vs sintered metal gear iteration" type="button"><img alt="VALVE ITERATIONS" data-fallback="imager/Aura.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/servo_valve_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 8.2</div></button><button class="portfolio-thumb" data-cap="Fig 8.3: Integrated run valve installed in Block 2 feed line" data-fallback="imager/MilkyWay.JPG" data-label="PLUMBING TREE" data-src="imager/servo_valve_3.jpg" data-sub="High-Cv Feed System" title="Fig 8.3: Integrated run valve installed in Block 2 feed line" type="button"><img alt="PLUMBING TREE" data-fallback="imager/MilkyWay.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/servo_valve_3.jpg"/><div class="thumb-fallback" style="display:none;">Fig 8.3</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Fluids System NOx Servo-Actuated Main Run Valve</div><div class="portfolio-meta">BYU Rocketry Propulsion Research · Head of Fluids Team · May 2025 – Sept 2025</div></div><div class="tag-strip"><span class="tag">Aerospace</span><span class="tag">Fluids</span><span class="tag">Servo Valve</span><span class="tag">Sintered Gears</span><span class="tag">PWM Control</span></div><p class="portfolio-desc">As head of the fluids team within BYU Propulsion Research, I designed the fluids plumbing system for our block 2 engine. I made a couple iterations of a custom servo actuated ball valve to act as our main run-valve. The final design used two sintered gears attached to the ball valve shaft and a high-torque servo in order to turn the 1/2-inch high pressure ball valve reliably and with precision. I learned about PWM, managing a pressure budget, and maintaining a high coefficient of flow.</p><div class="portfolio-specs">Specifications: 1/2" High-Pressure Ball Valve · Custom Sintered Gear Train · High-Torque PWM Servo · High Flow Coefficient (Cv)</div></div></article><article class="portfolio-item" data-keywords="hermoso,car,engine_swap,transmission,subaru,outback,automotive" data-tags="mechanical" id="proj-car-swap-hermoso"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="HERMOSO POWERTRAIN" data-fallback="imager/rolling%20sunset.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/hermoso_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[HERMOSO POWERTRAIN]</strong><span class="ph-sub">Engine &amp; Transmission Pull</span></div></div><div class="portfolio-caption">Fig 9.1: Pulling the engine and transmission assembly on Hermoso</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 9.1: Pulling the engine and transmission assembly on Hermoso" data-fallback="imager/rolling%20sunset.jpg" data-label="HERMOSO POWERTRAIN" data-src="imager/hermoso_1.jpg" data-sub="Engine &amp; Transmission Pull" title="Fig 9.1: Pulling the engine and transmission assembly on Hermoso" type="button"><img alt="HERMOSO POWERTRAIN" data-fallback="imager/rolling%20sunset.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/hermoso_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 9.1</div></button><button class="portfolio-thumb" data-cap="Fig 9.2: Cylinder head gasket rebuild and transmission mating" data-fallback="imager/Rope.JPG" data-label="HEAD &amp; TIMING" data-src="imager/hermoso_2.jpg" data-sub="Gasket &amp; Torque Spec" title="Fig 9.2: Cylinder head gasket rebuild and transmission mating" type="button"><img alt="HEAD &amp; TIMING" data-fallback="imager/Rope.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/hermoso_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 9.2</div></button><button class="portfolio-thumb" data-cap="Fig 9.3: Completed installation in engine bay" data-fallback="imager/telephone%20pole.JPG" data-label="REINSTALLED" data-src="imager/hermoso_3.jpg" data-sub="Road-Tested Powertrain" title="Fig 9.3: Completed installation in engine bay" type="button"><img alt="REINSTALLED" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/hermoso_3.jpg"/><div class="thumb-fallback" style="display:none;">Fig 9.3</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Car Transmission and Engine Swap (“Hermoso”)</div><div class="portfolio-meta">Independent Automotive Mechanical Project · Summer 2025</div></div><div class="tag-strip"><span class="tag">Mechanical</span><span class="tag">Automotive</span><span class="tag">Powertrain Overhaul</span><span class="tag">Drivetrain</span></div><p class="portfolio-desc">Independently removed, repaired, rebuilt, and reinstalled an automobile engine and transmission assembly on my vehicle (“Hermoso”). Performed cylinder head gasket replacement, head bolt torque sequencing, valve timing alignment, transmission coupling, electrical harness routing, and cooling/fluid system bleeding. Completed the entire overhaul under limited resources and verified reliable operation on cross-country road testing.</p><div class="portfolio-specs">Outcome: Complete Engine &amp; Transmission Swap · Head Gasket &amp; Timing Overhaul · Zero Leaks or Fault Codes</div></div></article><article class="portfolio-item" data-keywords="burst,hypercomp,tank_burst,rupture,vessel" data-tags="aerospace fluids testing" id="proj-block2-burst-test"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="TANK BURST TEST" data-fallback="imager/rocks.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/burst_test_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[TANK BURST TEST]</strong><span class="ph-sub">HyPerComp Test Chamber</span></div></div><div class="portfolio-caption">Fig 10.1: Flight-like NOx tank mounted in HyPerComp burst bunker</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 10.1: Flight-like NOx tank mounted in HyPerComp burst bunker" data-fallback="imager/rocks.jpg" data-label="TANK BURST TEST" data-src="imager/burst_test_1.jpg" data-sub="HyPerComp Test Chamber" title="Fig 10.1: Flight-like NOx tank mounted in HyPerComp burst bunker" type="button"><img alt="TANK BURST TEST" data-fallback="imager/rocks.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/burst_test_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 10.1</div></button><button class="portfolio-thumb" data-cap="Fig 10.2: Post-burst fracture inspection confirming factor of safety" data-fallback="imager/ymount.JPG" data-label="POST-BURST ARTICLE" data-src="imager/burst_test_2.jpg" data-sub="Ductile Failure Margin" title="Fig 10.2: Post-burst fracture inspection confirming factor of safety" type="button"><img alt="POST-BURST ARTICLE" data-fallback="imager/ymount.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/burst_test_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 10.2</div></button><button class="portfolio-thumb" data-cap="Fig 10.3: Pressure-to-failure curve recorded during burst test" data-fallback="imager/Aurora.JPG" data-label="PRESSURE RAMP" data-src="imager/burst_test_3.jpg" data-sub="Burst Telemetry Curve" title="Fig 10.3: Pressure-to-failure curve recorded during burst test" type="button"><img alt="PRESSURE RAMP" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/burst_test_3.jpg"/><div class="thumb-fallback" style="display:none;">Fig 10.3</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Block 2 Flight Tank Hydrostatic Burst Test</div><div class="portfolio-meta">BYU Rocketry Propulsion Research · HyPerComp Engineering Test · 2026</div></div><div class="tag-strip"><span class="tag">Aerospace</span><span class="tag">Burst Testing</span><span class="tag">Pressure Vessels</span><span class="tag">HyPerComp</span><span class="tag">Factor of Safety</span></div><p class="portfolio-desc">I traveled as part of a small team with BYU Propulsion Research to burst test our first flight-ready tank article. We tested up at a place called HyPerComp, which makes pressure vessels for aerospace and energy applications. Pressurizing the flight-like 6061-T6 nitrous oxide tank article to destructive failure allowed us to empirically validate our structural models, bulkhead retention margins, and actualized factor of safety prior to flight.</p><div class="portfolio-specs">Facility: HyPerComp Engineering · Destructive Hydro-Burst Qualification · Validated Flight Tank Factor of Safety (FOS)</div></div></article><article class="portfolio-item" data-keywords="kintsugi,l1,nosecone,build_day,rocket_build" data-tags="aerospace cad leadership" id="proj-kintsugi-rocket"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="KINTSUGI ROCKET" data-fallback="imager/MilkyWay.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/kintsugi_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[KINTSUGI ROCKET]</strong><span class="ph-sub">L1 High-Power Build</span></div></div><div class="portfolio-caption">Fig 11.1: Kintsugi high-power rocket with 3D-printed nosecone</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 11.1: Kintsugi high-power rocket with 3D-printed nosecone" data-fallback="imager/MilkyWay.JPG" data-label="KINTSUGI ROCKET" data-src="imager/kintsugi_1.jpg" data-sub="L1 High-Power Build" title="Fig 11.1: Kintsugi high-power rocket with 3D-printed nosecone" type="button"><img alt="KINTSUGI ROCKET" data-fallback="imager/MilkyWay.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/kintsugi_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 11.1</div></button><button class="portfolio-thumb" data-cap="Fig 11.2: Kintsugi on the launch rail prior to L1 flight" data-fallback="imager/View%20from%20rock%20canyon.JPG" data-label="LAUNCH PAD" data-src="imager/kintsugi_2.jpg" data-sub="L1 Certification Flight" title="Fig 11.2: Kintsugi on the launch rail prior to L1 flight" type="button"><img alt="LAUNCH PAD" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/kintsugi_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 11.2</div></button><button class="portfolio-thumb" data-cap="Fig 11.3: Leading hobby rocketry build day for 7 kids" data-fallback="imager/Aura.JPG" data-label="YOUTH BUILD DAY" data-src="imager/kintsugi_3.jpg" data-sub="Mentoring 7 Students" title="Fig 11.3: Leading hobby rocketry build day for 7 kids" type="button"><img alt="YOUTH BUILD DAY" data-fallback="imager/Aura.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/kintsugi_3.jpg"/><div class="thumb-fallback" style="display:none;">Fig 11.3</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">“Kintsugi” High-Power Rocket Design, Build &amp; L1 Launch</div><div class="portfolio-meta">High-Power Rocketry L1 Certification &amp; Youth Mentorship · 2025</div></div><div class="tag-strip"><span class="tag">Aerospace</span><span class="tag">High-Power Rocketry</span><span class="tag">3D Printing</span><span class="tag">L1 Cert</span><span class="tag">STEM Outreach</span></div><p class="portfolio-desc">I built my first high-power rocket “Kintsugi” as an L1 certification attempt. I also experimented with 3D printing the nosecone. While I built Kintsugi, I also guided 7 kids in a “rocket build day” and explained to them the basics of rocketry.</p><div class="portfolio-specs">Vehicle: L1 High-Power Rocket “Kintsugi” · Custom 3D-Printed Nosecone · Guided 7 Youth Builders in STEM Rocket Build Day</div></div></article><article class="portfolio-item" data-keywords="bot,robot,pid,balancing,arduino" data-tags="mechanical" id="proj-self-balancing-bot"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="PID BALANCING BOT" data-fallback="imager/Aura.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/pid_bot_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[PID BALANCING BOT]</strong><span class="ph-sub">Arduino &amp; IMU Chassis</span></div></div><div class="portfolio-caption">Fig 12.1: Two-wheel self-balancing robot chassis and wiring</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 12.1: Two-wheel self-balancing robot chassis and wiring" data-fallback="imager/Aura.JPG" data-label="PID BALANCING BOT" data-src="imager/pid_bot_1.jpg" data-sub="Arduino &amp; IMU Chassis" title="Fig 12.1: Two-wheel self-balancing robot chassis and wiring" type="button"><img alt="PID BALANCING BOT" data-fallback="imager/Aura.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/pid_bot_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 12.1</div></button><button class="portfolio-thumb" data-cap="Fig 12.2: Arduino Nano, H-bridge motor driver, and IMU sensor mount" data-fallback="imager/Rope.JPG" data-label="CONTROL ELECTRONICS" data-src="imager/pid_bot_2.jpg" data-sub="H-Bridge &amp; Accelerometer" title="Fig 12.2: Arduino Nano, H-bridge motor driver, and IMU sensor mount" type="button"><img alt="CONTROL ELECTRONICS" data-fallback="imager/Rope.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/pid_bot_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 12.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Self-Balancing PID Robot Experiment</div><div class="portfolio-meta">Mechatronics &amp; Control Systems Project · March 2026</div></div><div class="tag-strip"><span class="tag">Mechanical</span><span class="tag">PID Control</span><span class="tag">Arduino Nano</span><span class="tag">Mechatronics</span><span class="tag">Accelerometer</span></div><p class="portfolio-desc">I wanted to learn about PID loops so I built a small self-balancing robot using some motors, an H-bridge motor driver, an Arduino Nano, and an Adafruit accelerometer. I learned a lot about PID, but unfortunately the peak torque of the motors was too low to keep the system upright in anything besides the ideal scenario.</p><div class="portfolio-specs">Hardware: Arduino Nano · H-Bridge Driver · Adafruit IMU Accelerometer · Closed-Loop PID Control Tuning</div></div></article><article class="portfolio-item" data-keywords="swing,rope,idaho,rigging,maple,belay" data-tags="mechanical" id="proj-engineered-swing"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="45FT ROPE SWING" data-fallback="imager/Rope.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/Rope.JPG"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[45FT ROPE SWING]</strong><span class="ph-sub">2" Naval Stay Rope &amp; Rigging</span></div></div><div class="portfolio-caption">Fig 13.1: Rigging the 45ft span with steel cable tows and naval stay rope</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 13.1: Rigging the 45ft span with steel cable tows and naval stay rope" data-fallback="imager/Rope.JPG" data-label="45FT ROPE SWING" data-src="imager/Rope.JPG" data-sub='2" Naval Stay Rope &amp; Rigging' title="Fig 13.1: Rigging the 45ft span with steel cable tows and naval stay rope" type="button"><img alt="45FT ROPE SWING" data-fallback="imager/Rope.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/Rope.JPG"/><div class="thumb-fallback" style="display:none;">Fig 13.1</div></button><button class="portfolio-thumb" data-cap="Fig 13.2: High-angle ascender rigging for the tree cable anchors" data-fallback="imager/belay.jpg" data-label="TREE RIGGING" data-src="imager/belay.jpg" data-sub="Ascenders &amp; Steel Cable" title="Fig 13.2: High-angle ascender rigging for the tree cable anchors" type="button"><img alt="TREE RIGGING" data-fallback="imager/belay.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/belay.jpg"/><div class="thumb-fallback" style="display:none;">Fig 13.2</div></button><button class="portfolio-thumb" data-cap="Fig 13.3: Custom maple swing seat &amp; dynamic swing arc test" data-fallback="imager/View%20from%20rock%20canyon.JPG" data-label="MAPLE SEAT" data-src="imager/swing_seat.jpg" data-sub="Jointer &amp; Router Fabrication" title="Fig 13.3: Custom maple swing seat &amp; dynamic swing arc test" type="button"><img alt="MAPLE SEAT" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/swing_seat.jpg"/><div class="thumb-fallback" style="display:none;">Fig 13.3</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Large-Scale 45ft Engineered Rope Swing</div><div class="portfolio-meta">Structural Rigging &amp; Stress Analysis Project · Rural Idaho</div></div><div class="tag-strip"><span class="tag">Mechanical</span><span class="tag">Stress Analysis</span><span class="tag">Cyclical Loading</span><span class="tag">Rigging</span><span class="tag">Woodworking</span></div><p class="portfolio-desc">A friend of mine asked for help engineering a 45ft rope swing for his property up in rural Idaho. I made cyclical loading calculations, peak stress calculations, and did arc prediction. I built the seat out of maple using a jointer, router, and drill press, then we used rigging and ascenders to place the swing side tows in the trees, made out of steel cable. At the center of the cable we placed a shackle that connected to a 2-inch diameter naval stay rope. Building and designing the system was lots of fun and it’s just the right amount of precarious to swing from a nearby tree stand.</p><div class="portfolio-specs">Engineering: 45ft Radius Arc · Steel Cable Side Tows · 2" Naval Stay Rope · Machined Hard Maple Seat · Peak G-Load &amp; Fatigue Analysis</div></div></article><article class="portfolio-item" data-keywords="aurora,milkyway,astro,night,sky,stars" data-tags="aerospace" id="proj-aurora-chasing"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="MID-LATITUDE AURORA" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/Aurora.JPG"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[MID-LATITUDE AURORA]</strong><span class="ph-sub">Coronal Mass Ejection Event</span></div></div><div class="portfolio-caption">Fig 14.1: Mid-latitude aurora borealis captured during geomagnetic storm</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 14.1: Mid-latitude aurora borealis captured during geomagnetic storm" data-fallback="imager/Aurora.JPG" data-label="MID-LATITUDE AURORA" data-src="imager/Aurora.JPG" data-sub="Coronal Mass Ejection Event" title="Fig 14.1: Mid-latitude aurora borealis captured during geomagnetic storm" type="button"><img alt="MID-LATITUDE AURORA" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/Aurora.JPG"/><div class="thumb-fallback" style="display:none;">Fig 14.1</div></button><button class="portfolio-thumb" data-cap="Fig 14.2: High-altitude red and green oxygen/nitrogen auroral emission" data-fallback="imager/Aura.JPG" data-label="AURORAL PILLARS" data-src="imager/Aura.JPG" data-sub="Low-Bortle Long Exposure" title="Fig 14.2: High-altitude red and green oxygen/nitrogen auroral emission" type="button"><img alt="AURORAL PILLARS" data-fallback="imager/Aura.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/Aura.JPG"/><div class="thumb-fallback" style="display:none;">Fig 14.2</div></button><button class="portfolio-thumb" data-cap="Fig 14.3: Galactic core silhouette captured in dark-sky field session" data-fallback="imager/MilkyWay.JPG" data-label="MILKY WAY CORE" data-src="imager/MilkyWay.JPG" data-sub="Dark Sky Astrophotography" title="Fig 14.3: Galactic core silhouette captured in dark-sky field session" type="button"><img alt="MILKY WAY CORE" data-fallback="imager/MilkyWay.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/MilkyWay.JPG"/><div class="thumb-fallback" style="display:none;">Fig 14.3</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Aurora Chasing &amp; Space Weather Astrophotography</div><div class="portfolio-meta">Space Weather Monitoring &amp; Low-Bortle Photography · 2022 – Present</div></div><div class="tag-strip"><span class="tag">Astrophotography</span><span class="tag">Space Weather</span><span class="tag">CME Forecasting</span><span class="tag">Sony a6500</span></div><p class="portfolio-desc">Since 2022, I have been chasing and photographing auroral events. I used a Canon EOS Rebel XS to start and now use a Sony a6500. To catch aurora at mid-altitude, you have to monitor space weather for high-energy coronal mass ejections and watch NOAA SWPC and 3rd-party predictions. You then have to go to low-Bortle areas for minimal light pollution with little warning. It is a fun hobby and even if the aurora don’t show, you can do normal astrophotography.</p><div class="portfolio-specs">Equipment: Sony a6500 &amp; Canon EOS Rebel XS · NOAA SWPC &amp; Solar Wind Magnetometer Tracking · Bortle 1–2 Dark Sky Field Operations</div></div></article><article class="portfolio-item" data-keywords="stand,heater,weld,load_cell,bottle,vapor" data-tags="aerospace fluids mechanical" id="proj-test-stand-improvements"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="LOAD CELL MOUNT" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/test_stand_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[LOAD CELL MOUNT]</strong><span class="ph-sub">Welded Thrust Reaction Bracket</span></div></div><div class="portfolio-caption">Fig 15.1: Welded structural load cell holder on rocket test stand</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 15.1: Welded structural load cell holder on rocket test stand" data-fallback="imager/telephone%20pole.JPG" data-label="LOAD CELL MOUNT" data-src="imager/test_stand_1.jpg" data-sub="Welded Thrust Reaction Bracket" title="Fig 15.1: Welded structural load cell holder on rocket test stand" type="button"><img alt="LOAD CELL MOUNT" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/test_stand_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 15.1</div></button><button class="portfolio-thumb" data-cap="Fig 15.2: Nitrous oxide supply tank thermal conditioning wrap" data-fallback="imager/rocks.jpg" data-label="NOx HEATER LOOP" data-src="imager/test_stand_2.jpg" data-sub="Vapor Dome Temperature Control" title="Fig 15.2: Nitrous oxide supply tank thermal conditioning wrap" type="button"><img alt="NOx HEATER LOOP" data-fallback="imager/rocks.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/test_stand_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 15.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Rocket Test Stand Upgrades &amp; NOx Thermal Conditioning</div><div class="portfolio-meta">BYU Rocketry Propulsion Research · Propulsion Team Member · 2025</div></div><div class="tag-strip"><span class="tag">Aerospace</span><span class="tag">Thermodynamics</span><span class="tag">TIG/MIG Welding</span><span class="tag">Two-Phase NOx</span><span class="tag">Load Cell</span></div><p class="portfolio-desc">My first assignment on the BYU Rocketry Propulsion Team was to help maintain the temperature of our nitrous supply bottle. I selected a suitable heater and researched the vapor dome of Nitrous Oxide to set the heating loop to the ideal temperature. I then welded a load cell holder for the test stand which supports the thrust of the rocket during a hotfire. In these upgrades I learned about 2-phase systems, product selection, and manufacturing processes.</p><div class="portfolio-specs">Upgrades: Nitrous Oxide Vapor-Dome Thermal Control Loop · Welded Structural Load Cell Mount · Two-Phase Supply Pressure Regulation</div></div></article><article class="portfolio-item" data-keywords="dsn,deep_space,openrocket,1943,midpower" data-tags="aerospace cad" id="proj-dsn-rocket"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="DSN ROCKET" data-fallback="imager/ymount.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/dsn_rocket_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[DSN ROCKET]</strong><span class="ph-sub">1,943 ft Apogee Winner</span></div></div><div class="portfolio-caption">Fig 16.1: Deep Space Network (DSN) mid-power rocket on AeroTech G-74W</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 16.1: Deep Space Network (DSN) mid-power rocket on AeroTech G-74W" data-fallback="imager/ymount.JPG" data-label="DSN ROCKET" data-src="imager/dsn_rocket_1.jpg" data-sub="1,943 ft Apogee Winner" title="Fig 16.1: Deep Space Network (DSN) mid-power rocket on AeroTech G-74W" type="button"><img alt="DSN ROCKET" data-fallback="imager/ymount.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/dsn_rocket_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 16.1</div></button><button class="portfolio-thumb" data-cap="Fig 16.2: OpenRocket flight simulation and airframe construction" data-fallback="imager/View%20from%20rock%20canyon.JPG" data-label="OPENROCKET SIM" data-src="imager/dsn_rocket_2.jpg" data-sub="Stability &amp; Apogee Model" title="Fig 16.2: OpenRocket flight simulation and airframe construction" type="button"><img alt="OPENROCKET SIM" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/dsn_rocket_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 16.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">“Deep Space Network” (DSN) Mid-Power Rocket Design, Build &amp; Launch</div><div class="portfolio-meta">Amateur Rocketry Competition Team · Highest Altitude Award (1,943 ft)</div></div><div class="tag-strip"><span class="tag">Aerospace</span><span class="tag">OpenRocket</span><span class="tag">AeroTech G-74W</span><span class="tag">1,943 ft Apogee</span><span class="tag">Award Winner</span></div><p class="portfolio-desc">In my first foray into amateur rocketry, I participated with a team to design, build, and fly a mid-power rocket from scratch. We built “Deep Space Network”, a mid-power rocket flown on an AeroTech G-74W. We won the highest altitude award, at 1,943 ft. I learned that simulations are only as good as you make them—we were aiming for the target altitude of 1,700 ft, so we way overshot. I learned how to use OpenRocket to design and simulate rockets.</p><div class="portfolio-specs">Motor: AeroTech G-74W · Measured Apogee: 1,943 ft (Highest Altitude Award) · OpenRocket Aerodynamic Simulation</div></div></article><article class="portfolio-item" data-keywords="bike,shock,cannondale,lefty,damper" data-tags="mechanical fluids" id="proj-bike-shock-rebuild"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="SHOCK REBUILD" data-fallback="imager/rolling%20sunset.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/bike_shock_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[SHOCK REBUILD]</strong><span class="ph-sub">Cannondale Lefty 3 Damper</span></div></div><div class="portfolio-caption">Fig 17.1: Disassembled hydraulic rear shock and damper internals</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 17.1: Disassembled hydraulic rear shock and damper internals" data-fallback="imager/rolling%20sunset.jpg" data-label="SHOCK REBUILD" data-src="imager/bike_shock_1.jpg" data-sub="Cannondale Lefty 3 Damper" title="Fig 17.1: Disassembled hydraulic rear shock and damper internals" type="button"><img alt="SHOCK REBUILD" data-fallback="imager/rolling%20sunset.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/bike_shock_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 17.1</div></button><button class="portfolio-thumb" data-cap="Fig 17.2: Custom shop-machined tooling bypassing proprietary service wrenches" data-fallback="imager/telephone%20pole.JPG" data-label="CUSTOM TOOLING" data-src="imager/bike_shock_2.jpg" data-sub="Machined Dorm-Room Repair" title="Fig 17.2: Custom shop-machined tooling bypassing proprietary service wrenches" type="button"><img alt="CUSTOM TOOLING" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/bike_shock_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 17.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Cannondale Mountain Bike Rear Shock Rebuild &amp; Custom Tooling</div><div class="portfolio-meta">Independent Fluid Damper &amp; Machining Project · Provo, UT</div></div><div class="tag-strip"><span class="tag">Mechanical</span><span class="tag">Fluid Dampers</span><span class="tag">Custom Tooling</span><span class="tag">Machining</span><span class="tag">Hydraulics</span></div><p class="portfolio-desc">I purchased a Cannondale Lefty 3 mountain bike for cheap because the rear shock was blown. I rebuilt the shock in my dorm room using custom tooling I made in the machine shop to get around proprietary tools required to repair the shock. I learned about fluid dampers, part design, and machining.</p><div class="portfolio-specs">Scope: Custom-Machined Spanner &amp; Seal Tooling · Hydraulic Damper Seal Overhaul · Pressurized IFP Recharge</div></div></article><article class="portfolio-item" data-keywords="block1,block_1,nozzle,graphite,eject" data-tags="aerospace propulsion testing" id="proj-block1-testing"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="BLOCK 1 HOTFIRE" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/block1_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[BLOCK 1 HOTFIRE]</strong><span class="ph-sub">Early Hybrid Test Campaign</span></div></div><div class="portfolio-caption">Fig 18.1: Block 1 hybrid motor static test fire &amp; high-speed camera rig</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 18.1: Block 1 hybrid motor static test fire &amp; high-speed camera rig" data-fallback="imager/Aurora.JPG" data-label="BLOCK 1 HOTFIRE" data-src="imager/block1_1.jpg" data-sub="Early Hybrid Test Campaign" title="Fig 18.1: Block 1 hybrid motor static test fire &amp; high-speed camera rig" type="button"><img alt="BLOCK 1 HOTFIRE" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/block1_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 18.1</div></button><button class="portfolio-thumb" data-cap="Fig 18.2: Ejected pure-graphite nozzle that drove retention sleeve redesign" data-fallback="imager/rocks.jpg" data-label="NOZZLE EJECTION" data-src="imager/block1_2.jpg" data-sub="Graphite Fracture Investigation" title="Fig 18.2: Ejected pure-graphite nozzle that drove retention sleeve redesign" type="button"><img alt="NOZZLE EJECTION" data-fallback="imager/rocks.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/block1_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 18.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Block 1 Hybrid Rocket Motor Testing &amp; High-Speed Analysis</div><div class="portfolio-meta">BYU Rocketry Propulsion Research · Test Operations &amp; Diagnostics · 2025</div></div><div class="tag-strip"><span class="tag">Aerospace</span><span class="tag">Propulsion</span><span class="tag">High-Speed Video</span><span class="tag">Graphite Nozzle</span><span class="tag">Test SOPs</span></div><p class="portfolio-desc">When I first joined propulsion research, I helped with propulsion system setup and high-speed camera setup and analysis. Our combustion efficiencies at this point were awful, but we were learning how to operate the system safely. This meant we did eject the all-graphite nozzle once, which helped us learn about how procedures and process documentation are so important.</p><div class="portfolio-specs">Focus: High-Speed Optical Diagnostics · Graphite Nozzle Retention Root-Cause Analysis · Pre-Test Procedure Standardization</div></div></article><article class="portfolio-item" data-keywords="org,management,tracking,trl,mrl,chart,president" data-tags="aerospace leadership" id="proj-propulsion-org-management"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="SYSTEMS TRACKER" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/prop_org_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[SYSTEMS TRACKER]</strong><span class="ph-sub">TRL/MRL &amp; Risk Matrix</span></div></div><div class="portfolio-caption">Fig 19.1: R&amp;D project tracking matrix, TRL/MRL gates, and risk registry</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 19.1: R&amp;D project tracking matrix, TRL/MRL gates, and risk registry" data-fallback="imager/View%20from%20rock%20canyon.JPG" data-label="SYSTEMS TRACKER" data-src="imager/prop_org_1.jpg" data-sub="TRL/MRL &amp; Risk Matrix" title="Fig 19.1: R&amp;D project tracking matrix, TRL/MRL gates, and risk registry" type="button"><img alt="SYSTEMS TRACKER" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/prop_org_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 19.1</div></button><button class="portfolio-thumb" data-cap="Fig 19.2: Reorganized chain of command enabling parallel engine development" data-fallback="imager/IMG_9610.jpg" data-label="ORG STRUCTURE" data-src="imager/prop_org_2.jpg" data-sub="25 Researchers &amp; 7 Subteams" title="Fig 19.2: Reorganized chain of command enabling parallel engine development" type="button"><img alt="ORG STRUCTURE" data-fallback="imager/IMG_9610.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/prop_org_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 19.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Propulsion Research Organizational &amp; Systems Management Overhaul</div><div class="portfolio-meta">BYU Rocketry Propulsion Research · Head of Systems Integration · 2025 – 2026</div></div><div class="tag-strip"><span class="tag">Aerospace</span><span class="tag">Leadership</span><span class="tag">Systems Engineering</span><span class="tag">TRL/MRL Tracking</span><span class="tag">Risk Matrix</span></div><p class="portfolio-desc">While I was Integration Lead for BYU Propulsion Research, I became frustrated by the lack of project management, accountability, and documentation. I talked with industry professionals at Blue Origin, Northrop Grumman, and GE Aerospace and developed a project tracking system, knowledge base document, risk assessment system, and reorganized the group so that there was a proper chain of command. This reorganization allowed for the onboarding of more students to the team and allowed for multiple projects to run in parallel, while rewarding documentation and safety procedures.</p><div class="portfolio-specs">Deliverables: TRL/MRL Readiness Gates · Standardized PDR/CDR Templates · Weekly Risk Assessment Matrix · Adopted Across R&amp;D Division (BYU Rocketry Service Award)</div></div></article><article class="portfolio-item" data-keywords="drone,gimbal,quadcopter,folding" data-tags="cad mechanical aerospace" id="proj-folding-camera-drone"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="FOLDING DRONE CAD" data-fallback="imager/Aura.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/drone_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[FOLDING DRONE CAD]</strong><span class="ph-sub">Final Assembly Render</span></div></div><div class="portfolio-caption">Fig 20.1: Final quadcopter assembly render (deployed)</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 20.1: Final quadcopter assembly render (deployed)" data-fallback="imager/Aura.JPG" data-label="FOLDING DRONE CAD" data-src="imager/drone_1.jpg" data-sub="Final Assembly Render" title="Fig 20.1: Final quadcopter assembly render (deployed)" type="button"><img alt="FOLDING DRONE CAD" data-fallback="imager/Aura.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/drone_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 20.1</div></button><button class="portfolio-thumb" data-cap="Fig 20.2: Initial hand sketches defining CAD strategy" data-fallback="imager/ymount.JPG" data-label="IDEATION SKETCH" data-src="imager/drone_2.jpg" data-sub="Hand CAD Strategy" title="Fig 20.2: Initial hand sketches defining CAD strategy" type="button"><img alt="IDEATION SKETCH" data-fallback="imager/ymount.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/drone_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 20.2</div></button><button class="portfolio-thumb" data-cap="Fig 20.3: 3-axis gimbal &amp; injection-molded ribbing" data-fallback="imager/rocks.jpg" data-label="3-AXIS GIMBAL" data-src="imager/drone_3.jpg" data-sub="Wide &amp; Telephoto Optics" title="Fig 20.3: 3-axis gimbal &amp; injection-molded ribbing" type="button"><img alt="3-AXIS GIMBAL" data-fallback="imager/rocks.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/drone_3.jpg"/><div class="thumb-fallback" style="display:none;">Fig 20.3</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Folding Camera Drone with 3-Axis Gimbal System (40 hrs)</div><div class="portfolio-meta">BYU CAD Program · Modern Drone Team Project Lead</div></div><div class="tag-strip"><span class="tag">CAD</span><span class="tag">SolidWorks</span><span class="tag">Injection Molding DFM</span><span class="tag">Kinematics</span></div><p class="portfolio-desc">Led a student CAD design team to develop a compact, high-endurance folding quadcopter aimed at outdoor adventurers. Designed folding arm linkages that collapse flush into the fuselage, an internal structural ribbing matrix optimized for injection molding (uniform 2.5mm wall thicknesses, 1.5° draft angles), and a 3-axis stabilized camera gimbal housing dual wide and telephoto lenses. Managed CAD master assemblies, corrected team interferences, and produced photorealistic contextual renderings.</p><div class="portfolio-specs">Tooling: SolidWorks · 40 Project Hours · Full Assembly Interference Checked · DFM Verified</div></div></article><article class="portfolio-item" data-keywords="oculus,quest,vr,headset,exploded" data-tags="cad mechanical" id="proj-oculus-quest-cad"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="VR HEADSET CAD" data-fallback="imager/ymount.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/oculus_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[VR HEADSET CAD]</strong><span class="ph-sub">Class-A Surface Model</span></div></div><div class="portfolio-caption">Fig 21.1: Next-gen VR headset &amp; ergonomic controllers</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 21.1: Next-gen VR headset &amp; ergonomic controllers" data-fallback="imager/ymount.JPG" data-label="VR HEADSET CAD" data-src="imager/oculus_1.jpg" data-sub="Class-A Surface Model" title="Fig 21.1: Next-gen VR headset &amp; ergonomic controllers" type="button"><img alt="VR HEADSET CAD" data-fallback="imager/ymount.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/oculus_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 21.1</div></button><button class="portfolio-thumb" data-cap="Fig 21.2: Exploded assembly (PCBs, optics, compute puck)" data-fallback="imager/Aura.JPG" data-label="EXPLODED VIEW" data-src="imager/oculus_2.jpg" data-sub="20+ Internal Parts" title="Fig 21.2: Exploded assembly (PCBs, optics, compute puck)" type="button"><img alt="EXPLODED VIEW" data-fallback="imager/Aura.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/oculus_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 21.2</div></button><button class="portfolio-thumb" data-cap="Fig 21.3: Production engineering drawings &amp; surface analysis" data-fallback="imager/belay.jpg" data-label="ENG DRAWINGS" data-src="imager/oculus_3.jpg" data-sub="GD&amp;T Documentation" title="Fig 21.3: Production engineering drawings &amp; surface analysis" type="button"><img alt="ENG DRAWINGS" data-fallback="imager/belay.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/oculus_3.jpg"/><div class="thumb-fallback" style="display:none;">Fig 21.3</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Oculus Quest Next-Generation VR Headset Redesign (25 hrs)</div><div class="portfolio-meta">Independent CAD Project · Surface &amp; Top-Down Parametric Modeling</div></div><div class="tag-strip"><span class="tag">CAD</span><span class="tag">Class-A Surfacing</span><span class="tag">Parametric Tables</span><span class="tag">Exploded View</span></div><p class="portfolio-desc">Redesigned a consumer VR headset and controllers utilizing advanced surface modeling and top-down parametric relations. Created a complete 20+ component exploded assembly including front plate, mid-plate, compute puck, display driver PCBs, dual displays, facial interface, felt lens bridge, optics, tightening knob, and counterbalanced rear battery puck. Modeled handheld motion controllers with ergonomic grip button interfaces and tracking sensor arrays.</p><div class="portfolio-specs">Scope: 25 CAD Hours · 20+ Discrete Internal Components · Full Engineering Drawings &amp; Renderings</div></div></article><article class="portfolio-item" data-keywords="acrylic,gox,demonstrator,transparent" data-tags="aerospace propulsion fluids" id="proj-gox-acrylic-demo"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="GOX-ACRYLIC MOTOR" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/gox_acrylic_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[GOX-ACRYLIC MOTOR]</strong><span class="ph-sub">Optical Flame Testbed</span></div></div><div class="portfolio-caption">Fig 22.1: High-speed frame showing boundary flame inside clear acrylic</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 22.1: High-speed frame showing boundary flame inside clear acrylic" data-fallback="imager/Aurora.JPG" data-label="GOX-ACRYLIC MOTOR" data-src="imager/gox_acrylic_1.jpg" data-sub="Optical Flame Testbed" title="Fig 22.1: High-speed frame showing boundary flame inside clear acrylic" type="button"><img alt="GOX-ACRYLIC MOTOR" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/gox_acrylic_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 22.1</div></button><button class="portfolio-thumb" data-cap="Fig 22.2: Oxygen-cleaned Swagelok injector &amp; test stand assembly" data-fallback="imager/MilkyWay.JPG" data-label="SWAGELOK FEED" data-src="imager/gox_acrylic_2.jpg" data-sub="O2-Cleaned Hardware" title="Fig 22.2: Oxygen-cleaned Swagelok injector &amp; test stand assembly" type="button"><img alt="SWAGELOK FEED" data-fallback="imager/MilkyWay.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/gox_acrylic_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 22.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Transparent GOX-Acrylic Hybrid Motor Demonstrator</div><div class="portfolio-meta">BYU Rocketry Propulsion Research · Head of Fluids Team · 2025</div></div><div class="tag-strip"><span class="tag">Aerospace</span><span class="tag">Optical Diagnostics</span><span class="tag">Swagelok</span><span class="tag">High-Speed Video</span></div><p class="portfolio-desc">Constructed a miniature demonstration hybrid motor based on NASA and Northrop Grumman designs utilizing gaseous oxygen (GOX) and an optically clear cast acrylic fuel grain. Because acrylic is transparent, researchers and students can visually observe flame kernel ignition, diffusion boundary layer formation, and fuel regression from oxidizer-rich to fuel-rich conditions in real time. Captured high-speed video frames during test fires to map fuel regression rates and evaluate new grain geometries.</p><div class="portfolio-specs">Architecture: GOX + Cast Acrylic · Oxygen-Cleaned Swagelok Run Lines · High-Speed Optical Flame Diagnostics</div></div></article><article class="portfolio-item" data-keywords="press,140kip,hydraulic,anvil,metallurgy" data-tags="mechanical" id="proj-hydraulic-press-140kip"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="140-KIP PRESS" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/press_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[140-KIP PRESS]</strong><span class="ph-sub">Powder Metallurgy Setup</span></div></div><div class="portfolio-caption">Fig 23.1: Commissioned 140,000 lbf hydraulic press</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 23.1: Commissioned 140,000 lbf hydraulic press" data-fallback="imager/telephone%20pole.JPG" data-label="140-KIP PRESS" data-src="imager/press_1.jpg" data-sub="Powder Metallurgy Setup" title="Fig 23.1: Commissioned 140,000 lbf hydraulic press" type="button"><img alt="140-KIP PRESS" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/press_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 23.1</div></button><button class="portfolio-thumb" data-cap="Fig 23.2: Machined &amp; heat-treated compression anvils" data-fallback="imager/rocks.jpg" data-label="CUSTOM ANVILS" data-src="imager/press_2.jpg" data-sub="Heat-Treated Tool Steel" title="Fig 23.2: Machined &amp; heat-treated compression anvils" type="button"><img alt="CUSTOM ANVILS" data-fallback="imager/rocks.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/press_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 23.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">140-Kip Hydraulic Press Commissioning &amp; Operations Manual</div><div class="portfolio-meta">BYU Engineering Department · Technical Trainer · May 2025 – Present</div></div><div class="tag-strip"><span class="tag">Mechanical</span><span class="tag">Tool Steel Heat Treat</span><span class="tag">Hydraulics</span><span class="tag">Technical Writing</span></div><p class="portfolio-desc">Commissioned a 140,000 lbf industrial hydraulic press for powder metallurgy and materials compression testing. Machined and heat-treated custom compression anvils to specified Rockwell C hardness and programmed pressure control routines. Authored a comprehensive 12-page operations and process safety manual currently utilized by over 140 mechanical engineering students per semester for core curriculum lab work.</p><div class="portfolio-specs">Output: 140,000 lbf Press Restored · Custom Heat-Treated Tool Steel Anvils · 12-Page Lab SOP Manual</div></div></article><article class="portfolio-item" data-keywords="micronuclear,reactor,draftsman,demonstrator" data-tags="nuclear cad" id="proj-micronuclear-cad"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="NUCLEAR CAD" data-fallback="imager/rocks.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/micronuclear_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[NUCLEAR CAD]</strong><span class="ph-sub">$2.5M Flow Demonstrator</span></div></div><div class="portfolio-caption">Fig 24.1: Full-scale test reactor flow demonstrator CAD</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 24.1: Full-scale test reactor flow demonstrator CAD" data-fallback="imager/rocks.jpg" data-label="NUCLEAR CAD" data-src="imager/micronuclear_1.jpg" data-sub="$2.5M Flow Demonstrator" title="Fig 24.1: Full-scale test reactor flow demonstrator CAD" type="button"><img alt="NUCLEAR CAD" data-fallback="imager/rocks.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/micronuclear_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 24.1</div></button><button class="portfolio-thumb" data-cap="Fig 24.2: Approved manufacturing drawings &amp; cutaway render" data-fallback="imager/View%20from%20rock%20canyon.JPG" data-label="FAB DRAWINGS" data-src="imager/micronuclear_2.jpg" data-sub="Fusion360 &amp; FreeCAD" title="Fig 24.2: Approved manufacturing drawings &amp; cutaway render" type="button"><img alt="FAB DRAWINGS" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/micronuclear_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 24.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Nuclear Flow Demonstrator 3D Modeling &amp; Manufacturing Prints</div><div class="portfolio-meta">MicroNuclear LLC · Nuclear System Draftsman · July 2022 – Aug 2025</div></div><div class="tag-strip"><span class="tag">Nuclear</span><span class="tag">CAD</span><span class="tag">Fusion360</span><span class="tag">FreeCAD</span><span class="tag">GD&amp;T</span></div><p class="portfolio-desc">Produced high-fidelity 3D models and manufacturing drawings conforming to ASME standards in Fusion360 and FreeCAD for a $2.5M full-scale nuclear test reactor flow demonstrator prototype. Created mechanical cutaway renders that assisted the company in securing over $2M in additional private development funding. Delivered precision tolerance drawings on schedule to support preliminary fabrication.</p><div class="portfolio-specs">Platform: Fusion360 &amp; FreeCAD · $2.5M Reactor Demonstrator · $2M+ Secured Funding Visuals</div></div></article><article class="portfolio-item" data-keywords="lego,cincinnati,union_station,parametric" data-tags="cad" id="proj-union-station-lego"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="PARAMETRIC LEGO" data-fallback="imager/belay.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/lego_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[PARAMETRIC LEGO]</strong><span class="ph-sub">Cincinnati Union Station</span></div></div><div class="portfolio-caption">Fig 25.1: Art Deco rotunda modular Lego assembly</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 25.1: Art Deco rotunda modular Lego assembly" data-fallback="imager/belay.jpg" data-label="PARAMETRIC LEGO" data-src="imager/lego_1.jpg" data-sub="Cincinnati Union Station" title="Fig 25.1: Art Deco rotunda modular Lego assembly" type="button"><img alt="PARAMETRIC LEGO" data-fallback="imager/belay.jpg" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/lego_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 25.1</div></button><button class="portfolio-thumb" data-cap="Fig 25.2: Parametric custom brick stud geometry" data-fallback="imager/ymount.JPG" data-label="BRICK EQUATIONS" data-src="imager/lego_2.jpg" data-sub="SolidWorks Design Table" title="Fig 25.2: Parametric custom brick stud geometry" type="button"><img alt="BRICK EQUATIONS" data-fallback="imager/ymount.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/lego_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 25.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Cincinnati Union Station Lego Architecture Model (25 hrs)</div><div class="portfolio-meta">BYU CAD Program · Parametric Design Project</div></div><div class="tag-strip"><span class="tag">CAD</span><span class="tag">Parametric Modeling</span><span class="tag">Architecture</span><span class="tag">SolidWorks</span></div><p class="portfolio-desc">Converted Cincinnati's historic Art Deco Union Terminal into a buildable modular Lego Architecture product. Developed parametric equations and design tables in SolidWorks to generate custom brick geometries, interlocking studs, and curved arch profiles matching the 1933 landmark's limestone half-dome rotunda.</p><div class="portfolio-specs">Modeling: SolidWorks Parametric Tables · Custom Stud Mates · 25 Project Hours</div></div></article><article class="portfolio-item" data-keywords="cricut,vinyl,avr,avrdude,sticker" data-tags="mechanical" id="proj-cricut-rebuild"><div class="portfolio-media"><div class="portfolio-img-box"><img alt="HARDWARE REBUILD" data-fallback="imager/Rope.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/cricut_1.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong class="ph-title">[HARDWARE REBUILD]</strong><span class="ph-sub">AVR Microcontroller</span></div></div><div class="portfolio-caption">Fig 26.1: Gantry leadscrew overhaul &amp; board ISP wiring</div><div class="portfolio-thumbs"><button class="portfolio-thumb active" data-cap="Fig 26.1: Gantry leadscrew overhaul &amp; board ISP wiring" data-fallback="imager/Rope.JPG" data-label="HARDWARE REBUILD" data-src="imager/cricut_1.jpg" data-sub="AVR Microcontroller" title="Fig 26.1: Gantry leadscrew overhaul &amp; board ISP wiring" type="button"><img alt="HARDWARE REBUILD" data-fallback="imager/Rope.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/cricut_1.jpg"/><div class="thumb-fallback" style="display:none;">Fig 26.1</div></button><button class="portfolio-thumb" data-cap="Fig 26.2: Custom NASA rover sticker cut test" data-fallback="imager/Aura.JPG" data-label="AVRDUDE FLASH" data-src="imager/cricut_2.jpg" data-sub="Open-Source Firmware" title="Fig 26.2: Custom NASA rover sticker cut test" type="button"><img alt="AVRDUDE FLASH" data-fallback="imager/Aura.JPG" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; this.src.indexOf(this.dataset.fallback)===-1){this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/cricut_2.jpg"/><div class="thumb-fallback" style="display:none;">Fig 26.2</div></button></div></div><div class="portfolio-content"><div class="portfolio-header"><div class="portfolio-title">Cricut Vinyl Cutter Reverse-Engineering &amp; Firmware Reflash</div><div class="portfolio-meta">Independent Mechatronics &amp; Hardware Hacking Project · Feb 2022</div></div><div class="tag-strip"><span class="tag">Mechanical</span><span class="tag">Embedded Systems</span><span class="tag">AVRDude</span><span class="tag">Microcontrollers</span></div><p class="portfolio-desc">Tore apart, serviced mechanical gantry leadscrews, and rebuilt a Cricut vinyl cutter. Re-flashed its onboard AVR microprocessor with open-source firmware using AVRDude, learning about fuse bits and low-level stepper control. Used the rebuilt cutter to produce custom stickers of the NASA Mars rovers family.</p><div class="portfolio-specs">Hardware: AVR Microprocessor · AVRDude ISP Programming · Gantry Mechanism Overhaul</div></div></article></div>
+</section>
+<!-- ================= 3. RESUME PAGE ================= -->
+<section class="page-section" id="page-resume">
+<h2>Resume &amp; Selective Export</h2>
+<!-- Utilitarian Control Bar -->
+<div class="resume-controls no-print">
+<div class="resume-presets">
+<span class="filter-label">Quick Select:</span>
+<button class="btn-action" id="btn-select-all">Select All</button>
+<button class="btn-action" id="btn-select-aero">Select Aerospace</button>
+<button class="btn-action" id="btn-select-nuclear">Select Nuclear</button>
+<button class="btn-action" id="btn-select-cad">Select CAD &amp; Mfg</button>
+<button class="btn-action" id="btn-clear-all">Clear All</button>
+</div>
+<div>
+<button class="btn-action btn-export" id="btn-print-resume">Print / Export Selected to PDF</button>
+</div>
+</div>
+<!-- Printable Resume Document -->
+<div class="resume-document" id="resume-sheet">
+<!-- Header -->
+<div class="resume-doc-header">
+<div class="resume-name">Samuel Christensen</div>
+<div class="resume-contact">
+            (801) 900-8994 · Samuel.christensen240@gmail.com · linkedin.com/in/samuel-christensen240 · Provo, UT
+          </div>
+</div>
+<!-- Education -->
+<div class="resume-sec-title">Education</div>
+<div class="resume-item" data-category="general">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="edu-byu" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Brigham Young University</span>
+<span class="mono">September 2021 – Present</span>
+</div>
+<div class="resume-sub">Bachelor of Science: Mechanical Engineering, Junior (2028 graduation) · 3.03 Major GPA · Provo, UT</div>
+<div style="font-size: 12px; color: var(--text-muted);">
+<strong>Courses:</strong> Thermodynamics, Machine Design, Manufacturing Processes, Material Mechanics, Material Science, Multivariable Calculus, Linear Algebra, Leadership, Statics, Dynamics, Differential Equations.
+            </div>
+</div>
+</div>
+<!-- Technical Skills -->
+<div class="resume-sec-title">Technical Skills</div>
+<div class="resume-item" data-category="general">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="skills-all" type="checkbox"/>
+</div>
+<div class="resume-content-col" style="font-size: 12.5px; line-height: 1.5;">
+<div><strong>Digital &amp; Software:</strong> LabVIEW, SolidWorks, Ansys FEA, Fusion360, Onshape, FreeCAD, MATLAB, Python, SQL, PowerBI.</div>
+<div><strong>Physical &amp; Hardware:</strong> High-pressure oxidizer plumbing &amp; fittings, pneumatics, hydraulics, Swagelok, rocket test stands, composites, TIG/MIG welding, manual machining, furnaces, sintering, woodworking, OSHA Forklift Certified.</div>
+<div><strong>Testing &amp; Instrumentation:</strong> Hotfire testing, injector flow testing, hydrostatic tank testing, cryo handling (LN), oxygen-prep cleaning, load frames, digital profilometry, hardness testing, optical microscopy, schlieren setup.</div>
+<div><strong>Languages:</strong> Spanish (Advanced Written &amp; Spoken).</div>
+</div>
+</div>
+<!-- Experience -->
+<div class="resume-sec-title">Experience</div>
+<!-- Exp 1: Rocketry President -->
+<div class="resume-item" data-category="aerospace">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-president" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Rocketry President</span>
+<span class="mono">March 2026 – Present</span>
+</div>
+<div class="resume-sub">BYU Rocketry · Provo, UT</div>
+<ul class="resume-bullets">
+<li>Direct BYU’s Rocketry Club comprising 130 student members.</li>
+<li>Manage club finances, grant proposals, team selection, and budget appropriation.</li>
+<li>Conduct community and industry outreach to secure technical sponsorship and mentorship.</li>
+<li>Set requirements and lead formal design reviews for two-stage rocket flight test campaign (Capstone project).</li>
+<li>Consult with IREC intercollegiate High Power Rocketry competition teams on systems and safety.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 2: KADMOS Energy -->
+<div class="resume-item" data-category="nuclear">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-kadmos" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Systems Engineering Intern &amp; Project Consultant</span>
+<span class="mono">May 2026 – Present</span>
+</div>
+<div class="resume-sub">KADMOS Energy Inc. (Subject to NDA) · Provo, UT</div>
+<ul class="resume-bullets">
+<li>Designed &amp; patented high-efficiency two-phase separator for a small modular nuclear reactor (SMR).</li>
+<li>Self-taught principles of two-phase flow and fluid mechanics to communicate and complete technical work.</li>
+<li>Direct 6-person university research team with weekly testing operations and consulting.</li>
+<li>Designed and constructed full-scale 33ft water-air test loop integrated with a custom LabVIEW monitoring program.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 3: Head of Systems Integration -->
+<div class="resume-item" data-category="aerospace">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-propulsion-head" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Head of Systems Integration &amp; Fluids Lead</span>
+<span class="mono">September 2025 – Present</span>
+</div>
+<div class="resume-sub">BYU Rocketry Propulsion Research · Provo, UT</div>
+<ul class="resume-bullets">
+<li>Directed 25 researchers in developing BYU’s first flight-ready SRAD Hybrid NOx-paraffin engine, producing 550 lbf peak thrust.</li>
+<li>Implemented comprehensive project tracking system adopted by R&amp;D division, incorporating weekly risk assessments, TRL/MRL readiness ratings, and standardized PDR/CDR templates.</li>
+<li>Constructed test stand for vertically integrated engine testing and structural load reaction.</li>
+<li>Conducted 8 static fires, hydrostatic proof testing on NOx tank, bolt-shear tests, ignitor tests, and hydro burst test to failure to determine actual factor of safety.</li>
+<li>Oversaw 5 concurrent projects and 7 subteams ensuring project alignment with flight test objectives.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 4: Engineering Project Consultant BYU -->
+<div class="resume-item" data-category="cad">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-byu-trainer" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Engineering Project Consultant &amp; Technical Trainer</span>
+<span class="mono">May 2025 – Present</span>
+</div>
+<div class="resume-sub">BYU Engineering Department · Provo, UT</div>
+<ul class="resume-bullets">
+<li>70+ hours of training provided to students and faculty on advanced instrumentation (load frames, digital profilometers, high-speed cameras, wind tunnels, NI LabVIEW DAQ).</li>
+<li>Consult 20+ students and faculty weekly on class projects, research instrumentation, and component design.</li>
+<li>Commissioned a 140-kip hydraulic press, including machining and heat-treating custom anvils for powder metallurgy.</li>
+<li>Authored a 12-page operations and process manual utilized by 140+ students per semester for core lab work.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 5: MicroNuclear LLC -->
+<div class="resume-item" data-category="nuclear cad">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-micronuclear" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Nuclear System Draftsman</span>
+<span class="mono">July 2022 – August 2025</span>
+</div>
+<div class="resume-sub">MicroNuclear LLC · Cincinnati, OH / Idaho Falls, ID</div>
+<ul class="resume-bullets">
+<li>Produced high-fidelity 3D models and engineering drawings using Fusion360 and FreeCAD for a $2.5M nuclear reactor demonstrator prototype.</li>
+<li>Created system renders that directly assisted the venture in securing $2M+ in additional developmental funding.</li>
+<li>Delivered approved manufacturing drawings on schedule to facilitate precision machining.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 6: Head of Fluids Team -->
+<div class="resume-item" data-category="aerospace">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-fluids-lead" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Head of Fluids Team</span>
+<span class="mono">May 2025 – September 2025</span>
+</div>
+<div class="resume-sub">BYU Rocketry Propulsion Research · Provo, UT</div>
+<ul class="resume-bullets">
+<li>Designed, machined, and assembled liquid nitrous oxide plumbing for SRAD hybrid engine using NPT/AN fittings, vapor-pressurized tank, and custom run valve.</li>
+<li>Constructed GOX-Acrylic Hybrid demo engine based on NASA architecture using Swagelok fittings with oxygen-cleaning procedures.</li>
+<li>Managed cross-functional team to conduct initial flow tests adhering strictly to schedule and budget.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 7: Procter & Gamble -->
+<div class="resume-item" data-category="cad">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-pg" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Process Development &amp; Product Research Intern</span>
+<span class="mono">Jun 2021 – Aug 2021, Jun 2022 – Aug 2022</span>
+</div>
+<div class="resume-sub">Procter &amp; Gamble · Cincinnati, OH</div>
+<ul class="resume-bullets">
+<li>Surfactant plant process improvement and metrics management resulting in $40 Million in annual savings.</li>
+<li>Developed technical testing regimens quantifying 21 consumer experience metrics for modeling Pepto Bismol and NyQuil.</li>
+<li>Deployed plant metrics dashboard utilizing SQL and PowerBI to guide daily operations valued at $2.3 million.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 8: Research Assistant BYU Chemistry -->
+<div class="resume-item" data-category="nuclear">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-chem" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Research Assistant</span>
+<span class="mono">September 2021 – March 2022</span>
+</div>
+<div class="resume-sub">BYU Chemistry · Provo, UT</div>
+<ul class="resume-bullets">
+<li>Conducted specific surface area testing (BET) and handled cryogenics (Liquid Nitrogen) and caustics (10M NH3).</li>
+</ul>
+</div>
+</div>
+<!-- Awards -->
+<div class="resume-sec-title">Awards &amp; Additional Achievements</div>
+<div class="resume-item" data-category="general">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="awards-all" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<ul class="resume-bullets">
+<li><strong>Procter &amp; Gamble CIBSI Outstanding Intern of the Year (2021):</strong> End-of-year award for excellence and high-impact work among 50 fellow interns.</li>
+<li><strong>BYU Rocketry Service to the Club Award (2026):</strong> Recognition for developing internal project proposals, TRL/MRL tracking, and safety documentation.</li>
+<li><strong>BSA Eagle Scout (2018):</strong> Coordinated donation drive and complete furnishing of a home for incoming Eritrean refugees.</li>
+<li><strong>Volunteer Missionary Service (Nebraska, 2 Years):</strong> Utilized fluent Spanish to teach and provide service; led a team of 8–12 other missionaries.</li>
+<li><strong>Automotive Work:</strong> Independently removed, repaired, and installed car engine and transmission during summer project.</li>
+<li><strong>BYU L.I.F.E. Club Outreach:</strong> Led educational STEM demonstrations at local schools and co-hosted introductory engineering podcast for youth.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="page-section" id="page-photos"><h2>Photography Portfolio</h2><div class="photos-toolbar"><button class="btn-action" id="back-to-about-btn" type="button">← Back to About Me</button><span id="photo-gallery-status">Source: imager/photography_portfolio/ (Auto-indexed via GitHub API)</span></div><div class="photo-gallery-grid" id="photo-gallery-grid"></div></section></main>
+<footer><div class="footer-inner"><span>Samuel Christensen</span><span>·</span><a href="mailto:Samuel.christensen240@gmail.com">Samuel.christensen240@gmail.com</a><span>·</span><span>BYU Mechanical Engineering</span></div></footer>
+<!-- ================= LOGIC SCRIPT ================= -->
+<div class="lightbox-backdrop no-print" id="photo-lightbox"><div class="lightbox-box"><div class="lightbox-top"><span id="lightbox-title">Photo Preview</span><button class="lightbox-close" id="lightbox-close-btn" type="button">Close [ESC]</button></div><div class="lightbox-img-wrap"><img alt="Full resolution photo" id="lightbox-img" src=""/></div></div></div><script>
+    // ================= 1. TAB NAVIGATION =================
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const sections = document.querySelectorAll('.page-section');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+
+        tabButtons.forEach(b => b.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+
+        btn.classList.add('active');
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) targetEl.classList.add('active');
+
+        history.replaceState(null, null, '#' + targetId.replace('page-', ''));
+      });
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        const matchingBtn = document.querySelector(`.tab-btn[data-target="page-${hash}"]`);
+        if (matchingBtn) matchingBtn.click();
+      }
+    });
+
+    // ================= 2. PORTFOLIO FILTERING =================
+    function bindFilterButtons() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          portfolioItems.forEach(item => {
+            const tags = item.getAttribute('data-tags') || '';
+            if (filter === 'all' || tags.includes(filter)) {
+              item.style.display = 'grid';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+    bindFilterButtons();
+
+    // ================= 3. PORTFOLIO MULTI-IMAGE THUMBNAIL SWITCHER (OPTION 1) =================
+    function bindPortfolioThumbnails(root = document) {
+      root.querySelectorAll('.portfolio-media').forEach(media => {
+        const mainImg = media.querySelector('.portfolio-img-box img');
+        const phBox = media.querySelector('.portfolio-placeholder-img');
+        const phTitle = media.querySelector('.ph-title');
+        const phSub = media.querySelector('.ph-sub');
+        const caption = media.querySelector('.portfolio-caption');
+        const thumbs = media.querySelectorAll('.portfolio-thumb');
+
+        thumbs.forEach(thumb => {
+          thumb.onclick = () => {
+            thumbs.forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+
+            const src = thumb.getAttribute('data-src');
+            const fallback = thumb.getAttribute('data-fallback') || '';
+            const label = thumb.getAttribute('data-label') || 'IMAGE';
+            const sub = thumb.getAttribute('data-sub') || '';
+            const cap = thumb.getAttribute('data-cap') || '';
+
+            if (caption) caption.textContent = cap;
+            if (phTitle) phTitle.textContent = '[' + label + ']';
+            if (phSub) phSub.textContent = sub;
+
+            if (mainImg) {
+              mainImg.style.display = 'block';
+              if (phBox) phBox.style.display = 'none';
+              mainImg.setAttribute('data-fallback', fallback);
+              mainImg.src = src;
+              mainImg.alt = label;
+            }
+          };
+        });
+      });
+    }
+    bindPortfolioThumbnails();
+
+    // ================= 4. RESUME SELECTIVE CHECKBOXES & PRINT =================
+    const checkboxes = document.querySelectorAll('.resume-checkbox');
+
+    function updateResumeVisibility() {
+      checkboxes.forEach(cb => {
+        const item = cb.closest('.resume-item');
+        if (cb.checked) {
+          item.classList.remove('excluded');
+        } else {
+          item.classList.add('excluded');
+        }
+      });
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', updateResumeVisibility);
+    });
+
+    document.getElementById('btn-select-all').addEventListener('click', () => {
+      checkboxes.forEach(cb => cb.checked = true);
+      updateResumeVisibility();
+    });
+
+    document.getElementById('btn-clear-all').addEventListener('click', () => {
+      checkboxes.forEach(cb => {
+        const item = cb.closest('.resume-item');
+        const cat = item.getAttribute('data-category') || '';
+        cb.checked = (cat === 'general');
+      });
+      updateResumeVisibility();
+    });
+
+    document.getElementById('btn-select-aero').addEventListener('click', () => {
+      checkboxes.forEach(cb => {
+        const item = cb.closest('.resume-item');
+        const cat = item.getAttribute('data-category') || '';
+        cb.checked = (cat === 'general' || cat.includes('aerospace'));
+      });
+      updateResumeVisibility();
+    });
+
+    document.getElementById('btn-select-nuclear').addEventListener('click', () => {
+      checkboxes.forEach(cb => {
+        const item = cb.closest('.resume-item');
+        const cat = item.getAttribute('data-category') || '';
+        cb.checked = (cat === 'general' || cat.includes('nuclear'));
+      });
+      updateResumeVisibility();
+    });
+
+    document.getElementById('btn-select-cad').addEventListener('click', () => {
+      checkboxes.forEach(cb => {
+        const item = cb.closest('.resume-item');
+        const cat = item.getAttribute('data-category') || '';
+        cb.checked = (cat === 'general' || cat.includes('cad'));
+      });
+      updateResumeVisibility();
+    });
+
+    document.getElementById('btn-print-resume').addEventListener('click', () => {
+      window.print();
+    });
+
+    // ================= 5. PHOTOGRAPHY PORTFOLIO & GITHUB REPO AUTO-DISCOVERY =================
+    const openAlbumBtn = document.getElementById('open-photo-album-btn');
+    const backToAboutBtn = document.getElementById('back-to-about-btn');
+    const galleryGrid = document.getElementById('photo-gallery-grid');
+    const galleryStatus = document.getElementById('photo-gallery-status');
+    const lightbox = document.getElementById('photo-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxClose = document.getElementById('lightbox-close-btn');
+
+    if (openAlbumBtn) {
+      openAlbumBtn.addEventListener('click', () => {
+        const photosTab = document.querySelector('.tab-btn[data-target="page-photos"]');
+        if (photosTab) photosTab.click();
+        window.scrollTo(0, 0);
+      });
+    }
+
+    if (backToAboutBtn) {
+      backToAboutBtn.addEventListener('click', () => {
+        const aboutTab = document.querySelector('.tab-btn[data-target="page-about"]');
+        if (aboutTab) aboutTab.click();
+        window.scrollTo(0, 0);
+      });
+    }
+
+    function openLightbox(src, title) {
+      if (!lightbox || !lightboxImg) return;
+      lightboxImg.src = src;
+      if (lightboxTitle) lightboxTitle.textContent = title || src;
+      lightbox.classList.add('open');
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove('open');
+      if (lightboxImg) lightboxImg.src = '';
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightbox) {
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+    }
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    function formatPhotoName(filename) {
+      return decodeURIComponent(filename)
+        .replace(/\.[^/.]+$/, '')
+        .replace(/[_-]+/g, ' ');
+    }
+
+    function createPhotoCard(src, name, folderLabel) {
+      const card = document.createElement('div');
+      card.className = 'photo-card';
+      const cleanTitle = formatPhotoName(name);
+
+      const frame = document.createElement('div');
+      frame.className = 'photo-card-frame';
+
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = cleanTitle;
+      img.loading = 'lazy';
+      img.onerror = function() {
+        this.style.display = 'none';
+        const ph = document.createElement('div');
+        ph.className = 'portfolio-placeholder-img';
+        ph.innerHTML = '<strong>[' + cleanTitle + ']</strong><span>' + folderLabel + '</span>';
+        frame.appendChild(ph);
+      };
+      frame.appendChild(img);
+
+      const meta = document.createElement('div');
+      meta.className = 'photo-card-meta';
+      meta.innerHTML = '<span>' + cleanTitle + '</span><span class="photo-card-source">' + folderLabel + '</span>';
+
+      card.appendChild(frame);
+      card.appendChild(meta);
+      card.addEventListener('click', () => openLightbox(src, cleanTitle + ' (' + folderLabel + ')'));
+      return card;
+    }
+
+    const defaultRepoPhotos = [
+      { file: 'MilkyWay.JPG', folder: 'imager' },
+      { file: 'View from rock canyon.JPG', folder: 'imager' },
+      { file: 'rolling sunset.jpg', folder: 'imager' },
+      { file: 'Aurora.JPG', folder: 'imager' },
+      { file: 'Aura.JPG', folder: 'imager' },
+      { file: 'ymount.JPG', folder: 'imager' },
+      { file: 'rocks.jpg', folder: 'imager' },
+      { file: 'belay.jpg', folder: 'imager' },
+      { file: 'Rope.JPG', folder: 'imager' },
+      { file: 'telephone pole.JPG', folder: 'imager' },
+      { file: 'IMG_9610.jpg', folder: 'imager' }
+    ];
+
+    // Auto-match newly uploaded repo images to portfolio entries if filenames/folders match project keywords
+    function autoMatchRepoImagesToProjects(allRepoFiles) {
+      if (!allRepoFiles || allRepoFiles.length === 0) return;
+      document.querySelectorAll('.portfolio-item').forEach(item => {
+        const kwAttr = item.getAttribute('data-keywords') || '';
+        const keywords = kwAttr.split(',').map(k => k.trim().toLowerCase()).filter(Boolean);
+        if (keywords.length === 0) return;
+
+        // Find repo images whose path or filename matches any keyword of this project
+        const matched = allRepoFiles.filter(f => {
+          const lowerPath = f.path.toLowerCase();
+          return keywords.some(kw => lowerPath.includes(kw));
+        });
+
+        if (matched.length > 0) {
+          const thumbs = item.querySelectorAll('.portfolio-thumb');
+          const mainImg = item.querySelector('.portfolio-img-box img');
+          matched.slice(0, thumbs.length).forEach((mFile, idx) => {
+            const tBtn = thumbs[idx];
+            if (tBtn) {
+              tBtn.setAttribute('data-src', mFile.encodedUrl);
+              const tImg = tBtn.querySelector('img');
+              if (tImg) tImg.src = mFile.encodedUrl;
+              if (idx === 0 && mainImg) {
+                mainImg.src = mFile.encodedUrl;
+              }
+            }
+          });
+        }
+      });
+    }
+
+    async function loadPhotographyAndProjectImages() {
+      if (!galleryGrid) return;
+      galleryGrid.innerHTML = '';
+
+      const imageExtRegex = /\.(jpe?g|png|webp|gif|bmp|avif)$/i;
+      let loadedPhotos = [];
+      let allRepoImageFiles = [];
+      let foundInSubfolder = 0;
+
+      // 1. Scan imager/photography_portfolio
+      try {
+        const resp = await fetch('https://api.github.com/repos/sampfalcon/sampfalcon/contents/imager/photography_portfolio');
+        if (resp.ok) {
+          const items = await resp.json();
+          if (Array.isArray(items)) {
+            items.forEach(item => {
+              if (item.type === 'file' && imageExtRegex.test(item.name)) {
+                const encodedUrl = 'imager/photography_portfolio/' + encodeURIComponent(item.name);
+                loadedPhotos.push({ src: encodedUrl, name: item.name, folder: 'photography_portfolio' });
+                allRepoImageFiles.push({ path: item.path, name: item.name, encodedUrl });
+                foundInSubfolder++;
+              }
+            });
+          }
+        }
+      } catch (e) {}
+
+      // 2. Scan imager/ root (and any project subfolders) so new project photos are also discovered
+      try {
+        const respRoot = await fetch('https://api.github.com/repos/sampfalcon/sampfalcon/contents/imager');
+        if (respRoot.ok) {
+          const rootItems = await respRoot.json();
+          if (Array.isArray(rootItems)) {
+            for (const item of rootItems) {
+              if (item.type === 'file' && imageExtRegex.test(item.name)) {
+                const encodedUrl = 'imager/' + encodeURIComponent(item.name);
+                allRepoImageFiles.push({ path: item.path, name: item.name, encodedUrl });
+              } else if (item.type === 'dir' && item.name !== 'photography_portfolio') {
+                try {
+                  const subResp = await fetch(item.url);
+                  if (subResp.ok) {
+                    const subItems = await subResp.json();
+                    if (Array.isArray(subItems)) {
+                      subItems.forEach(sub => {
+                        if (sub.type === 'file' && imageExtRegex.test(sub.name)) {
+                          const encodedUrl = 'imager/' + encodeURIComponent(item.name) + '/' + encodeURIComponent(sub.name);
+                          allRepoImageFiles.push({ path: sub.path, name: sub.name, encodedUrl });
+                        }
+                      });
+                    }
+                  }
+                } catch (e2) {}
+              }
+            }
+          }
+        }
+      } catch (e) {}
+
+      // Auto-match any discovered project photos to their portfolio cards
+      autoMatchRepoImagesToProjects(allRepoImageFiles);
+
+      // 3. Populate Photo Album gallery
+      const existingNames = new Set(loadedPhotos.map(p => p.name.toLowerCase()));
+      defaultRepoPhotos.forEach(item => {
+        if (!existingNames.has(item.file.toLowerCase())) {
+          loadedPhotos.push({
+            src: item.folder + '/' + encodeURIComponent(item.file),
+            name: item.file,
+            folder: item.folder
+          });
+        }
+      });
+
+      loadedPhotos.forEach(photo => {
+        const card = createPhotoCard(photo.src, photo.name, photo.folder);
+        galleryGrid.appendChild(card);
+      });
+
+      if (galleryStatus) {
+        if (foundInSubfolder > 0) {
+          galleryStatus.textContent = 'Loaded ' + foundInSubfolder + ' photo(s) from imager/photography_portfolio/ (+ ' + (loadedPhotos.length - foundInSubfolder) + ' in imager/)';
+        } else {
+          galleryStatus.textContent = 'Auto-loads any image dropped into imager/photography_portfolio/ (Showing ' + loadedPhotos.length + ' photos)';
+        }
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', loadPhotographyAndProjectImages);
+</script></body>
+</html>
