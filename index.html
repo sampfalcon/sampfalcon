@@ -212,17 +212,21 @@
 
     .about-details {
       display: flex;
-      flex-col: column;
-      gap: 16px;
+      flex-direction: row;
+      align-items: flex-start; /* Stops table from stretching to match paragraph height */
+      gap: 24px;
+    }
+
+    .about-details > div {
+      flex: 1; /* Bio text takes the main column width */
     }
 
     .contact-table {
-      width: 100%;
-      border: 1px solid var(--border);
-      background: var(--panel-bg);
-      margin-top: 14px;
-      font-size: 13px;
+      width: 280px;
+      flex-shrink: 0;
+      margin-top: 0;
     }
+
     .contact-table td {
       padding: 1px 12px;
       line-height: 1.25;
@@ -626,7 +630,7 @@
 <h2>About Me</h2>
 <div class="about-layout">
 <!-- Picture of Samuel -->
-<div class="photo-container"><img alt="Samuel Christensen" onerror="if(this.src.indexOf('IMG_9610.jpg')===-1){this.src='imager/IMG_9610.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/profile.jpg"/><div class="portfolio-placeholder-img" style="display:none; height:260px;"><strong>Samuel Christensen</strong><span>Mechanical Engineering</span></div><div class="photo-caption">Samuel Christensen</div></div>
+<div class="photo-container"><img alt="Samuel Christensen" onerror="if(this.src.indexOf('IMG_9610.jpg')===-1){this.src='imager/IMG_9610.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/Headshot.JPG"/><div class="portfolio-placeholder-img" style="display:none; height:260px;"><strong>Samuel Christensen</strong><span>Mechanical Engineering</span></div><div class="photo-caption">Samuel Christensen</div></div>
 <!-- Utilitarian About Narrative -->
 <div class="about-details">
 <div>
@@ -864,7 +868,7 @@
 <span class="tag">Drivetrain</span>
 </div>
 <p class="portfolio-desc">
-              Independently removed, repaired, rebuilt, and reinstalled an automobile engine and manual transmission assembly. Performed cylinder head gasket replacement, valve timing alignment, clutch alignment, electrical harness rewiring, and cooling/fluid system bleeding. Verified zero diagnostic trouble codes (DTCs) and zero leaks under post-installation road testing.
+              In this summer-long project, I removed, repaired, rebuilt, and reinstalled an automobile engine and 4-speed automatic transmission. Performed cylinder head gasket replacement, valve cover gasket replacement,  electrical harness repair, and cooling/fluid system flush&fill. Diagnosed vaccuum leaks under post-installation road testing.
             </p>
 <div class="portfolio-specs">
               Outcome: Complete Engine &amp; Transmission Swap · Gasket &amp; Clutch Rebuild · Verified Reliable Road Test
@@ -873,23 +877,23 @@
 </article>
 <!-- Entry 9 -->
 <article class="portfolio-item" data-tags="cad">
-<div class="portfolio-img-box"><img alt="PARAMETRIC LEGO" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/belay.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[PARAMETRIC LEGO]</strong><span>Cincinnati Union Station</span></div></div>
+<div class="portfolio-img-box"><img alt="PARAMETRIC LEGO" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/lego_architecture.png"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[PARAMETRIC LEGO]</strong><span>Cincinnati Union Station</span></div></div>
 <div class="portfolio-content">
 <div class="portfolio-header">
-<div class="portfolio-title">Cincinnati Union Station Lego Architecture Model (25 hrs)</div>
+<div class="portfolio-title">Cincinnati Union Station Lego Architecture Model</div>
 <div class="portfolio-meta">BYU CAD Program · Parametric Design Project</div>
 </div>
 <div class="tag-strip">
 <span class="tag">CAD</span>
 <span class="tag">Parametric Modeling</span>
 <span class="tag">Architecture</span>
-<span class="tag">SolidWorks</span>
+<span class="tag">Onshape</span>
 </div>
 <p class="portfolio-desc">
-              Converted Cincinnati's historic Art Deco Union Terminal into a buildable modular Lego Architecture product. Developed parametric equations and design tables in SolidWorks to generate custom brick geometries, interlocking studs, and curved arch profiles matching the 1933 landmark's limestone half-dome rotunda.
+              I created a LEGO Architecture inspired version of Cincinnati's historic Art Deco Union Terminal using real LEGO pieces that were generated via a parametric generator system I created in Onshape. I love the Union terminal in my hometown, and spent a long time recreating the structure in as much detail as possible.
             </p>
 <div class="portfolio-specs">
-              Modeling: SolidWorks Parametric Tables · Custom Stud Mates · 25 Project Hours
+              Modeling: Onshape Parametric Tables · FeatureScript · Large Assemblies · 40 project hours
             </div>
 </div>
 </article>
@@ -898,7 +902,7 @@
 <div class="portfolio-img-box"><img alt="HARDWARE REBUILD" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/Rope.JPG"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[HARDWARE REBUILD]</strong><span>AVR Microcontroller Flashing</span></div></div>
 <div class="portfolio-content">
 <div class="portfolio-header">
-<div class="portfolio-title">Cricut Vinyl Cutter Reverse-Engineering &amp; Firmware Reflash</div>
+<div class="portfolio-title">Cricut Vinyl Cutter Repair & Reflash</div>
 <div class="portfolio-meta">Independent Mechatronics &amp; Hardware Hacking Project</div>
 </div>
 <div class="tag-strip">
