@@ -224,7 +224,8 @@
       font-size: 13px;
     }
     .contact-table td {
-      padding: 6px 12px;
+      padding: 1px 12px;
+      line-height: 1.25;
       border-bottom: 1px solid var(--border);
     }
     .contact-table td:first-child {
@@ -559,14 +560,28 @@
 
     /* Minimalist Footer */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 16px 20px;
-      font-size: 11px;
-      color: var(--text-subtle);
-      text-align: center;
-      font-family: ui-monospace, monospace;
-      margin-top: 40px;
-    }
+  border-top: 1px solid var(--border);
+  padding: 20px;
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-subtle);
+  font-family: ui-monospace, monospace;
+}
+
+.footer-inner {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
   
     .portfolio-placeholder-img {
       width: 100%;
@@ -629,29 +644,35 @@
 <table class="contact-table">
 <tbody>
 <tr>
-<td>Location</td>
-<td>Provo, UT</td>
+<td>Emails</td>
+<td><a href="mailto:Samuel.christensen240@gmail.com">Samuel.christensen240@gmail.com</a> <br> <a href="mailto:sampfalc@byu.edu">sampfalc@byu.edu (university email)</a></td>
 </tr>
-<tr>
-<td>Email</td>
-<td><a href="mailto:Samuel.christensen240@gmail.com">Samuel.christensen240@gmail.com</a> / <a href="mailto:sampfalc@byu.edu">sampfalc@byu.edu</a></td>
-</tr>
-<tr>
-<td>Phone</td>
-<td>(801) 900-8994</td>
-</tr>
+
 <tr>
 <td>LinkedIn</td>
 <td><a href="https://linkedin.com/in/samuel-christensen240" rel="noopener noreferrer" target="_blank">linkedin.com/in/samuel-christensen240</a></td>
 </tr>
+
+<tr>
+<td>Phone</td>
+<td>(801) 900-8994</td>
+</tr>  
+    
+<tr>
+<td>Location</td>
+<td>Provo, UT</td>
+</tr>
+    
 <tr>
 <td>GitHub</td>
 <td><a href="https://github.com/sampfalcon/sampfalcon" rel="noopener noreferrer" target="_blank">github.com/sampfalcon/sampfalcon</a></td>
 </tr>
+    
 <tr>
 <td>Languages</td>
 <td>English (Native), Spanish (Advanced Written &amp; Spoken)</td>
 </tr>
+    
 </tbody>
 </table>
 </div>
