@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samuel Christensen | Mechanical Engineering</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Samuel Christensen | Mechanical Engineering</title>
+<style>
     /* Utilitarian, McMaster-Carr & Technical Documentation Aesthetic */
     :root {
       --bg: #ffffff;
@@ -510,9 +511,14 @@
       margin-bottom: 3px;
     }
 
+    @page {
+      size: letter portrait;
+      margin: 0; /* Removes browser default headers (timestamp, title) and footers (URL, page numbers) */
+    }
+
     /* Print Stylesheet */
     @media print {
-      header, .resume-controls, .resume-checkbox-col, .tab-bar {
+      header, footer, .resume-controls, .resume-checkbox-col, .tab-bar, #page-resume > h2 {
         display: none !important;
       }
       body {
@@ -520,6 +526,8 @@
         color: #000000 !important;
         font-size: 10pt !important;
         line-height: 1.35 !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
       main {
         max-width: 100% !important;
@@ -531,10 +539,14 @@
       }
       #page-resume {
         display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
       .resume-document {
         border: none !important;
-        padding: 0 !important;
+        padding: 0.5in 0.6in !important; /* Document margins */
+        box-shadow: none !important;
+        margin: 0 !important;
       }
       .resume-item.excluded {
         display: none !important;
@@ -555,620 +567,566 @@
       font-family: ui-monospace, monospace;
       margin-top: 40px;
     }
-  </style>
+  
+    .portfolio-placeholder-img {
+      width: 100%;
+      height: 100%;
+      background: #f1f5f9;
+      border: 1px dashed #94a3b8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      font-size: 11px;
+      color: #334155;
+      font-family: ui-monospace, monospace;
+    }
+    .portfolio-placeholder-img strong {
+      color: #0f172a;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+    </style>
 </head>
 <body>
-
-  <!-- Top Utilitarian Navigation -->
-  <header>
-    <div class="header-inner">
-      <div>
-        <div class="brand-title">Samuel Christensen</div>
-        <div class="brand-subtitle">Mechanical Engineering · BYU · Class of 2028</div>
-      </div>
-      <nav class="tab-bar">
-        <button class="tab-btn active" data-target="page-about">About</button>
-        <button class="tab-btn" data-target="page-portfolio">Portfolio</button>
-        <button class="tab-btn" data-target="page-resume">Resume</button>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- ================= 1. ABOUT / LANDING PAGE ================= -->
-    <section id="page-about" class="page-section active">
-      <h2>About Me</h2>
-      <div class="about-layout">
-        <!-- Picture of Samuel -->
-        <div class="photo-container">
-          <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="260" viewBox="0 0 220 260" fill="%23f8fafc"><rect width="220" height="260" fill="%23f1f5f9" stroke="%23cbd5e1" stroke-width="2"/><circle cx="110" cy="95" r="45" fill="%23cbd5e1"/><path d="M40 220 C40 165 180 165 180 220 Z" fill="%23cbd5e1"/><text x="110" y="240" font-family="ui-monospace, monospace" font-size="11" fill="%2364748b" text-anchor="middle">Samuel Christensen</text></svg>" data-src="imager/profile.jpg" alt="Samuel Christensen">
-          <div class="photo-caption">Samuel Christensen</div>
-        </div>
-
-        <!-- Utilitarian About Narrative -->
-        <div class="about-details">
-          <div>
-            <p>
+<!-- Top Utilitarian Navigation -->
+<header>
+<div class="header-inner">
+<div>
+<div class="brand-title">Samuel Christensen</div>
+<div class="brand-subtitle">Mechanical Engineering · BYU · Class of 2028</div>
+</div>
+<nav class="tab-bar">
+<button class="tab-btn active" data-target="page-about">About</button>
+<button class="tab-btn" data-target="page-portfolio">Portfolio</button>
+<button class="tab-btn" data-target="page-resume">Resume</button>
+</nav>
+</div>
+</header>
+<main>
+<!-- ================= 1. ABOUT / LANDING PAGE ================= -->
+<section class="page-section active" id="page-about">
+<h2>About Me</h2>
+<div class="about-layout">
+<!-- Picture of Samuel -->
+<div class="photo-container"><img alt="Samuel Christensen" onerror="if(this.src.indexOf('IMG_9610.jpg')===-1){this.src='imager/IMG_9610.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="imager/profile.jpg"/><div class="portfolio-placeholder-img" style="display:none; height:260px;"><strong>Samuel Christensen</strong><span>Mechanical Engineering</span></div><div class="photo-caption">Samuel Christensen</div></div>
+<!-- Utilitarian About Narrative -->
+<div class="about-details">
+<div>
+<p>
               I am a junior studying Mechanical Engineering at Brigham Young University (graduating in 2028, 3.03 Major GPA). My technical work focuses on rocket propulsion integration, high-pressure oxidizer plumbing, two-phase fluid mechanics, and production CAD modeling.
             </p>
-            <p>
+<p>
               Currently, I serve as President of BYU Rocketry (130 student members), overseeing club finances, grant proposals, and flight review requirements for our CAPSTONE two-stage rocket campaign and IREC competition teams. Previously, I was Head of Systems Integration for BYU Rocketry Propulsion Research, directing 25 student researchers on BYU's first flight-ready 550 lbf SRAD hybrid rocket motor across 8 static hotfires and flight tank structural qualification tests.
             </p>
-            <p>
+<p>
               In industry, I work as a Systems Engineering Intern &amp; Project Consultant with KADMOS Energy Inc., where I designed and patented a high-efficiency two-phase separator for a small modular nuclear reactor (SMR) and engineered a full-scale 33-foot water-air test loop. Prior experience includes two internships at Procter &amp; Gamble ($40M process optimization and R&amp;D consumer modeling) and 3D modeling for a $2.5M test reactor flow demonstrator at MicroNuclear LLC.
             </p>
-          </div>
-
-          <!-- Contact & Quick Reference Table -->
-          <table class="contact-table">
-            <tbody>
-              <tr>
-                <td>Location</td>
-                <td>Provo, UT</td>
-              </tr>
-              <tr>
-                <td>Email</td>
-                <td><a href="mailto:Samuel.christensen240@gmail.com">Samuel.christensen240@gmail.com</a> / <a href="mailto:sampfalc@byu.edu">sampfalc@byu.edu</a></td>
-              </tr>
-              <tr>
-                <td>Phone</td>
-                <td>(801) 900-8994</td>
-              </tr>
-              <tr>
-                <td>LinkedIn</td>
-                <td><a href="https://linkedin.com/in/samuel-christensen240" target="_blank" rel="noopener noreferrer">linkedin.com/in/samuel-christensen240</a></td>
-              </tr>
-              <tr>
-                <td>GitHub</td>
-                <td><a href="https://github.com/sampfalcon/sampfalcon" target="_blank" rel="noopener noreferrer">github.com/sampfalcon/sampfalcon</a></td>
-              </tr>
-              <tr>
-                <td>Languages</td>
-                <td>English (Native), Spanish (Advanced Written &amp; Spoken)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= 2. PORTFOLIO PAGE ================= -->
-    <section id="page-portfolio" class="page-section">
-      <h2>Project Portfolio</h2>
-      
-      <!-- Filter Bar -->
-      <div class="filter-bar">
-        <span class="filter-label">Filter Tag:</span>
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="aerospace">Aerospace &amp; Propulsion</button>
-        <button class="filter-btn" data-filter="cad">CAD &amp; Product</button>
-        <button class="filter-btn" data-filter="nuclear">Nuclear &amp; Fluids</button>
-        <button class="filter-btn" data-filter="mechanical">Mechanical &amp; Machinery</button>
-      </div>
-
-      <!-- Chronological / Priority Portfolio List -->
-      <div class="portfolio-list" id="portfolio-list-container">
-        
-        <!-- Entry 1 -->
-        <article class="portfolio-item" data-tags="aerospace propulsion testing">
-          <div class="portfolio-img-box">
-            <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" fill="%23f8fafc"><rect width="240" height="180" fill="%23f1f5f9" stroke="%23cbd5e1" stroke-width="2"/><line x1="0" y1="0" x2="240" y2="180" stroke="%23e2e8f0" stroke-width="1"/><line x1="0" y1="180" x2="240" y2="0" stroke="%23e2e8f0" stroke-width="1"/><rect x="20" y="45" width="200" height="90" fill="%23ffffff" stroke="%2394a3b8" stroke-width="1.5"/><text x="120" y="85" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" fill="%230f172a" text-anchor="middle">[SRAD HYBRID MOTOR]</text><text x="120" y="105" font-family="ui-monospace, monospace" font-size="10" fill="%2364748b" text-anchor="middle">548 lbf Static Fire</text></svg>" data-src="imager/MilkyWay.JPG" alt="Engineering Hardware Project">[Rocket Hotfire]<br>548 lbf Static Fire</div>';" alt="Hybrid Rocket Engine">
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-header">
-              <div class="portfolio-title">SRAD Hybrid NOx-Paraffin Motor Campaign (Block 2)</div>
-              <div class="portfolio-meta">BYU Rocketry Propulsion Research · Head of Systems Integration · Sept 2025 – Present</div>
-            </div>
-            <div class="tag-strip">
-              <span class="tag">Aerospace</span>
-              <span class="tag">Propulsion</span>
-              <span class="tag">Static Hotfire</span>
-              <span class="tag">Plumbing</span>
-              <span class="tag">LabVIEW</span>
-            </div>
-            <p class="portfolio-desc">
+</div>
+<!-- Contact & Quick Reference Table -->
+<table class="contact-table">
+<tbody>
+<tr>
+<td>Location</td>
+<td>Provo, UT</td>
+</tr>
+<tr>
+<td>Email</td>
+<td><a href="mailto:Samuel.christensen240@gmail.com">Samuel.christensen240@gmail.com</a> / <a href="mailto:sampfalc@byu.edu">sampfalc@byu.edu</a></td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>(801) 900-8994</td>
+</tr>
+<tr>
+<td>LinkedIn</td>
+<td><a href="https://linkedin.com/in/samuel-christensen240" rel="noopener noreferrer" target="_blank">linkedin.com/in/samuel-christensen240</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td><a href="https://github.com/sampfalcon/sampfalcon" rel="noopener noreferrer" target="_blank">github.com/sampfalcon/sampfalcon</a></td>
+</tr>
+<tr>
+<td>Languages</td>
+<td>English (Native), Spanish (Advanced Written &amp; Spoken)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- ================= 2. PORTFOLIO PAGE ================= -->
+<section class="page-section" id="page-portfolio">
+<h2>Project Portfolio</h2>
+<!-- Filter Bar -->
+<div class="filter-bar">
+<span class="filter-label">Filter Tag:</span>
+<button class="filter-btn active" data-filter="all">All Projects</button>
+<button class="filter-btn" data-filter="aerospace">Aerospace &amp; Propulsion</button>
+<button class="filter-btn" data-filter="cad">CAD &amp; Product</button>
+<button class="filter-btn" data-filter="nuclear">Nuclear &amp; Fluids</button>
+<button class="filter-btn" data-filter="mechanical">Mechanical &amp; Machinery</button>
+</div>
+<!-- Chronological / Priority Portfolio List -->
+<div class="portfolio-list" id="portfolio-list-container">
+<!-- Entry 1 -->
+<article class="portfolio-item" data-tags="aerospace propulsion testing">
+<div class="portfolio-img-box"><img alt="SRAD HYBRID MOTOR" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/MilkyWay.JPG"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[SRAD HYBRID MOTOR]</strong><span>548 lbf Static Fire</span></div></div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">SRAD Hybrid NOx-Paraffin Motor Campaign (Block 2)</div>
+<div class="portfolio-meta">BYU Rocketry Propulsion Research · Head of Systems Integration · Sept 2025 – Present</div>
+</div>
+<div class="tag-strip">
+<span class="tag">Aerospace</span>
+<span class="tag">Propulsion</span>
+<span class="tag">Static Hotfire</span>
+<span class="tag">Plumbing</span>
+<span class="tag">LabVIEW</span>
+</div>
+<p class="portfolio-desc">
               Directed 25 researchers in developing and testing BYU's first flight-ready SRAD Hybrid rocket engine utilizing nitrous oxide (NOx) and paraffin wax, recording 548 lbf peak thrust and 450 lbf average thrust. Designed the high-pressure fluid delivery system using AN/NPT fittings, a vapor-pressurized tank, and a custom run valve. Conducted 8 static fires, flight tank hydrostatic proof tests (1.5x MEOP), bolt-shear tests, and a hydro burst test to failure to establish the actual factor of safety. Diagnosed and resolved 4 critical test anomalies: chamber detachment (pre-test SOP torque checklist), low flow rate (aluminum FOD removal with borescope protocol), graphite nozzle fracture (interference-fit aluminum pre-load sleeve), and tank outer wall gouge qualification using digital optical profilometry.
             </p>
-            <div class="portfolio-specs">
+<div class="portfolio-specs">
               Specifications: 548 lbf Peak Thrust · 8 Static Fires · 1.5x MEOP Hydro Proof · Flight Readiness Review Passed
             </div>
-          </div>
-        </article>
-
-        <!-- Entry 2 -->
-        <article class="portfolio-item" data-tags="nuclear fluids testing">
-          <div class="portfolio-img-box">
-            <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" fill="%23f8fafc"><rect width="240" height="180" fill="%23f1f5f9" stroke="%23cbd5e1" stroke-width="2"/><line x1="0" y1="0" x2="240" y2="180" stroke="%23e2e8f0" stroke-width="1"/><line x1="0" y1="180" x2="240" y2="0" stroke="%23e2e8f0" stroke-width="1"/><rect x="20" y="45" width="200" height="90" fill="%23ffffff" stroke="%2394a3b8" stroke-width="1.5"/><text x="120" y="85" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" fill="%230f172a" text-anchor="middle">[33ft TEST LOOP]</text><text x="120" y="105" font-family="ui-monospace, monospace" font-size="10" fill="%2364748b" text-anchor="middle">Two-Phase Separator</text></svg>" data-src="imager/View from rock canyon.JPG" alt="Engineering Hardware Project">[33ft Test Loop]<br>Nuclear Separator</div>';" alt="Two-Phase Separator">
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-header">
-              <div class="portfolio-title">Small Modular Reactor Two-Phase Flow Separator &amp; 33ft Test Loop</div>
-              <div class="portfolio-meta">KADMOS Energy Inc. · Systems Engineering Intern &amp; Project Consultant · May 2026 – Present</div>
-            </div>
-            <div class="tag-strip">
-              <span class="tag">Nuclear</span>
-              <span class="tag">Two-Phase Flow</span>
-              <span class="tag">Patent</span>
-              <span class="tag">LabVIEW DAQ</span>
-              <span class="tag">Fluid Dynamics</span>
-            </div>
-            <p class="portfolio-desc">
+</div>
+</article>
+<!-- Entry 2 -->
+<article class="portfolio-item" data-tags="nuclear fluids testing">
+<div class="portfolio-img-box"><img alt="33ft TEST LOOP" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/View%20from%20rock%20canyon.JPG"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[33ft TEST LOOP]</strong><span>Two-Phase Separator</span></div></div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">Small Modular Reactor Two-Phase Flow Separator &amp; 33ft Test Loop</div>
+<div class="portfolio-meta">KADMOS Energy Inc. · Systems Engineering Intern &amp; Project Consultant · May 2026 – Present</div>
+</div>
+<div class="tag-strip">
+<span class="tag">Nuclear</span>
+<span class="tag">Two-Phase Flow</span>
+<span class="tag">Patent</span>
+<span class="tag">LabVIEW DAQ</span>
+<span class="tag">Fluid Dynamics</span>
+</div>
+<p class="portfolio-desc">
               Designed and patented a high-efficiency steam-water two-phase separator for a small modular nuclear reactor (SMR). Self-taught fundamentals of two-phase flow and interfacial mechanics to direct a 6-person university research team through 6 prototype iterations. Set system requirements, supervised construction, and programmed the NI LabVIEW DAQ monitoring suite for a full-scale 33-foot water-air validation test loop measuring carryover, volumetric flow rates, and differential pressure drops across varying phase velocities.
             </p>
-            <div class="portfolio-specs">
+<div class="portfolio-specs">
               Specifications: Patented Design · 33ft Vertical Test Loop · 6 Iterative Prototypes · Multi-Channel DAQ
             </div>
-          </div>
-        </article>
-
-        <!-- Entry 3 -->
-        <article class="portfolio-item" data-tags="cad mechanical">
-          <div class="portfolio-img-box">
-            <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" fill="%23f8fafc"><rect width="240" height="180" fill="%23f1f5f9" stroke="%23cbd5e1" stroke-width="2"/><line x1="0" y1="0" x2="240" y2="180" stroke="%23e2e8f0" stroke-width="1"/><line x1="0" y1="180" x2="240" y2="0" stroke="%23e2e8f0" stroke-width="1"/><rect x="20" y="45" width="200" height="90" fill="%23ffffff" stroke="%2394a3b8" stroke-width="1.5"/><text x="120" y="85" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" fill="%230f172a" text-anchor="middle">[FOLDING DRONE CAD]</text><text x="120" y="105" font-family="ui-monospace, monospace" font-size="10" fill="%2364748b" text-anchor="middle">SolidWorks 40hrs</text></svg>" data-src="imager/Aura.JPG" alt="Engineering Hardware Project">[Folding Drone CAD]<br>SolidWorks 40hrs</div>';" alt="Folding Camera Drone">
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-header">
-              <div class="portfolio-title">Folding Camera Drone with 3-Axis Gimbal System (40 hrs)</div>
-              <div class="portfolio-meta">Modern Drone Team Project · CAD Team Lead · BYU CAD Program</div>
-            </div>
-            <div class="tag-strip">
-              <span class="tag">CAD</span>
-              <span class="tag">SolidWorks</span>
-              <span class="tag">Injection Molding DFM</span>
-              <span class="tag">Kinematics</span>
-            </div>
-            <p class="portfolio-desc">
+</div>
+</article>
+<!-- Entry 3 -->
+<article class="portfolio-item" data-tags="cad mechanical">
+<div class="portfolio-img-box"><img alt="FOLDING DRONE CAD" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/Aura.JPG"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[FOLDING DRONE CAD]</strong><span>SolidWorks 40hrs</span></div></div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">Folding Camera Drone with 3-Axis Gimbal System (40 hrs)</div>
+<div class="portfolio-meta">Modern Drone Team Project · CAD Team Lead · BYU CAD Program</div>
+</div>
+<div class="tag-strip">
+<span class="tag">CAD</span>
+<span class="tag">SolidWorks</span>
+<span class="tag">Injection Molding DFM</span>
+<span class="tag">Kinematics</span>
+</div>
+<p class="portfolio-desc">
               Led a student CAD design team to develop a compact, high-endurance folding quadcopter aimed at outdoor adventurers. Designed folding arm linkages that collapse flush into the fuselage, an internal structural ribbing matrix optimized for injection molding (uniform 2.5mm wall thicknesses, 1.5° draft angles), and a 3-axis stabilized camera gimbal housing dual wide and telephoto lenses. Managed CAD master assemblies, caught and corrected team mates and interference errors, and produced photorealistic contextual renderings.
             </p>
-            <div class="portfolio-specs">
+<div class="portfolio-specs">
               Tooling: SolidWorks · 40 Project Hours · Full Assembly Interference Checked · DFM Verified
             </div>
-          </div>
-        </article>
-
-        <!-- Entry 4 -->
-        <article class="portfolio-item" data-tags="cad mechanical">
-          <div class="portfolio-img-box">
-            <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" fill="%23f8fafc"><rect width="240" height="180" fill="%23f1f5f9" stroke="%23cbd5e1" stroke-width="2"/><line x1="0" y1="0" x2="240" y2="180" stroke="%23e2e8f0" stroke-width="1"/><line x1="0" y1="180" x2="240" y2="0" stroke="%23e2e8f0" stroke-width="1"/><rect x="20" y="45" width="200" height="90" fill="%23ffffff" stroke="%2394a3b8" stroke-width="1.5"/><text x="120" y="85" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" fill="%230f172a" text-anchor="middle">[VR HEADSET CAD]</text><text x="120" y="105" font-family="ui-monospace, monospace" font-size="10" fill="%2364748b" text-anchor="middle">20+ Exploded Parts</text></svg>" data-src="imager/ymount.JPG" alt="Engineering Hardware Project">[VR Headset CAD]<br>Exploded View 20+ Parts</div>';" alt="VR Headset CAD">
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-header">
-              <div class="portfolio-title">Oculus Quest Next-Generation VR Headset Redesign (25 hrs)</div>
-              <div class="portfolio-meta">Independent CAD Project · Surface &amp; Top-Down Modeling</div>
-            </div>
-            <div class="tag-strip">
-              <span class="tag">CAD</span>
-              <span class="tag">Class-A Surfacing</span>
-              <span class="tag">Parametric Tables</span>
-              <span class="tag">Exploded View</span>
-            </div>
-            <p class="portfolio-desc">
+</div>
+</article>
+<!-- Entry 4 -->
+<article class="portfolio-item" data-tags="cad mechanical">
+<div class="portfolio-img-box"><img alt="VR HEADSET CAD" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/ymount.JPG"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[VR HEADSET CAD]</strong><span>20+ Exploded Parts</span></div></div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">Oculus Quest Next-Generation VR Headset Redesign (25 hrs)</div>
+<div class="portfolio-meta">Independent CAD Project · Surface &amp; Top-Down Modeling</div>
+</div>
+<div class="tag-strip">
+<span class="tag">CAD</span>
+<span class="tag">Class-A Surfacing</span>
+<span class="tag">Parametric Tables</span>
+<span class="tag">Exploded View</span>
+</div>
+<p class="portfolio-desc">
               Redesigned a consumer VR headset and controllers utilizing advanced surface modeling and top-down parametric relations. Created a complete 20+ component exploded assembly including front plate, mid-plate, compute puck, display driver PCBs, dual displays, facial interface, felt lens bridge, optics, tightening knob, and counterbalanced rear battery puck. Modeled handheld motion controllers with ergonomic grip button interfaces and tracking sensor arrays.
             </p>
-            <div class="portfolio-specs">
+<div class="portfolio-specs">
               Scope: 25 CAD Hours · 20+ Discrete Internal Components · Full Engineering Drawings &amp; Renderings
             </div>
-          </div>
-        </article>
-
-        <!-- Entry 5 -->
-        <article class="portfolio-item" data-tags="aerospace propulsion">
-          <div class="portfolio-img-box">
-            <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" fill="%23f8fafc"><rect width="240" height="180" fill="%23f1f5f9" stroke="%23cbd5e1" stroke-width="2"/><line x1="0" y1="0" x2="240" y2="180" stroke="%23e2e8f0" stroke-width="1"/><line x1="0" y1="180" x2="240" y2="0" stroke="%23e2e8f0" stroke-width="1"/><rect x="20" y="45" width="200" height="90" fill="%23ffffff" stroke="%2394a3b8" stroke-width="1.5"/><text x="120" y="85" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" fill="%230f172a" text-anchor="middle">[GOX-ACRYLIC MOTOR]</text><text x="120" y="105" font-family="ui-monospace, monospace" font-size="10" fill="%2364748b" text-anchor="middle">Flame Regression Testbed</text></svg>" data-src="imager/Aurora.JPG" alt="Engineering Hardware Project">[GOX-Acrylic Motor]<br>Optical Flame Testbed</div>';" alt="Transparent Hybrid Motor">
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-header">
-              <div class="portfolio-title">Transparent GOX-Acrylic Hybrid Motor Demonstrator</div>
-              <div class="portfolio-meta">BYU Rocketry Propulsion Research · Head of Fluids Team · May 2025 – Sept 2025</div>
-            </div>
-            <div class="tag-strip">
-              <span class="tag">Aerospace</span>
-              <span class="tag">Optical Diagnostics</span>
-              <span class="tag">Swagelok</span>
-              <span class="tag">High-Speed Video</span>
-            </div>
-            <p class="portfolio-desc">
+</div>
+</article>
+<!-- Entry 5 -->
+<article class="portfolio-item" data-tags="aerospace propulsion">
+<div class="portfolio-img-box"><img alt="GOX-ACRYLIC MOTOR" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/Aurora.JPG"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[GOX-ACRYLIC MOTOR]</strong><span>Flame Regression Testbed</span></div></div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">Transparent GOX-Acrylic Hybrid Motor Demonstrator</div>
+<div class="portfolio-meta">BYU Rocketry Propulsion Research · Head of Fluids Team · May 2025 – Sept 2025</div>
+</div>
+<div class="tag-strip">
+<span class="tag">Aerospace</span>
+<span class="tag">Optical Diagnostics</span>
+<span class="tag">Swagelok</span>
+<span class="tag">High-Speed Video</span>
+</div>
+<p class="portfolio-desc">
               Constructed a miniature demonstration hybrid motor based on NASA/Northrop Grumman designs utilizing gaseous oxygen (GOX) and an optically clear cast acrylic fuel grain. Because acrylic is transparent, researchers and students can visually observe flame kernel ignition, diffusion boundary layer formation, and fuel regression from oxidizer-rich to fuel-rich conditions in real-time. Captured high-speed video to analyze regression velocities, serving as a rapid, low-cost testbed for evaluating novel fuel port configurations.
             </p>
-            <div class="portfolio-specs">
+<div class="portfolio-specs">
               Architecture: GOX + Cast Acrylic · Swagelok Cleaned Run Lines · High-Speed Video Frame Diagnostics
             </div>
-          </div>
-        </article>
-
-        <!-- Entry 6 -->
-        <article class="portfolio-item" data-tags="mechanical">
-          <div class="portfolio-img-box">
-            <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" fill="%23f8fafc"><rect width="240" height="180" fill="%23f1f5f9" stroke="%23cbd5e1" stroke-width="2"/><line x1="0" y1="0" x2="240" y2="180" stroke="%23e2e8f0" stroke-width="1"/><line x1="0" y1="180" x2="240" y2="0" stroke="%23e2e8f0" stroke-width="1"/><rect x="20" y="45" width="200" height="90" fill="%23ffffff" stroke="%2394a3b8" stroke-width="1.5"/><text x="120" y="85" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" fill="%230f172a" text-anchor="middle">[140-KIP PRESS]</text><text x="120" y="105" font-family="ui-monospace, monospace" font-size="10" fill="%2364748b" text-anchor="middle">Powder Metallurgy SOP</text></svg>" data-src="imager/telephone pole.JPG" alt="Engineering Hardware Project">[140-Kip Press]<br>Powder Metallurgy</div>';" alt="Hydraulic Press">
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-header">
-              <div class="portfolio-title">140-Kip Hydraulic Press Commissioning &amp; Operations Manual</div>
-              <div class="portfolio-meta">BYU Engineering Department · Technical Trainer · May 2025 – Present</div>
-            </div>
-            <div class="tag-strip">
-              <span class="tag">Mechanical</span>
-              <span class="tag">Tool Steel Heat Treat</span>
-              <span class="tag">Hydraulics</span>
-              <span class="tag">Technical Writing</span>
-            </div>
-            <p class="portfolio-desc">
+</div>
+</article>
+<!-- Entry 6 -->
+<article class="portfolio-item" data-tags="mechanical">
+<div class="portfolio-img-box"><img alt="140-KIP PRESS" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/telephone%20pole.JPG"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[140-KIP PRESS]</strong><span>Powder Metallurgy SOP</span></div></div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">140-Kip Hydraulic Press Commissioning &amp; Operations Manual</div>
+<div class="portfolio-meta">BYU Engineering Department · Technical Trainer · May 2025 – Present</div>
+</div>
+<div class="tag-strip">
+<span class="tag">Mechanical</span>
+<span class="tag">Tool Steel Heat Treat</span>
+<span class="tag">Hydraulics</span>
+<span class="tag">Technical Writing</span>
+</div>
+<p class="portfolio-desc">
               Commissioned a 140,000 lbf industrial hydraulic press for powder metallurgy and materials compression testing. Machined and heat-treated custom compression anvils to specified Rockwell C hardness and programmed pressure control routines. Authored a comprehensive 12-page operations and process safety manual currently utilized by over 140 mechanical engineering students per semester for core curriculum lab work.
             </p>
-            <div class="portfolio-specs">
+<div class="portfolio-specs">
               Output: 140,000 lbf Press Restored · Custom Heat-Treated Tool Steel Anvils · 12-Page Lab SOP Manual
             </div>
-          </div>
-        </article>
-
-        <!-- Entry 7 -->
-        <article class="portfolio-item" data-tags="nuclear cad">
-          <div class="portfolio-img-box">
-            <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" fill="%23f8fafc"><rect width="240" height="180" fill="%23f1f5f9" stroke="%23cbd5e1" stroke-width="2"/><line x1="0" y1="0" x2="240" y2="180" stroke="%23e2e8f0" stroke-width="1"/><line x1="0" y1="180" x2="240" y2="0" stroke="%23e2e8f0" stroke-width="1"/><rect x="20" y="45" width="200" height="90" fill="%23ffffff" stroke="%2394a3b8" stroke-width="1.5"/><text x="120" y="85" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" fill="%230f172a" text-anchor="middle">[NUCLEAR CAD]</text><text x="120" y="105" font-family="ui-monospace, monospace" font-size="10" fill="%2364748b" text-anchor="middle">MicroNuclear $2.5M Demonstrator</text></svg>" data-src="imager/rocks.jpg" alt="Engineering Hardware Project">[Nuclear Prototype CAD]<br>$2.5M Demonstrator</div>';" alt="Nuclear Demonstrator">
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-header">
-              <div class="portfolio-title">Nuclear Flow Demonstrator 3D Modeling &amp; Manufacturing Prints</div>
-              <div class="portfolio-meta">MicroNuclear LLC · Nuclear System Draftsman · May 2025 – May 2026</div>
-            </div>
-            <div class="tag-strip">
-              <span class="tag">Nuclear</span>
-              <span class="tag">CAD</span>
-              <span class="tag">Fusion360</span>
-              <span class="tag">FreeCAD</span>
-              <span class="tag">GD&amp;T</span>
-            </div>
-            <p class="portfolio-desc">
+</div>
+</article>
+<!-- Entry 7 -->
+<article class="portfolio-item" data-tags="nuclear cad">
+<div class="portfolio-img-box"><img alt="NUCLEAR CAD" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocks.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[NUCLEAR CAD]</strong><span>MicroNuclear $2.5M Demonstrator</span></div></div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">Nuclear Flow Demonstrator 3D Modeling &amp; Manufacturing Prints</div>
+<div class="portfolio-meta">MicroNuclear LLC · Nuclear System Draftsman · May 2025 – May 2026</div>
+</div>
+<div class="tag-strip">
+<span class="tag">Nuclear</span>
+<span class="tag">CAD</span>
+<span class="tag">Fusion360</span>
+<span class="tag">FreeCAD</span>
+<span class="tag">GD&amp;T</span>
+</div>
+<p class="portfolio-desc">
               Produced high-fidelity 3D models and manufacturing drawings conforming to ASME standards in Fusion360 and FreeCAD for a $2.5M full-scale nuclear test reactor flow demonstrator prototype. Created mechanical cutaway renders that assisted the company in securing over $2M in additional private development funding. Delivered precision tolerance drawings on schedule to support immediate machine-shop fabrication.
             </p>
-            <div class="portfolio-specs">
+<div class="portfolio-specs">
               Platform: Fusion360 &amp; FreeCAD · $2.5M Reactor Demonstrator · $2M+ Secured Funding Visuals
             </div>
-          </div>
-        </article>
-
-        <!-- Entry 8 -->
-        <article class="portfolio-item" data-tags="mechanical">
-          <div class="portfolio-img-box">
-            <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" fill="%23f8fafc"><rect width="240" height="180" fill="%23f1f5f9" stroke="%23cbd5e1" stroke-width="2"/><line x1="0" y1="0" x2="240" y2="180" stroke="%23e2e8f0" stroke-width="1"/><line x1="0" y1="180" x2="240" y2="0" stroke="%23e2e8f0" stroke-width="1"/><rect x="20" y="45" width="200" height="90" fill="%23ffffff" stroke="%2394a3b8" stroke-width="1.5"/><text x="120" y="85" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" fill="%230f172a" text-anchor="middle">[ENGINE SWAP]</text><text x="120" y="105" font-family="ui-monospace, monospace" font-size="10" fill="%2364748b" text-anchor="middle">Drivetrain Overhaul</text></svg>" data-src="imager/rolling sunset.jpg" alt="Engineering Hardware Project">[Engine Swap]<br>Powertrain Mechanical</div>';" alt="Engine Swap">
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-header">
-              <div class="portfolio-title">Vehicle Engine &amp; Manual Transmission Mechanical Overhaul</div>
-              <div class="portfolio-meta">Independent Automotive Mechanical Project · Summer Project</div>
-            </div>
-            <div class="tag-strip">
-              <span class="tag">Mechanical</span>
-              <span class="tag">Automotive</span>
-              <span class="tag">Torque Specs</span>
-              <span class="tag">Drivetrain</span>
-            </div>
-            <p class="portfolio-desc">
+</div>
+</article>
+<!-- Entry 8 -->
+<article class="portfolio-item" data-tags="mechanical">
+<div class="portfolio-img-box"><img alt="ENGINE SWAP" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rolling%20sunset.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[ENGINE SWAP]</strong><span>Drivetrain Overhaul</span></div></div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">Vehicle Engine &amp; Manual Transmission Mechanical Overhaul</div>
+<div class="portfolio-meta">Independent Automotive Mechanical Project · Summer Project</div>
+</div>
+<div class="tag-strip">
+<span class="tag">Mechanical</span>
+<span class="tag">Automotive</span>
+<span class="tag">Torque Specs</span>
+<span class="tag">Drivetrain</span>
+</div>
+<p class="portfolio-desc">
               Independently removed, repaired, rebuilt, and reinstalled an automobile engine and manual transmission assembly. Performed cylinder head gasket replacement, valve timing alignment, clutch alignment, electrical harness rewiring, and cooling/fluid system bleeding. Verified zero diagnostic trouble codes (DTCs) and zero leaks under post-installation road testing.
             </p>
-            <div class="portfolio-specs">
+<div class="portfolio-specs">
               Outcome: Complete Engine &amp; Transmission Swap · Gasket &amp; Clutch Rebuild · Verified Reliable Road Test
             </div>
-          </div>
-        </article>
-
-        <!-- Entry 9 -->
-        <article class="portfolio-item" data-tags="cad">
-          <div class="portfolio-img-box">
-            <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" fill="%23f8fafc"><rect width="240" height="180" fill="%23f1f5f9" stroke="%23cbd5e1" stroke-width="2"/><line x1="0" y1="0" x2="240" y2="180" stroke="%23e2e8f0" stroke-width="1"/><line x1="0" y1="180" x2="240" y2="0" stroke="%23e2e8f0" stroke-width="1"/><rect x="20" y="45" width="200" height="90" fill="%23ffffff" stroke="%2394a3b8" stroke-width="1.5"/><text x="120" y="85" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" fill="%230f172a" text-anchor="middle">[PARAMETRIC LEGO]</text><text x="120" y="105" font-family="ui-monospace, monospace" font-size="10" fill="%2364748b" text-anchor="middle">Cincinnati Union Station</text></svg>" data-src="imager/belay.jpg" alt="Engineering Hardware Project">[Lego CAD]<br>Parametric Brick Table</div>';" alt="Cincinnati Lego">
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-header">
-              <div class="portfolio-title">Cincinnati Union Station Lego Architecture Model (25 hrs)</div>
-              <div class="portfolio-meta">BYU CAD Program · Parametric Design Project</div>
-            </div>
-            <div class="tag-strip">
-              <span class="tag">CAD</span>
-              <span class="tag">Parametric Modeling</span>
-              <span class="tag">Architecture</span>
-              <span class="tag">SolidWorks</span>
-            </div>
-            <p class="portfolio-desc">
+</div>
+</article>
+<!-- Entry 9 -->
+<article class="portfolio-item" data-tags="cad">
+<div class="portfolio-img-box"><img alt="PARAMETRIC LEGO" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/belay.jpg"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[PARAMETRIC LEGO]</strong><span>Cincinnati Union Station</span></div></div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">Cincinnati Union Station Lego Architecture Model (25 hrs)</div>
+<div class="portfolio-meta">BYU CAD Program · Parametric Design Project</div>
+</div>
+<div class="tag-strip">
+<span class="tag">CAD</span>
+<span class="tag">Parametric Modeling</span>
+<span class="tag">Architecture</span>
+<span class="tag">SolidWorks</span>
+</div>
+<p class="portfolio-desc">
               Converted Cincinnati's historic Art Deco Union Terminal into a buildable modular Lego Architecture product. Developed parametric equations and design tables in SolidWorks to generate custom brick geometries, interlocking studs, and curved arch profiles matching the 1933 landmark's limestone half-dome rotunda.
             </p>
-            <div class="portfolio-specs">
+<div class="portfolio-specs">
               Modeling: SolidWorks Parametric Tables · Custom Stud Mates · 25 Project Hours
             </div>
-          </div>
-        </article>
-
-        <!-- Entry 10 -->
-        <article class="portfolio-item" data-tags="mechanical">
-          <div class="portfolio-img-box">
-            <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" fill="%23f8fafc"><rect width="240" height="180" fill="%23f1f5f9" stroke="%23cbd5e1" stroke-width="2"/><line x1="0" y1="0" x2="240" y2="180" stroke="%23e2e8f0" stroke-width="1"/><line x1="0" y1="180" x2="240" y2="0" stroke="%23e2e8f0" stroke-width="1"/><rect x="20" y="45" width="200" height="90" fill="%23ffffff" stroke="%2394a3b8" stroke-width="1.5"/><text x="120" y="85" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" fill="%230f172a" text-anchor="middle">[HARDWARE REBUILD]</text><text x="120" y="105" font-family="ui-monospace, monospace" font-size="10" fill="%2364748b" text-anchor="middle">AVR Microcontroller Flashing</text></svg>" data-src="imager/Rope.JPG" alt="Engineering Hardware Project">[Hardware Rebuild]<br>AVR Microprocessor</div>';" alt="Cricut Rebuild">
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-header">
-              <div class="portfolio-title">Cricut Vinyl Cutter Reverse-Engineering &amp; Firmware Reflash</div>
-              <div class="portfolio-meta">Independent Mechatronics &amp; Hardware Hacking Project</div>
-            </div>
-            <div class="tag-strip">
-              <span class="tag">Mechanical</span>
-              <span class="tag">Embedded Systems</span>
-              <span class="tag">AVRDude</span>
-              <span class="tag">Microcontrollers</span>
-            </div>
-            <p class="portfolio-desc">
+</div>
+</article>
+<!-- Entry 10 -->
+<article class="portfolio-item" data-tags="mechanical">
+<div class="portfolio-img-box"><img alt="HARDWARE REBUILD" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/Rope.JPG"/><div class="portfolio-placeholder-img" style="display:none;"><strong>[HARDWARE REBUILD]</strong><span>AVR Microcontroller Flashing</span></div></div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">Cricut Vinyl Cutter Reverse-Engineering &amp; Firmware Reflash</div>
+<div class="portfolio-meta">Independent Mechatronics &amp; Hardware Hacking Project</div>
+</div>
+<div class="tag-strip">
+<span class="tag">Mechanical</span>
+<span class="tag">Embedded Systems</span>
+<span class="tag">AVRDude</span>
+<span class="tag">Microcontrollers</span>
+</div>
+<p class="portfolio-desc">
               Disassembled, serviced mechanical gantry leadscrews, and reverse-engineered a Cricut vinyl cutter. Re-flashed the onboard AVR microprocessor with open-source firmware using AVRDude, setting clock fuses and configuring low-level stepper driver communication to bypass vendor software locks. Used the refurbished hardware to cut custom sticker sets.
             </p>
-            <div class="portfolio-specs">
+<div class="portfolio-specs">
               Hardware: AVR Microprocessor · AVRDude ISP Programming · Gantry Mechanism Overhaul
             </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ================= 3. RESUME PAGE ================= -->
-    <section id="page-resume" class="page-section">
-      <h2>Resume &amp; Selective Export</h2>
-
-      <!-- Utilitarian Control Bar -->
-      <div class="resume-controls no-print">
-        <div class="resume-presets">
-          <span class="filter-label">Quick Select:</span>
-          <button class="btn-action" id="btn-select-all">Select All</button>
-          <button class="btn-action" id="btn-select-aero">Select Aerospace</button>
-          <button class="btn-action" id="btn-select-nuclear">Select Nuclear</button>
-          <button class="btn-action" id="btn-select-cad">Select CAD &amp; Mfg</button>
-          <button class="btn-action" id="btn-clear-all">Clear All</button>
-        </div>
-        <div>
-          <button class="btn-action btn-export" id="btn-print-resume">Print / Export Selected to PDF</button>
-        </div>
-      </div>
-
-      <!-- Printable Resume Document -->
-      <div class="resume-document" id="resume-sheet">
-        
-        <!-- Header -->
-        <div class="resume-doc-header">
-          <div class="resume-name">Samuel Christensen</div>
-          <div class="resume-contact">
+</div>
+</article>
+</div>
+</section>
+<!-- ================= 3. RESUME PAGE ================= -->
+<section class="page-section" id="page-resume">
+<h2>Resume &amp; Selective Export</h2>
+<!-- Utilitarian Control Bar -->
+<div class="resume-controls no-print">
+<div class="resume-presets">
+<span class="filter-label">Quick Select:</span>
+<button class="btn-action" id="btn-select-all">Select All</button>
+<button class="btn-action" id="btn-select-aero">Select Aerospace</button>
+<button class="btn-action" id="btn-select-nuclear">Select Nuclear</button>
+<button class="btn-action" id="btn-select-cad">Select CAD &amp; Mfg</button>
+<button class="btn-action" id="btn-clear-all">Clear All</button>
+</div>
+<div>
+<button class="btn-action btn-export" id="btn-print-resume">Print / Export Selected to PDF</button>
+</div>
+</div>
+<!-- Printable Resume Document -->
+<div class="resume-document" id="resume-sheet">
+<!-- Header -->
+<div class="resume-doc-header">
+<div class="resume-name">Samuel Christensen</div>
+<div class="resume-contact">
             (801) 900-8994 · Samuel.christensen240@gmail.com · linkedin.com/in/samuel-christensen240 · Provo, UT
           </div>
-        </div>
-
-        <!-- Education -->
-        <div class="resume-sec-title">Education</div>
-        <div class="resume-item" data-category="general">
-          <div class="resume-checkbox-col no-print">
-            <input type="checkbox" class="resume-checkbox" checked data-item-id="edu-byu">
-          </div>
-          <div class="resume-content-col">
-            <div class="resume-row-top">
-              <span>Brigham Young University</span>
-              <span class="mono">September 2021 – Present</span>
+</div>
+<!-- Education -->
+<div class="resume-sec-title">Education</div>
+<div class="resume-item" data-category="general">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="edu-byu" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Brigham Young University</span>
+<span class="mono">September 2021 – Present</span>
+</div>
+<div class="resume-sub">Bachelor of Science: Mechanical Engineering, Junior (2028 graduation) · 3.03 Major GPA · Provo, UT</div>
+<div style="font-size: 12px; color: var(--text-muted);">
+<strong>Courses:</strong> Thermodynamics, Machine Design, Manufacturing Processes, Material Mechanics, Material Science, Multivariable Calculus, Linear Algebra, Leadership, Statics, Dynamics, Differential Equations.
             </div>
-            <div class="resume-sub">Bachelor of Science: Mechanical Engineering, Junior (2028 graduation) · 3.03 Major GPA · Provo, UT</div>
-            <div style="font-size: 12px; color: var(--text-muted);">
-              <strong>Courses:</strong> Thermodynamics, Machine Design, Manufacturing Processes, Material Mechanics, Material Science, Multivariable Calculus, Linear Algebra, Leadership, Statics, Dynamics, Differential Equations.
-            </div>
-          </div>
-        </div>
-
-        <!-- Technical Skills -->
-        <div class="resume-sec-title">Technical Skills</div>
-        <div class="resume-item" data-category="general">
-          <div class="resume-checkbox-col no-print">
-            <input type="checkbox" class="resume-checkbox" checked data-item-id="skills-all">
-          </div>
-          <div class="resume-content-col" style="font-size: 12.5px; line-height: 1.5;">
-            <div><strong>Digital &amp; Software:</strong> LabVIEW, SolidWorks, Ansys FEA, Fusion360, Onshape, FreeCAD, MATLAB, Python, SQL, PowerBI.</div>
-            <div><strong>Physical &amp; Hardware:</strong> High-pressure oxidizer plumbing &amp; fittings, pneumatics, hydraulics, Swagelok, rocket test stands, composites, TIG/MIG welding, manual machining, furnaces, sintering, woodworking, OSHA Forklift Certified.</div>
-            <div><strong>Testing &amp; Instrumentation:</strong> Hotfire testing, injector flow testing, hydrostatic tank testing, cryo handling (LN), oxygen-prep cleaning, load frames, digital profilometry, hardness testing, optical microscopy, schlieren setup.</div>
-            <div><strong>Languages:</strong> Spanish (Advanced Written &amp; Spoken).</div>
-          </div>
-        </div>
-
-        <!-- Experience -->
-        <div class="resume-sec-title">Experience</div>
-
-        <!-- Exp 1: Rocketry President -->
-        <div class="resume-item" data-category="aerospace">
-          <div class="resume-checkbox-col no-print">
-            <input type="checkbox" class="resume-checkbox" checked data-item-id="exp-president">
-          </div>
-          <div class="resume-content-col">
-            <div class="resume-row-top">
-              <span>Rocketry President</span>
-              <span class="mono">March 2026 – Present</span>
-            </div>
-            <div class="resume-sub">BYU Rocketry · Provo, UT</div>
-            <ul class="resume-bullets">
-              <li>Direct BYU’s Rocketry Club comprising 130 student members.</li>
-              <li>Manage club finances, grant proposals, team selection, and budget appropriation.</li>
-              <li>Conduct community and industry outreach to secure technical sponsorship and mentorship.</li>
-              <li>Set requirements and lead formal design reviews for two-stage rocket flight test campaign (Capstone project).</li>
-              <li>Consult with IREC intercollegiate High Power Rocketry competition teams on systems and safety.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Exp 2: KADMOS Energy -->
-        <div class="resume-item" data-category="nuclear">
-          <div class="resume-checkbox-col no-print">
-            <input type="checkbox" class="resume-checkbox" checked data-item-id="exp-kadmos">
-          </div>
-          <div class="resume-content-col">
-            <div class="resume-row-top">
-              <span>Systems Engineering Intern &amp; Project Consultant</span>
-              <span class="mono">May 2026 – Present</span>
-            </div>
-            <div class="resume-sub">KADMOS Energy Inc. (Subject to NDA) · Provo, UT</div>
-            <ul class="resume-bullets">
-              <li>Designed &amp; patented high-efficiency two-phase separator for a small modular nuclear reactor (SMR).</li>
-              <li>Self-taught principles of two-phase flow and fluid mechanics to communicate and complete technical work.</li>
-              <li>Direct 6-person university research team with weekly testing operations and consulting.</li>
-              <li>Designed and constructed full-scale 33ft water-air test loop integrated with a custom LabVIEW monitoring program.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Exp 3: Head of Systems Integration -->
-        <div class="resume-item" data-category="aerospace">
-          <div class="resume-checkbox-col no-print">
-            <input type="checkbox" class="resume-checkbox" checked data-item-id="exp-propulsion-head">
-          </div>
-          <div class="resume-content-col">
-            <div class="resume-row-top">
-              <span>Head of Systems Integration &amp; Fluids Lead</span>
-              <span class="mono">September 2025 – Present</span>
-            </div>
-            <div class="resume-sub">BYU Rocketry Propulsion Research · Provo, UT</div>
-            <ul class="resume-bullets">
-              <li>Directed 25 researchers in developing BYU’s first flight-ready SRAD Hybrid NOx-paraffin engine, producing 550 lbf peak thrust.</li>
-              <li>Implemented comprehensive project tracking system adopted by R&amp;D division, incorporating weekly risk assessments, TRL/MRL readiness ratings, and standardized PDR/CDR templates.</li>
-              <li>Constructed test stand for vertically integrated engine testing and structural load reaction.</li>
-              <li>Conducted 8 static fires, hydrostatic proof testing on NOx tank, bolt-shear tests, ignitor tests, and hydro burst test to failure to determine actual factor of safety.</li>
-              <li>Oversaw 5 concurrent projects and 7 subteams ensuring project alignment with flight test objectives.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Exp 4: Engineering Project Consultant BYU -->
-        <div class="resume-item" data-category="cad">
-          <div class="resume-checkbox-col no-print">
-            <input type="checkbox" class="resume-checkbox" checked data-item-id="exp-byu-trainer">
-          </div>
-          <div class="resume-content-col">
-            <div class="resume-row-top">
-              <span>Engineering Project Consultant &amp; Technical Trainer</span>
-              <span class="mono">May 2025 – Present</span>
-            </div>
-            <div class="resume-sub">BYU Engineering Department · Provo, UT</div>
-            <ul class="resume-bullets">
-              <li>70+ hours of training provided to students and faculty on advanced instrumentation (load frames, digital profilometers, high-speed cameras, wind tunnels, NI LabVIEW DAQ).</li>
-              <li>Consult 20+ students and faculty weekly on class projects, research instrumentation, and component design.</li>
-              <li>Commissioned a 140-kip hydraulic press, including machining and heat-treating custom anvils for powder metallurgy.</li>
-              <li>Authored a 12-page operations and process manual utilized by 140+ students per semester for core lab work.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Exp 5: MicroNuclear LLC -->
-        <div class="resume-item" data-category="nuclear cad">
-          <div class="resume-checkbox-col no-print">
-            <input type="checkbox" class="resume-checkbox" checked data-item-id="exp-micronuclear">
-          </div>
-          <div class="resume-content-col">
-            <div class="resume-row-top">
-              <span>Nuclear System Draftsman</span>
-              <span class="mono">July 2022 – August 2025</span>
-            </div>
-            <div class="resume-sub">MicroNuclear LLC · Cincinnati, OH / Idaho Falls, ID</div>
-            <ul class="resume-bullets">
-              <li>Produced high-fidelity 3D models and engineering drawings using Fusion360 and FreeCAD for a $2.5M nuclear reactor demonstrator prototype.</li>
-              <li>Created system renders that directly assisted the venture in securing $2M+ in additional developmental funding.</li>
-              <li>Delivered approved manufacturing drawings on schedule to facilitate precision machining.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Exp 6: Head of Fluids Team -->
-        <div class="resume-item" data-category="aerospace">
-          <div class="resume-checkbox-col no-print">
-            <input type="checkbox" class="resume-checkbox" checked data-item-id="exp-fluids-lead">
-          </div>
-          <div class="resume-content-col">
-            <div class="resume-row-top">
-              <span>Head of Fluids Team</span>
-              <span class="mono">May 2025 – September 2025</span>
-            </div>
-            <div class="resume-sub">BYU Rocketry Propulsion Research · Provo, UT</div>
-            <ul class="resume-bullets">
-              <li>Designed, machined, and assembled liquid nitrous oxide plumbing for SRAD hybrid engine using NPT/AN fittings, vapor-pressurized tank, and custom run valve.</li>
-              <li>Constructed GOX-Acrylic Hybrid demo engine based on NASA architecture using Swagelok fittings with oxygen-cleaning procedures.</li>
-              <li>Managed cross-functional team to conduct initial flow tests adhering strictly to schedule and budget.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Exp 7: Procter & Gamble -->
-        <div class="resume-item" data-category="cad">
-          <div class="resume-checkbox-col no-print">
-            <input type="checkbox" class="resume-checkbox" checked data-item-id="exp-pg">
-          </div>
-          <div class="resume-content-col">
-            <div class="resume-row-top">
-              <span>Process Development &amp; Product Research Intern</span>
-              <span class="mono">Jun 2021 – Aug 2021, Jun 2022 – Aug 2022</span>
-            </div>
-            <div class="resume-sub">Procter &amp; Gamble · Cincinnati, OH</div>
-            <ul class="resume-bullets">
-              <li>Surfactant plant process improvement and metrics management resulting in $40 Million in annual savings.</li>
-              <li>Developed technical testing regimens quantifying 21 consumer experience metrics for modeling Pepto Bismol and NyQuil.</li>
-              <li>Deployed plant metrics dashboard utilizing SQL and PowerBI to guide daily operations valued at $2.3 million.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Exp 8: Research Assistant BYU Chemistry -->
-        <div class="resume-item" data-category="nuclear">
-          <div class="resume-checkbox-col no-print">
-            <input type="checkbox" class="resume-checkbox" checked data-item-id="exp-chem">
-          </div>
-          <div class="resume-content-col">
-            <div class="resume-row-top">
-              <span>Research Assistant</span>
-              <span class="mono">September 2021 – March 2022</span>
-            </div>
-            <div class="resume-sub">BYU Chemistry · Provo, UT</div>
-            <ul class="resume-bullets">
-              <li>Conducted specific surface area testing (BET) and handled cryogenics (Liquid Nitrogen) and caustics (10M NH3).</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Awards -->
-        <div class="resume-sec-title">Awards &amp; Additional Achievements</div>
-        <div class="resume-item" data-category="general">
-          <div class="resume-checkbox-col no-print">
-            <input type="checkbox" class="resume-checkbox" checked data-item-id="awards-all">
-          </div>
-          <div class="resume-content-col">
-            <ul class="resume-bullets">
-              <li><strong>Procter &amp; Gamble CIBSI Outstanding Intern of the Year (2021):</strong> End-of-year award for excellence and high-impact work among 50 fellow interns.</li>
-              <li><strong>BYU Rocketry Service to the Club Award (2026):</strong> Recognition for developing internal project proposals, TRL/MRL tracking, and safety documentation.</li>
-              <li><strong>BSA Eagle Scout (2018):</strong> Coordinated donation drive and complete furnishing of a home for incoming Eritrean refugees.</li>
-              <li><strong>Volunteer Missionary Service (Nebraska, 2 Years):</strong> Utilized fluent Spanish to teach and provide service; led a team of 8–12 other missionaries.</li>
-              <li><strong>Automotive Work:</strong> Independently removed, repaired, and installed car engine and transmission during summer project.</li>
-              <li><strong>BYU L.I.F.E. Club Outreach:</strong> Led educational STEM demonstrations at local schools and co-hosted introductory engineering podcast for youth.</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <footer>
+</div>
+</div>
+<!-- Technical Skills -->
+<div class="resume-sec-title">Technical Skills</div>
+<div class="resume-item" data-category="general">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="skills-all" type="checkbox"/>
+</div>
+<div class="resume-content-col" style="font-size: 12.5px; line-height: 1.5;">
+<div><strong>Digital &amp; Software:</strong> LabVIEW, SolidWorks, Ansys FEA, Fusion360, Onshape, FreeCAD, MATLAB, Python, SQL, PowerBI.</div>
+<div><strong>Physical &amp; Hardware:</strong> High-pressure oxidizer plumbing &amp; fittings, pneumatics, hydraulics, Swagelok, rocket test stands, composites, TIG/MIG welding, manual machining, furnaces, sintering, woodworking, OSHA Forklift Certified.</div>
+<div><strong>Testing &amp; Instrumentation:</strong> Hotfire testing, injector flow testing, hydrostatic tank testing, cryo handling (LN), oxygen-prep cleaning, load frames, digital profilometry, hardness testing, optical microscopy, schlieren setup.</div>
+<div><strong>Languages:</strong> Spanish (Advanced Written &amp; Spoken).</div>
+</div>
+</div>
+<!-- Experience -->
+<div class="resume-sec-title">Experience</div>
+<!-- Exp 1: Rocketry President -->
+<div class="resume-item" data-category="aerospace">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-president" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Rocketry President</span>
+<span class="mono">March 2026 – Present</span>
+</div>
+<div class="resume-sub">BYU Rocketry · Provo, UT</div>
+<ul class="resume-bullets">
+<li>Direct BYU’s Rocketry Club comprising 130 student members.</li>
+<li>Manage club finances, grant proposals, team selection, and budget appropriation.</li>
+<li>Conduct community and industry outreach to secure technical sponsorship and mentorship.</li>
+<li>Set requirements and lead formal design reviews for two-stage rocket flight test campaign (Capstone project).</li>
+<li>Consult with IREC intercollegiate High Power Rocketry competition teams on systems and safety.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 2: KADMOS Energy -->
+<div class="resume-item" data-category="nuclear">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-kadmos" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Systems Engineering Intern &amp; Project Consultant</span>
+<span class="mono">May 2026 – Present</span>
+</div>
+<div class="resume-sub">KADMOS Energy Inc. (Subject to NDA) · Provo, UT</div>
+<ul class="resume-bullets">
+<li>Designed &amp; patented high-efficiency two-phase separator for a small modular nuclear reactor (SMR).</li>
+<li>Self-taught principles of two-phase flow and fluid mechanics to communicate and complete technical work.</li>
+<li>Direct 6-person university research team with weekly testing operations and consulting.</li>
+<li>Designed and constructed full-scale 33ft water-air test loop integrated with a custom LabVIEW monitoring program.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 3: Head of Systems Integration -->
+<div class="resume-item" data-category="aerospace">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-propulsion-head" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Head of Systems Integration &amp; Fluids Lead</span>
+<span class="mono">September 2025 – Present</span>
+</div>
+<div class="resume-sub">BYU Rocketry Propulsion Research · Provo, UT</div>
+<ul class="resume-bullets">
+<li>Directed 25 researchers in developing BYU’s first flight-ready SRAD Hybrid NOx-paraffin engine, producing 550 lbf peak thrust.</li>
+<li>Implemented comprehensive project tracking system adopted by R&amp;D division, incorporating weekly risk assessments, TRL/MRL readiness ratings, and standardized PDR/CDR templates.</li>
+<li>Constructed test stand for vertically integrated engine testing and structural load reaction.</li>
+<li>Conducted 8 static fires, hydrostatic proof testing on NOx tank, bolt-shear tests, ignitor tests, and hydro burst test to failure to determine actual factor of safety.</li>
+<li>Oversaw 5 concurrent projects and 7 subteams ensuring project alignment with flight test objectives.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 4: Engineering Project Consultant BYU -->
+<div class="resume-item" data-category="cad">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-byu-trainer" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Engineering Project Consultant &amp; Technical Trainer</span>
+<span class="mono">May 2025 – Present</span>
+</div>
+<div class="resume-sub">BYU Engineering Department · Provo, UT</div>
+<ul class="resume-bullets">
+<li>70+ hours of training provided to students and faculty on advanced instrumentation (load frames, digital profilometers, high-speed cameras, wind tunnels, NI LabVIEW DAQ).</li>
+<li>Consult 20+ students and faculty weekly on class projects, research instrumentation, and component design.</li>
+<li>Commissioned a 140-kip hydraulic press, including machining and heat-treating custom anvils for powder metallurgy.</li>
+<li>Authored a 12-page operations and process manual utilized by 140+ students per semester for core lab work.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 5: MicroNuclear LLC -->
+<div class="resume-item" data-category="nuclear cad">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-micronuclear" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Nuclear System Draftsman</span>
+<span class="mono">July 2022 – August 2025</span>
+</div>
+<div class="resume-sub">MicroNuclear LLC · Cincinnati, OH / Idaho Falls, ID</div>
+<ul class="resume-bullets">
+<li>Produced high-fidelity 3D models and engineering drawings using Fusion360 and FreeCAD for a $2.5M nuclear reactor demonstrator prototype.</li>
+<li>Created system renders that directly assisted the venture in securing $2M+ in additional developmental funding.</li>
+<li>Delivered approved manufacturing drawings on schedule to facilitate precision machining.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 6: Head of Fluids Team -->
+<div class="resume-item" data-category="aerospace">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-fluids-lead" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Head of Fluids Team</span>
+<span class="mono">May 2025 – September 2025</span>
+</div>
+<div class="resume-sub">BYU Rocketry Propulsion Research · Provo, UT</div>
+<ul class="resume-bullets">
+<li>Designed, machined, and assembled liquid nitrous oxide plumbing for SRAD hybrid engine using NPT/AN fittings, vapor-pressurized tank, and custom run valve.</li>
+<li>Constructed GOX-Acrylic Hybrid demo engine based on NASA architecture using Swagelok fittings with oxygen-cleaning procedures.</li>
+<li>Managed cross-functional team to conduct initial flow tests adhering strictly to schedule and budget.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 7: Procter & Gamble -->
+<div class="resume-item" data-category="cad">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-pg" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Process Development &amp; Product Research Intern</span>
+<span class="mono">Jun 2021 – Aug 2021, Jun 2022 – Aug 2022</span>
+</div>
+<div class="resume-sub">Procter &amp; Gamble · Cincinnati, OH</div>
+<ul class="resume-bullets">
+<li>Surfactant plant process improvement and metrics management resulting in $40 Million in annual savings.</li>
+<li>Developed technical testing regimens quantifying 21 consumer experience metrics for modeling Pepto Bismol and NyQuil.</li>
+<li>Deployed plant metrics dashboard utilizing SQL and PowerBI to guide daily operations valued at $2.3 million.</li>
+</ul>
+</div>
+</div>
+<!-- Exp 8: Research Assistant BYU Chemistry -->
+<div class="resume-item" data-category="nuclear">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="exp-chem" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<div class="resume-row-top">
+<span>Research Assistant</span>
+<span class="mono">September 2021 – March 2022</span>
+</div>
+<div class="resume-sub">BYU Chemistry · Provo, UT</div>
+<ul class="resume-bullets">
+<li>Conducted specific surface area testing (BET) and handled cryogenics (Liquid Nitrogen) and caustics (10M NH3).</li>
+</ul>
+</div>
+</div>
+<!-- Awards -->
+<div class="resume-sec-title">Awards &amp; Additional Achievements</div>
+<div class="resume-item" data-category="general">
+<div class="resume-checkbox-col no-print">
+<input checked="" class="resume-checkbox" data-item-id="awards-all" type="checkbox"/>
+</div>
+<div class="resume-content-col">
+<ul class="resume-bullets">
+<li><strong>Procter &amp; Gamble CIBSI Outstanding Intern of the Year (2021):</strong> End-of-year award for excellence and high-impact work among 50 fellow interns.</li>
+<li><strong>BYU Rocketry Service to the Club Award (2026):</strong> Recognition for developing internal project proposals, TRL/MRL tracking, and safety documentation.</li>
+<li><strong>BSA Eagle Scout (2018):</strong> Coordinated donation drive and complete furnishing of a home for incoming Eritrean refugees.</li>
+<li><strong>Volunteer Missionary Service (Nebraska, 2 Years):</strong> Utilized fluent Spanish to teach and provide service; led a team of 8–12 other missionaries.</li>
+<li><strong>Automotive Work:</strong> Independently removed, repaired, and installed car engine and transmission during summer project.</li>
+<li><strong>BYU L.I.F.E. Club Outreach:</strong> Led educational STEM demonstrations at local schools and co-hosted introductory engineering podcast for youth.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
     Samuel Christensen · <a href="mailto:Samuel.christensen240@gmail.com">Samuel.christensen240@gmail.com</a> · BYU Mechanical Engineering
   </footer>
-
-  <!-- ================= LOGIC SCRIPT ================= -->
-  <script>
-
-    // Load local repo images when deployed on GitHub Pages
-    window.addEventListener('DOMContentLoaded', () => {
-      if (window.location.protocol !== 'blob:' && !window.location.origin.includes('canvas')) {
-        document.querySelectorAll('img[data-src]').forEach(img => {
-          const ds = img.getAttribute('data-src');
-          if (ds) {
-            const testImg = new Image();
-            testImg.onload = () => { img.src = ds; };
-            testImg.src = ds;
-          }
-        });
-      }
-    });
-
+<!-- ================= LOGIC SCRIPT ================= -->
+<script>
     // Tab Navigation
     const tabButtons = document.querySelectorAll('.tab-btn');
     const sections = document.querySelectorAll('.page-section');
