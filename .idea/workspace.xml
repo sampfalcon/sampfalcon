@@ -4,65 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5917203a-e205-4471-8c37-bac0b2690e85" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/imager/Engineering_host.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/aurora_purple.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/aurora_red.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/aurora_teal.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/balance_bot.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/brian_cut.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/brian_many.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/brian_single.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/cricut_reassembly.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/hackathon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/pipsqueak_cyl.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/pipsqueak_flywheel.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/shock_installed.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/shock_rebuild.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/swing_done.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/swing_measure.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/personal_projects/swing_up_high.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/DSNlaunch.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/IMG_6208.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/SAV_test_bench.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/Screenshot 2026-11-01 002945.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/4032c36e-3e44-450f-864c-21ad93d32d86.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/4795a314-cdc0-4da4-9820-00ced44f6400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/499a0bd6-ca57-43c9-a108-12c05240946f.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/4c3a2f9b-2ac7-41cd-9c01-0b90a32911cd.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/4eaa963b-cd54-44b9-a1d7-41fc58d81d1f.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/70fad533-2fc4-49b1-a301-28875dbfe048.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/96c36daa-805f-45ab-8343-02523c8276c5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/Block 2 T9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/Screenshot 2026-08-07 113910.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/a435fab0-2058-4cba-abdf-dc915de89a4d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/block2blast.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/block2cad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/block2hotfire.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/c3c88991-458f-4418-879e-c154fc97bdb0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/d2773684-7617-45ab-8414-986ca39476b8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/de35612a-0743-412f-ae6b-3520df4d74c9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/e9129278-24b7-4cf6-8ca3-984e35ce5efb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/f6297933-5e79-4aa9-ba0e-4ff1a9e8e175.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/f862ec2b-58a6-4126-98e1-adf6e641acb9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2/image (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2_combustion_test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/block2_shiny.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/burst_tank.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/celebrateblock2.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/checking_heat_block2.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/dead_weight_rebuild.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/demomotor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/integratedSAV.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/kintsugi.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/kintsugi_nose.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/rocket_build_outreach.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/slo-mo-block2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/slo_mo_block2_brick.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/support_load_cell.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/tank_heater.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imager/rocketry_photos/vs-hybridchannel-byurocketry-8newitems-slack-5-03.jpg" beforeDir="false" />
-    </list>
+    <list default="true" id="5917203a-e205-4471-8c37-bac0b2690e85" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,10 +13,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="3LUJVZ0wJ5YFT5J0O2LmeZPbUo7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -85,9 +27,19 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true"
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Sampf/Documents/GitHubClones/sampfalcon/imager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sampf\Documents\GitHubClones\sampfalcon\imager" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sampf\Documents\GitHubClones\sampfalcon" />
+      <recent name="C:\Users\Sampf\Documents\GitHubClones\sampfalcon\imager" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
