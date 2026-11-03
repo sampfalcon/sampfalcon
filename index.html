@@ -936,6 +936,14 @@
       padding: 2px 10px;
       line-height: 1.35;
     }
+    
+
+    .tag.tag-featured {
+      background: var(--header-bg);
+      color: #ffffff;
+      font-weight: 700;
+      border: 1px solid var(--border-dark);
+    }
     </style>
 </head>
 <body>
@@ -963,7 +971,7 @@
 <div class="about-details">
 <div>
 <p>
-              I am a Senior (4/5 years) studying Mechanical Engineering at Brigham Young University. (graduating in 2028, 3.03 Major GPA) 
+              I am a Senior (4/6 years) studying Mechanical Engineering at Brigham Young University. (graduating in 2029, 3.03 Major GPA)
             </p>
 <p>
               Currently, I serve as the President of BYU Rocketry (130 student members), overseeing club finances, grant proposals, and reviewing requirements for our CAPSTONE two-stage rocket campaign and IREC competition teams. Previously, I was Head of Systems Integration for BYU Rocketry Propulsion Research, directing 25 student researchers on BYU's first flight-ready 620 lbf SRAD hybrid rocket motor across 8 static hotfires and flight tank burst and proof tests.
@@ -1011,76 +1019,11 @@
 <section class="page-section" id="page-portfolio">
 <h2>Project Portfolio</h2>
 <!-- Filter Bar -->
-<div class="filter-bar"><span class="filter-label">Filter Tag:</span><button class="filter-btn active" data-filter="all" type="button">All Projects (26)</button><button class="filter-btn" data-filter="Featured" type="button">Featured</button><button class="filter-btn" data-filter="aerospace" type="button">Aerospace &amp; Propulsion</button><button class="filter-btn" data-filter="nuclear" type="button">Nuclear</button><button class="filter-btn" data-filter="mechanical" type="button">Mechanical &amp; Hardware</button><button class="filter-btn" data-filter="cad" type="button">CAD &amp; Manufacturing</button><button class="filter-btn" data-filter="leadership" type="button">Leadership &amp; Outreach</button></div>
+<div class="filter-bar"><span class="filter-label">Filter Tag:</span><button class="filter-btn active" data-filter="all" type="button">All Projects (24)</button><button class="filter-btn" data-filter="featured" type="button">Featured (8)</button><button class="filter-btn" data-filter="aerospace" type="button">Aerospace &amp; Propulsion</button><button class="filter-btn" data-filter="nuclear" type="button">Nuclear &amp; Fluids</button><button class="filter-btn" data-filter="mechanical" type="button">Mechanical &amp; Hardware</button><button class="filter-btn" data-filter="cad" type="button">CAD &amp; Manufacturing</button><button class="filter-btn" data-filter="leadership" type="button">Leadership &amp; Outreach</button></div>
 <!-- Chronological / Priority Portfolio List -->
 <div class="portfolio-list" id="portfolio-list-container">
-<!-- ================= PROJECT 1: Kadmos Loop — Small Modular Reactor Two-Phase Flow Separator & 33ft Test Loop ================= -->
-<article class="portfolio-item" data-keywords="kadmos,loop,separator,venturi,nuclear,two-phase,twophase,cpvc,33ft" data-tags="Featured nuclear fluids testing cad" id="proj-kadmos-loop">
-<div class="portfolio-media">
-<div class="portfolio-img-box">
-<img alt="Loop Preliminary CAD" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/Separator/full_separator_loop.png"/>
-<div class="portfolio-placeholder-img" style="display:none;">
-<strong class="ph-title">
-             [33ft TEST LOOP]
-            </strong>
-<span class="ph-sub">
-             Full-Scale Water-Air Loop
-            </span>
-</div>
-</div>
-<div class="portfolio-caption">
-           Loop Preliminary CAD
-          </div>
-<div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Loop Preliminary CAD" data-src="imager/personal_projects/Separator/full_separator_loop.png" title="Loop Preliminary CAD" type="button">
-<img alt="Loop Preliminary CAD" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/Separator/full_separator_loop.png"/>
-
-</button>
-<button class="portfolio-thumb" data-cap="Early Separator Design (V3 of 8)" data-src="imager/personal_projects/Separator/Early_separator_design.png" title="Early Separator Design (V3 of 8)" type="button">
-<img alt="Early Separator Design (V3 of 8)" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/Separator/Early_separator_design.png"/>
-
-</button>
-</div>
-</div>
-<div class="portfolio-content">
-<div class="portfolio-header">
-<div class="portfolio-title">
-            Small Modular Reactor Simulator: Two-Phase Flow Separator &amp; 33ft Test Loop
-           </div>
-<div class="portfolio-meta">
-            KADMOS Energy Inc. · Systems Engineering Intern &amp; Project Consultant · May 2026 – Present
-           </div>
-</div>
-<div class="tag-strip">
-<span class="tag">
-        Featured
-       </span>
-<span class="tag">
-            Nuclear
-           </span>
-<span class="tag">
-            Two-Phase Flow
-           </span>
-<span class="tag">
-            Patent
-           </span>
-<span class="tag">
-            LabVIEW DAQ
-           </span>
-<span class="tag">
-            Fluid Dynamics
-           </span>
-</div>
-<p class="portfolio-desc">
-           Over the course of an internship, I designed and was co-autor on a patent for a high-efficiency steam-water two-phase separator for a small modular nuclear reactor (SMR). In order to do this, I taught myself the fundamentals of two-phase flow, learned Buckingham Pi theorem, and studied non-dimensional analysis in order to direct a 6-person university research team through 6 prototype iterations and 3 mixed-phase delivery systems. I also set system requirements, supervised the CPVC loop construction, and programmed the NI LabVIEW DAQ monitoring suite for a full-scale 33-foot water-air validation test loop measuring phase carryover, volumetric flow rates, and differential pressure drops.
-          </p>
-<div class="portfolio-specs">
-           Experience with: Patent Law · Iterative Prototyping · Multi-Channel LabVIEW DAQ systems · Team & Project Management · Two-Phase Flow
-          </div>
-</div>
-</article>
-<!-- ================= PROJECT 2: SRAD Hybrid Block 2 Test Campaign ================= -->
-<article class="portfolio-item" data-keywords="block2,block_2,hotfire,static,hybrid,srad,620,thrust,plume" data-tags="Featured aerospace propulsion fluids testing" id="proj-srad-block2-campaign">
+<!-- ================= PROJECT 1: SRAD Hybrid Block 2 Test Campaign [FEATURED] ================= -->
+<article class="portfolio-item" data-keywords="block2,block_2,hotfire,static,hybrid,srad,620,550,thrust,plume" data-tags="featured aerospace propulsion fluids testing" id="proj-srad-block2-campaign">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
 <img alt="Block 2 static hotfire achieving 620 lbf peak thrust" data-fallback="imager/MilkyWay.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/block2_mid_test_fire.jpg"/>
@@ -1099,22 +1042,33 @@
 <div class="portfolio-thumbs">
 <button class="portfolio-thumb active" data-cap="Block 2 static hotfire achieving 620 lbf peak thrust" data-src="imager/rocketry_photos/block2/block2_mid_test_fire.jpg" title="Block 2 static hotfire achieving 620 lbf peak thrust" type="button">
 <img alt="Block 2 static hotfire achieving 620 lbf peak thrust" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/block2_mid_test_fire.jpg"/>
-
+<div class="thumb-fallback" style="display:none;">
+             Photo 1
+            </div>
 </button>
-<button class="portfolio-thumb" data-cap="Close-up of hybrid combustion plume and disintegrating flame diverter" data-src="imager/rocketry_photos/block2/slo_mo_block2_brick.jpg" title="Close-up of hybrid combustion plume and disintegrating flame diverter" type="button">
-<img alt="Close-up of hybrid combustion plume and disintegrating flame diverter" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/slo_mo_block2_brick.jpg"/>
-</button>
-
-<button class="portfolio-thumb" data-cap="Combustion pressure &amp; thrust analysis data" data-src="imager/rocketry_photos/block2/block2testcampaigndata.png" title="Combustion pressure &amp; thrust analysis data" type="button">
-<img alt="Combustion pressure &amp; thrust analysis data" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/block2testcampaigndata.png"/>
-
+<button class="portfolio-thumb" data-cap="Close-up of hybrid combustion plume" data-src="imager/rocketry_photos/block2/block2hotfire_flame_closeup.png" title="Close-up of hybrid combustion plume" type="button">
+<img alt="Close-up of hybrid combustion plume" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/slo_mo_block2_brick.jpg"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 2
+            </div>
 </button>
 <button class="portfolio-thumb" data-cap="Vertically integrated motor on static test stand" data-src="imager/rocketry_photos/block2/block2_shiny_test_stand.JPG" title="Vertically integrated motor on static test stand" type="button">
 <img alt="Vertically integrated motor on static test stand" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/block2_shiny_test_stand.JPG"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 3
+            </div>
 </button>
-
-<button class="portfolio-thumb" data-cap="Posing with motor after hitting target thrust" data-src="imager/rocketry_photos/block2/celebrateblock2.JPG" title="Posing with motor after hitting target thrust" type="button">
-<img alt="Posing with motor after hitting target thrust" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/celebrateblock2.JPG"/>
+<button class="portfolio-thumb" data-cap="Celebrating hitting our peak thrust goal" data-src="imager/rocketry_photos/block2/celebrateblock2.JPG" title="Combustion pressure &amp; thrust telemetry curves" type="button">
+<img alt="Celebrating hitting our peak thrust goal" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/celebrateblock2.JPG"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 4
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Combustion pressure &amp; thrust telemetry curves" data-src="imager/rocketry_photos/block2/block2testcampaigndata.png" title="Combustion pressure &amp; thrust telemetry curves" type="button">
+<img alt="Combustion pressure &amp; thrust telemetry curves" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/block2testcampaigndata.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 5
+            </div>
 </button>
 
 </div>
@@ -1129,7 +1083,7 @@
            </div>
 </div>
 <div class="tag-strip">
-<span class="tag">
+<span class="tag tag-featured">
             Featured
            </span>
 <span class="tag">
@@ -1144,7 +1098,9 @@
 <span class="tag">
             Fluid Systems
            </span>
-
+<span class="tag">
+            620 lbf Peak
+           </span>
 </div>
 <p class="portfolio-desc">
            While I was Systems Integration Lead on BYU’s Propulsion Research Team, I worked to ensure we were ready for hotfire testing, and oversaw several test fires. While we ran into issues during the test campaign, we eventually met our peak thrust goal of 500 lbf, and then exceeded it by 20%, with one test hitting 620 lbf peak thrust. I learned so much about procedures, fluid systems, safety systems, redundancy, and project management through the duration of this test campaign.
@@ -1154,12 +1110,80 @@
           </div>
 </div>
 </article>
-
-<!-- ================= PROJECT 3: Block 2 Hydrostatic Testing & Dead Weight Tester Rebuild ================= -->
-<article class="portfolio-item" data-keywords="hydrostatic,hydro,dead_weight,deadweight,strain,proof,tank_crack,profilometer" data-tags="Featured aerospace fluids testing mechanical" id="proj-block2-hydrostatic">
+<!-- ================= PROJECT 2: Kadmos Loop — Small Modular Reactor Two-Phase Flow Separator & 33ft Test Loop [FEATURED] ================= -->
+<article class="portfolio-item" data-keywords="kadmos,loop,separator,venturi,nuclear,two-phase,twophase,cpvc,33ft" data-tags="featured nuclear fluids testing cad" id="proj-kadmos-loop">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Torn down dead weight hydrostatic tester" data-fallback="imager/rocks.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/dead_weight_rebuild.jpg"/>
+<img alt="Multi-phase flow simulation &amp; CAD model" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/Separator/full_separator_loop.png"/>
+<div class="portfolio-placeholder-img" style="display:none;">
+<strong class="ph-title">
+             [33ft TEST LOOP]
+            </strong>
+<span class="ph-sub">
+             Full-Scale Water-Air Loop
+            </span>
+</div>
+</div>
+<div class="portfolio-caption">
+           Multi-phase flow simulation &amp; CAD model
+          </div>
+<div class="portfolio-thumbs">
+<button class="portfolio-thumb active" data-cap="Multi-phase flow simulation &amp; CAD model" data-src="imager/personal_projects/Separator/full_separator_loop.png" title="Multi-phase flow simulation &amp; CAD model" type="button">
+<img alt="Multi-phase flow simulation &amp; CAD model" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/Separator/full_separator_loop.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 1
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Instrument test bench &amp; DAQ setup" data-src="imager/personal_projects/Separator/Early_separator_design.png" title="Instrument test bench &amp; DAQ setup" type="button">
+<img alt="Instrument test bench &amp; DAQ setup" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/Separator/Early_separator_design.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 2
+            </div>
+</button>
+</div>
+</div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">
+            Kadmos Loop — Small Modular Reactor Two-Phase Flow Separator &amp; 33ft Test Loop
+           </div>
+<div class="portfolio-meta">
+            KADMOS Energy Inc. · Systems Engineering Intern &amp; Project Consultant · May 2026 – Present
+           </div>
+</div>
+<div class="tag-strip">
+<span class="tag tag-featured">
+            Featured
+           </span>
+<span class="tag">
+            Nuclear
+           </span>
+<span class="tag">
+            Two-Phase Flow
+           </span>
+<span class="tag">
+            Patent
+           </span>
+<span class="tag">
+            LabVIEW DAQ
+           </span>
+<span class="tag">
+            Fluid Dynamics
+           </span>
+</div>
+<p class="portfolio-desc">
+           Designed and patented a high-efficiency steam-water two-phase separator for a small modular nuclear reactor (SMR). Self-taught fundamentals of two-phase flow, Buckingham Pi scaling analysis, and interfacial mechanics to direct a 6-person university research team through 6 prototype iterations and 3 delivery systems. Set system requirements, supervised Schedule 80 CPVC construction, and programmed the NI LabVIEW DAQ monitoring suite for a full-scale 33-foot water-air validation test loop measuring phase carryover, volumetric flow rates, and differential pressure drops.
+          </p>
+<div class="portfolio-specs">
+           Specifications: Patented Separator Design · 33ft Vertical Test Loop · 6 Iterative Prototypes · Multi-Channel LabVIEW DAQ
+          </div>
+</div>
+</article>
+<!-- ================= PROJECT 3: Block 2 Hydrostatic Testing & Dead Weight Tester Rebuild [FEATURED] ================= -->
+<article class="portfolio-item" data-keywords="hydrostatic,hydro,dead_weight,deadweight,strain,proof,tank_crack,profilometer" data-tags="featured aerospace fluids testing mechanical" id="proj-block2-hydrostatic">
+<div class="portfolio-media">
+<div class="portfolio-img-box">
+<img alt="Rebuilt distilled water dead weight hydrostatic tester" data-fallback="imager/rocks.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/dead_weight_rebuild.jpg"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
              [DEAD WEIGHT TESTER]
@@ -1170,31 +1194,31 @@
 </div>
 </div>
 <div class="portfolio-caption">
-           Torn down dead weight hydrostatic tester
+           Rebuilt distilled water dead weight hydrostatic tester
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Torn down dead weight hydrostatic tester" data-src="imager/rocketry_photos/block2/dead_weight_rebuild.jpg" title="Torn down dead weight hydrostatic tester" type="button">
-<img alt="Torn down dead weight hydrostatic tester" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/dead_weight_rebuild.jpg"/>
+<button class="portfolio-thumb active" data-cap="Rebuilt distilled water dead weight hydrostatic tester" data-src="imager/rocketry_photos/block2/dead_weight_rebuild.jpg" title="Rebuilt distilled water dead weight hydrostatic tester" type="button">
+<img alt="Rebuilt distilled water dead weight hydrostatic tester" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/dead_weight_rebuild.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
 <button class="portfolio-thumb" data-cap="Strain gauge instrumentation over tank wall defect" data-src="imager/rocketry_photos/block2/hydro_test_strain_gauge.png" title="Strain gauge instrumentation over tank wall defect" type="button">
 <img alt="Strain gauge instrumentation over tank wall defect" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/hydro_test_strain_gauge.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
             </div>
 </button>
 <button class="portfolio-thumb" data-cap="Elastic deformation vs pressure telemetry curve" data-src="imager/rocketry_photos/block2/proof_test_strain_data.png" title="Elastic deformation vs pressure telemetry curve" type="button">
 <img alt="Elastic deformation vs pressure telemetry curve" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/proof_test_strain_data.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 3
+             Photo 3
             </div>
 </button>
 <button class="portfolio-thumb" data-cap="Proof test instrumentation &amp; DAQ setup" data-src="imager/rocketry_photos/block2/proof_test_instrumentation_setup_daq.png" title="Proof test instrumentation &amp; DAQ setup" type="button">
 <img alt="Proof test instrumentation &amp; DAQ setup" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/proof_test_instrumentation_setup_daq.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 4
+             Photo 4
             </div>
 </button>
 </div>
@@ -1202,14 +1226,14 @@
 <div class="portfolio-content">
 <div class="portfolio-header">
 <div class="portfolio-title">
-            Block 2 Tank Hydrostatic Testing &amp; Dead Weight Tester Rebuild
+            Block 2 Hydrostatic Testing &amp; Dead Weight Tester Rebuild
            </div>
 <div class="portfolio-meta">
             BYU Rocketry Propulsion Research · Tank Qualification Lead · 2026
            </div>
 </div>
 <div class="tag-strip">
-<span class="tag">
+<span class="tag tag-featured">
             Featured
            </span>
 <span class="tag">
@@ -1229,16 +1253,15 @@
            </span>
 </div>
 <p class="portfolio-desc">
-           I rebuilt a distilled water dead weight tester in order to perform hydrostatic proof-testing on our block 2 flight tank. I then set up the DAQ and strain gauge system in order to track the elastic deformation of the tank walls as pressure increased, one on the bare surface and one over a surface defect. While the defect experienced higher deformation, it all was within elastic limits. We also used an optical profilometer to map the surface defect's depth and profile.
+           I rebuilt a distilled water dead weight tester in order to perform hydrostatic proof-testing on our block 2 flight tank. I then set up the DAQ and strain gauge system in order to track the elastic deformation of the tank walls as pressure increased, one on the bare surface and one over a surface defect. While the defect experienced higher deformation, it all was within elastic limits.
           </p>
 <div class="portfolio-specs">
-           Rebuilt Distilled Water Dead Weight Tester · Dual Strain Gauge DAQ · 1.5x MEOP Proof Test · Optical Profilometry
+           Instrumentation: Rebuilt Distilled Water Dead Weight Tester · Dual Strain Gauge Rosette DAQ · 1.5x MEOP Proof Test · Optical Profilometry
           </div>
 </div>
 </article>
-    
-<!-- ================= PROJECT 6: BYU Engineering Building Recorded Tour Host ================= -->
-<article class="portfolio-item" data-keywords="tour,byu_engineering,host,outreach,video,eb" data-tags="leadership outreach" id="proj-byu-tour-host">
+<!-- ================= PROJECT 4: BYU Engineering Building Recorded Tour Host [FEATURED] ================= -->
+<article class="portfolio-item" data-keywords="tour,byu_engineering,host,outreach,video,eb" data-tags="featured leadership outreach" id="proj-byu-tour-host">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
 <img alt="Hosting the recorded BYU Engineering building tour" data-fallback="imager/IMG_9610.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/engineering_video/outfront.jpg"/>
@@ -1255,16 +1278,22 @@
            Hosting the recorded BYU Engineering building tour
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Hosting the recorded BYU Engineering building tour" data-src="personal_projects/engineering_video/outfront.jpg" title="Hosting the recorded BYU Engineering building tour" type="button">
+<button class="portfolio-thumb active" data-cap="Hosting the recorded BYU Engineering building tour" data-src="imager/personal_projects/engineering_video/outfront.jpg" title="Hosting the recorded BYU Engineering building tour" type="button">
 <img alt="Hosting the recorded BYU Engineering building tour" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/engineering_video/outfront.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Facilities walkthrough" data-src="imager/personal_projects/engineering_video/outfront.jpg" title="Facilities walkthrough" type="button">
-<img alt="Facilities walkthrough" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/engineering_video/outfront.jpg"/>
+<button class="portfolio-thumb" data-cap="Clubs Showcase" data-src="imager/personal_projects/engineering_video/rocketslab.jpg" title="Clubs Showcase" type="button">
+<img alt="Clubs Showcase" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/engineering_video/rocketslab.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Facilities walkthrough" data-src="imager/personal_projects/engineering_video/halwaywalk.jpg" title="Facilities walkthrough" type="button">
+<img alt="Facilities walkthrough" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/engineering_video/halwaywalk.jpg"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 3
             </div>
 </button>
 </div>
@@ -1279,7 +1308,7 @@
            </div>
 </div>
 <div class="tag-strip">
-<span class="tag">
+<span class="tag tag-featured">
             Featured
            </span>
 <span class="tag">
@@ -1296,100 +1325,62 @@
            </span>
 </div>
 <p class="portfolio-desc">
-           I was asked to host a recorded tour of the BYU Engineering building, as part of a university outreach program. I rewrote the script they gave me for clarity. I had a great time working with the videographers and directors, while adding additional information and experience where I could.
+           I was asked to host a recorded tour of the BYU Engineering building, as part of a university outreach program. I had a great time working with the videographers and directors, while adding information and experience where I could.
            <a href="https://www.linkedin.com/posts/byu-engineering_just-got-admitted-to-byu-learning-a-activity-7496310740790857728-lmBN?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAChk4yMBp3bgGNKUkfTcC13hBRu9TH8neu0" rel="noopener noreferrer" target="_blank">
             Watch the Recorded BYU Engineering Tour on LinkedIn →
            </a>
 </p>
 <div class="portfolio-specs">
-           Featured Student Host · Engineering Research Lab &amp; Prototyping Facility Walkthrough · BYU Admissions Outreach
+           Role: Featured Student Host · Engineering Research Lab &amp; Prototyping Facility Walkthrough · BYU Admissions Outreach
           </div>
 </div>
 </article>
-<!-- ================= PROJECT 4: Air-Powered Engine (Pipsqueak Engine) ================= -->
-<article class="portfolio-item" data-keywords="pipsqueak,air,cylinder,machining,lathe,mill,manufacturing" data-tags="mechanical cad" id="proj-pipsqueak-engine">
+<!-- ================= PROJECT 5: Car Transmission and Engine Swap (“Hermoso”) [FEATURED] ================= -->
+<article class="portfolio-item" data-keywords="hermoso,car,engine_swap,transmission,subaru,outback,automotive" data-tags="featured mechanical" id="proj-car-swap-hermoso">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Machined pneumatic cylinder" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/pipsqueak_engine/pipsqueak_cyl.jpg"/>
+<img alt="Hermoso on jacks during powertrain pull" data-fallback="imager/rolling%20sunset.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/hermoso/hermoso_on_jacks.jpg"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
-             [PIPSQUEAK ENGINE]
+             [HERMOSO POWERTRAIN]
             </strong>
 <span class="ph-sub">
-             Single-Cylinder Pneumatic
+             Engine &amp; Transmission Pull
             </span>
 </div>
 </div>
 <div class="portfolio-caption">
-           Machined pneumatic cylinder
+           Hermoso on jacks during powertrain pull
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Machined pneumatic cylinder" data-src="imager/personal_projects/pipsqueak_engine/pipsqueak_cyl.jpg" title="Machined pneumatic cylinder" type="button">
-<img alt="Machined pneumatic cylinder" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/pipsqueak_engine/pipsqueak_cyl.jpg"/>
-
-</button>
-<button class="portfolio-thumb" data-cap="Turned flywheel &amp; crankshaft" data-src="imager/personal_projects/pipsqueak_engine/pipsqueak_flywheel.jpg" title="Turned flywheel &amp; crankshaft" type="button">
-<img alt="Turned flywheel &amp; crankshaft" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/pipsqueak_engine/pipsqueak_flywheel.jpg"/>
-
-</button>
-</div>
-</div>
-<div class="portfolio-content">
-<div class="portfolio-header">
-<div class="portfolio-title">
-            Air-Powered Engine (Pipsqueak Engine)
-           </div>
-<div class="portfolio-meta">
-            BYU Mechanical Engineering · Manufacturing Processes · Fall 2025
-           </div>
-</div>
-<div class="tag-strip">
-<span class="tag">
-            Mechanical
-           </span>
-<span class="tag">
-            Machining
-           </span>
-<span class="tag">
-            DFM
-           </span>
-<span class="tag">
-            Pneumatics
-           </span>
-<span class="tag">
-            Lathe &amp; Mill
-           </span>
-</div>
-<p class="portfolio-desc">
-           For my manufacturing processes class, we built an air-powered single cylinder engine in order to learn about different manufacturing processes. I learned about DFM and got practice machining components.
-          </p>
-<div class="portfolio-specs">
-           Processes: Manual Lathe Turning · Vertical Milling · Precision Bore Tolerancing · Pneumatic Valve Timing · DFM
-          </div>
-</div>
-</article>
-<!-- ================= PROJECT 5: 2026 “Sauceathon” OSH-Cut Hackathon ================= -->
-<article class="portfolio-item" data-keywords="sauceathon,oshcut,osh,opensauce,gocart,kart,hackathon,pedal" data-tags="mechanical cad" id="proj-sauceathon-2026">
-<div class="portfolio-media">
-<div class="portfolio-img-box">
-<img alt="Fig 5.1: 24-hour pedal-powered go-cart build at OSH-Cut" data-fallback="imager/rolling%20sunset.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/engineering_hackathon/hackathon.jpg"/>
-<div class="portfolio-placeholder-img" style="display:none;">
-<strong class="ph-title">
-             [SAUCEATHON KART]
-            </strong>
-<span class="ph-sub">
-             24-Hour OSH-Cut Build
-            </span>
-</div>
-</div>
-<div class="portfolio-caption">
-           Fig 5.1: 24-hour pedal-powered go-cart build at OSH-Cut
-          </div>
-<div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 5.1: 24-hour pedal-powered go-cart build at OSH-Cut" data-src="imager/personal_projects/engineering_hackathon/hackathon.jpg" title="Fig 5.1: 24-hour pedal-powered go-cart build at OSH-Cut" type="button">
-<img alt="Fig 5.1: 24-hour pedal-powered go-cart build at OSH-Cut" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/engineering_hackathon/hackathon.jpg"/>
+<button class="portfolio-thumb active" data-cap="Outback on jacks during powertrain pull" data-src="imager/personal_projects/hermoso/hermoso_on_jacks.jpg" title="Outback on jacks during powertrain pull" type="button">
+<img alt="Outback on jacks during powertrain pull" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/hermoso/hermoso_on_jacks.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Working under the hood on engine teardown" data-src="imager/personal_projects/hermoso/car_work.jpeg" title="Working under the hood on engine teardown" type="button">
+<img alt="Working under the hood on engine teardown" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/hermoso/car_work.jpeg"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 2
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Manual transmission rebuild and alignment" data-src="imager/personal_projects/hermoso/trans_install.jpg" title="Manual transmission rebuild and alignment" type="button">
+<img alt="Manual transmission rebuild and alignment" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/hermoso/trans_install.jpg"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 3
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Engine swap installation in engine bay" data-src="imager/personal_projects/hermoso/engine_swap_peek.JPG" title="Engine swap installation in engine bay" type="button">
+<img alt="Engine swap installation in engine bay" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/hermoso/engine_swap_peek.JPG"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 4
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Completed overhaul &amp; road-ready test run" data-src="imager/personal_projects/hermoso/hermoso_reflect.jpg" title="Completed overhaul &amp; road-ready test run" type="button">
+<img alt="Completed overhaul &amp; road-ready test run" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/hermoso/hermoso_reflect.jpg"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 5
             </div>
 </button>
 </div>
@@ -1397,112 +1388,42 @@
 <div class="portfolio-content">
 <div class="portfolio-header">
 <div class="portfolio-title">
-            2026 “Sauceathon” OSH-Cut Hackathon
+            Car Transmission and Engine Swap (Subaru Outback)
            </div>
 <div class="portfolio-meta">
-            OpenSauce &amp; OSH-Cut · Engineering Team Lead · 2026
+            Independent Automotive Mechanical Project · Summer 2025
            </div>
 </div>
 <div class="tag-strip">
+<span class="tag tag-featured">
+            Featured
+           </span>
 <span class="tag">
             Mechanical
            </span>
 <span class="tag">
-            Hackathon
+            Automotive
            </span>
 <span class="tag">
-            Sheet Metal DFM
+            Powertrain Overhaul
            </span>
 <span class="tag">
-            Rapid Prototyping
-           </span>
-<span class="tag">
-            5th Place
+            Drivetrain
            </span>
 </div>
 <p class="portfolio-desc">
-           I was selected to participate in “Sauceathon 2026”, an engineering hackathon. Hosted by OpenSauce and OSH-cut, I spent 24 hours in a state-of-the-art manufacturing facility with unlimited budget and the simple challenge: make a light, compact, pedal powered go-cart to race at the end of the 24 hours. I managed a team of 4 and we got 5th place despite a crash mid-race. I had fun, got to meet several engineering you-tubers, and learned a lot about DFM. I also got a whole 1.5 hours of sleep!
+           Independently removed, repaired, rebuilt, and reinstalled an automobile engine and transmission assembly on my 2001 Subaru Outback. Performed engine swap, head bolt torque sequencing, valve timing alignment, transmission coupling, electrical harness routing, and cooling/fluid system bleeding. Completed the entire overhaul under limited resources and verified reliable operation on cross-country road testing.
           </p>
 <div class="portfolio-specs">
-           Challenge: 24-Hour Build · Pedal-Powered Racing Go-Cart · Laser-Cut &amp; Bent Sheet Metal DFM · 5th Place Finish
+           Outcome: Complete Engine &amp; Transmission Swap · Head Gasket &amp; Timing Overhaul · Zero Leaks or Fault Codes
           </div>
 </div>
 </article>
-
-<!-- ================= PROJECT 7: Memorial Skateboard Rings (CNC Router) ================= -->
-<article class="portfolio-item" data-keywords="ring,skateboard,memorial,cnc,wood" data-tags="mechanical cad" id="proj-skateboard-rings">
-<div class="portfolio-media">
-<div class="portfolio-img-box">
-<img alt="Fig 7.1: Collection of finished memorial skateboard rings" data-fallback="imager/Rope.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/brian_rings/brian_many.jpg"/>
-<div class="portfolio-placeholder-img" style="display:none;">
-<strong class="ph-title">
-             [SKATEBOARD RINGS]
-            </strong>
-<span class="ph-sub">
-             Finished Maple Ply Rings
-            </span>
-</div>
-</div>
-<div class="portfolio-caption">
-           Fig 7.1: Collection of finished memorial skateboard rings
-          </div>
-<div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 7.1: Collection of finished memorial skateboard rings" data-src="imager/personal_projects/brian_rings/brian_many.jpg" title="Fig 7.1: Collection of finished memorial skateboard rings" type="button">
-<img alt="Fig 7.1: Collection of finished memorial skateboard rings" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/brian_rings/brian_many.jpg"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 1
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 7.2: Finished ring showing multi-ply maple grain" data-src="imager/personal_projects/brian_rings/brian_single.jpg" title="Fig 7.2: Finished ring showing multi-ply maple grain" type="button">
-<img alt="Fig 7.2: Finished ring showing multi-ply maple grain" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/brian_rings/brian_single.jpg"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 2
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 7.3: CNC router blanks cut from skateboard deck" data-src="imager/personal_projects/brian_rings/brian_cut.jpg" title="Fig 7.3: CNC router blanks cut from skateboard deck" type="button">
-<img alt="Fig 7.3: CNC router blanks cut from skateboard deck" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/brian_rings/brian_cut.jpg"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 3
-            </div>
-</button>
-</div>
-</div>
-<div class="portfolio-content">
-<div class="portfolio-header">
-<div class="portfolio-title">
-            Memorial Skateboard Rings (CNC Router)
-           </div>
-<div class="portfolio-meta">
-            Personal Manufacturing Project · CNC Routing &amp; Finishing · Jan 2026
-           </div>
-</div>
-<div class="tag-strip">
-<span class="tag">
-            Mechanical
-           </span>
-<span class="tag">
-            CNC Router
-           </span>
-<span class="tag">
-            CAM Toolpaths
-           </span>
-<span class="tag">
-            Woodworking
-           </span>
-</div>
-<p class="portfolio-desc">
-           My uncle unexpectedly passed away in January, 2026. He was an avid skateboarder who did a lot of community outreach, so to help memorialize him, I used a CNC router to cut out several rings of one of his old boards. These rings were then sanded and finished, then given to friends and family.
-          </p>
-<div class="portfolio-specs">
-           Manufacturing: Multi-Ply Maple Skateboard Deck · CNC Contour Profiling · Hand-Turned Sanding &amp; Sealed Finish
-          </div>
-</div>
-</article>
-<!-- ================= PROJECT 8: Fluids System NOx Servo-Actuated Main Run Valve ================= -->
+<!-- ================= PROJECT 6: Fluids System NOx Servo-Actuated Main Run Valve ================= -->
 <article class="portfolio-item" data-keywords="valve,servo,nox,fluids,gear,sintered,ball_valve,plumbing" data-tags="aerospace fluids mechanical cad" id="proj-servo-nox-valve">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Fig 8.1: Final integrated servo-actuated run valve (SAV)" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/integratedSAV.jpg"/>
+<img alt="Final integrated servo-actuated run valve (SAV)" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/integratedSAV.jpg"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
              [SERVO RUN VALVE]
@@ -1513,31 +1434,31 @@
 </div>
 </div>
 <div class="portfolio-caption">
-           Fig 8.1: Final integrated servo-actuated run valve (SAV)
+           Final integrated servo-actuated run valve (SAV)
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 8.1: Final integrated servo-actuated run valve (SAV)" data-src="imager/rocketry_photos/block2/integratedSAV.jpg" title="Fig 8.1: Final integrated servo-actuated run valve (SAV)" type="button">
-<img alt="Fig 8.1: Final integrated servo-actuated run valve (SAV)" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/integratedSAV.jpg"/>
+<button class="portfolio-thumb active" data-cap="Final integrated servo-actuated run valve (SAV)" data-src="imager/rocketry_photos/block2/integratedSAV.jpg" title="Final integrated servo-actuated run valve (SAV)" type="button">
+<img alt="Final integrated servo-actuated run valve (SAV)" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/integratedSAV.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 8.2: SAV test bench &amp; PWM servo calibration" data-src="imager/rocketry_photos/block2/SAV_test_bench.PNG" title="Fig 8.2: SAV test bench &amp; PWM servo calibration" type="button">
-<img alt="Fig 8.2: SAV test bench &amp; PWM servo calibration" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/SAV_test_bench.PNG"/>
+<button class="portfolio-thumb" data-cap="SAV test bench &amp; PWM servo calibration" data-src="imager/rocketry_photos/block2/SAV_test_bench.PNG" title="SAV test bench &amp; PWM servo calibration" type="button">
+<img alt="SAV test bench &amp; PWM servo calibration" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/SAV_test_bench.PNG"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 8.3: Block 2 high-pressure oxidizer feed plumbing schematic" data-src="imager/rocketry_photos/block2/block2fluidssystem.png" title="Fig 8.3: Block 2 high-pressure oxidizer feed plumbing schematic" type="button">
-<img alt="Fig 8.3: Block 2 high-pressure oxidizer feed plumbing schematic" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/block2fluidssystem.png"/>
+<button class="portfolio-thumb" data-cap="Block 2 high-pressure oxidizer feed plumbing schematic" data-src="imager/rocketry_photos/block2/block2fluidssystem.png" title="Block 2 high-pressure oxidizer feed plumbing schematic" type="button">
+<img alt="Block 2 high-pressure oxidizer feed plumbing schematic" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/block2fluidssystem.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 3
+             Photo 3
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 8.4: 3D CAD model of run valve &amp; sintered gear train" data-src="imager/rocketry_photos/block2/block2fluidscad.png" title="Fig 8.4: 3D CAD model of run valve &amp; sintered gear train" type="button">
-<img alt="Fig 8.4: 3D CAD model of run valve &amp; sintered gear train" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/block2fluidscad.png"/>
+<button class="portfolio-thumb" data-cap="3D CAD model of run valve &amp; sintered gear train" data-src="imager/rocketry_photos/block2/block2fluidscad.png" title="3D CAD model of run valve &amp; sintered gear train" type="button">
+<img alt="3D CAD model of run valve &amp; sintered gear train" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/block2fluidscad.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 4
+             Photo 4
             </div>
 </button>
 </div>
@@ -1576,52 +1497,46 @@
           </div>
 </div>
 </article>
-<!-- ================= PROJECT 9: Car Transmission and Engine Swap (“Hermoso”) ================= -->
-<article class="portfolio-item" data-keywords="hermoso,car,engine_swap,transmission,subaru,outback,automotive" data-tags="mechanical" id="proj-car-swap-hermoso">
+<!-- ================= PROJECT 7: Block 1 Hybrid Rocket Motor Testing & High-Speed Analysis [FEATURED] ================= -->
+<article class="portfolio-item" data-keywords="block1,block_1,nozzle,graphite,eject" data-tags="featured aerospace propulsion testing" id="proj-block1-testing">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Fig 9.1: Hermoso on jacks during powertrain pull" data-fallback="imager/rolling%20sunset.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/hermoso/hermoso_on_jacks.jpg"/>
+<img alt="Block 1 hybrid motor static test fire" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block1/block1fire.png"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
-             [HERMOSO POWERTRAIN]
+             [BLOCK 1 HOTFIRE]
             </strong>
 <span class="ph-sub">
-             Engine &amp; Transmission Pull
+             Early Hybrid Test Campaign
             </span>
 </div>
 </div>
 <div class="portfolio-caption">
-           Fig 9.1: Hermoso on jacks during powertrain pull
+           Block 1 hybrid motor static test fire
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 9.1: Hermoso on jacks during powertrain pull" data-src="imager/personal_projects/hermoso/hermoso_on_jacks.jpg" title="Fig 9.1: Hermoso on jacks during powertrain pull" type="button">
-<img alt="Fig 9.1: Hermoso on jacks during powertrain pull" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/hermoso/hermoso_on_jacks.jpg"/>
+<button class="portfolio-thumb active" data-cap="Block 1 hybrid motor static test fire" data-src="imager/rocketry_photos/block1/block1fire.png" title="Block 1 hybrid motor static test fire" type="button">
+<img alt="Block 1 hybrid motor static test fire" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block1/block1fire.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 9.2: Working under the hood on engine teardown" data-src="imager/personal_projects/hermoso/car_work.jpeg" title="Fig 9.2: Working under the hood on engine teardown" type="button">
-<img alt="Fig 9.2: Working under the hood on engine teardown" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/hermoso/car_work.jpeg"/>
+<button class="portfolio-thumb" data-cap="Fracture inspection of ejected pure-graphite nozzle" data-src="imager/rocketry_photos/block2/exploded_graphite_nozzle.png" title="Fracture inspection of ejected pure-graphite nozzle" type="button">
+<img alt="Fracture inspection of ejected pure-graphite nozzle" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/exploded_graphite_nozzle.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 9.3: Manual transmission rebuild and alignment" data-src="imager/personal_projects/hermoso/trans_install.jpg" title="Fig 9.3: Manual transmission rebuild and alignment" type="button">
-<img alt="Fig 9.3: Manual transmission rebuild and alignment" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/hermoso/trans_install.jpg"/>
+<button class="portfolio-thumb" data-cap="Early propulsion team at the static test bunker" data-src="imager/rocketry_photos/block1/groupblock1.JPG" title="Early propulsion team at the static test bunker" type="button">
+<img alt="Early propulsion team at the static test bunker" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block1/groupblock1.JPG"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 3
+             Photo 3
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 9.4: Engine swap installation in engine bay" data-src="imager/personal_projects/hermoso/engine_swap_peek.JPG" title="Fig 9.4: Engine swap installation in engine bay" type="button">
-<img alt="Fig 9.4: Engine swap installation in engine bay" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/hermoso/engine_swap_peek.JPG"/>
+<button class="portfolio-thumb" data-cap="Propulsion hardware setup on Block 1" data-src="imager/rocketry_photos/block1/poseblock1.JPG" title="Propulsion hardware setup on Block 1" type="button">
+<img alt="Propulsion hardware setup on Block 1" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block1/poseblock1.JPG"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 4
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 9.5: Completed overhaul &amp; road-ready test run" data-src="imager/personal_projects/hermoso/hermoso_reflect.jpg" title="Fig 9.5: Completed overhaul &amp; road-ready test run" type="button">
-<img alt="Fig 9.5: Completed overhaul &amp; road-ready test run" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/hermoso/hermoso_reflect.jpg"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 5
+             Photo 4
             </div>
 </button>
 </div>
@@ -1629,189 +1544,45 @@
 <div class="portfolio-content">
 <div class="portfolio-header">
 <div class="portfolio-title">
-            Car Transmission and Engine Swap (“Hermoso”)
+            Block 1 Hybrid Rocket Motor Testing &amp; High-Speed Analysis
            </div>
 <div class="portfolio-meta">
-            Independent Automotive Mechanical Project · Summer 2025
+            BYU Rocketry Propulsion Research · Test Operations &amp; Diagnostics · 2025
            </div>
 </div>
 <div class="tag-strip">
-<span class="tag">
-            Mechanical
+<span class="tag tag-featured">
+            Featured
            </span>
-<span class="tag">
-            Automotive
-           </span>
-<span class="tag">
-            Powertrain Overhaul
-           </span>
-<span class="tag">
-            Drivetrain
-           </span>
-</div>
-<p class="portfolio-desc">
-           Independently removed, repaired, rebuilt, and reinstalled an automobile engine and transmission assembly on my vehicle (“Hermoso”). Performed cylinder head gasket replacement, head bolt torque sequencing, valve timing alignment, transmission coupling, electrical harness routing, and cooling/fluid system bleeding. Completed the entire overhaul under limited resources and verified reliable operation on cross-country road testing.
-          </p>
-<div class="portfolio-specs">
-           Outcome: Complete Engine &amp; Transmission Swap · Head Gasket &amp; Timing Overhaul · Zero Leaks or Fault Codes
-          </div>
-</div>
-</article>
-<!-- ================= PROJECT 10: Block 2 Flight Tank Hydrostatic Burst Test ================= -->
-<article class="portfolio-item" data-keywords="burst,hypercomp,tank_burst,rupture,vessel" data-tags="aerospace fluids testing" id="proj-block2-burst-test">
-<div class="portfolio-media">
-<div class="portfolio-img-box">
-<img alt="Fig 10.1: Posing with burst-tested flight tank at HyPerComp" data-fallback="imager/rocks.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/tank_burst_pose.png"/>
-<div class="portfolio-placeholder-img" style="display:none;">
-<strong class="ph-title">
-             [TANK BURST TEST]
-            </strong>
-<span class="ph-sub">
-             HyPerComp Test Chamber
-            </span>
-</div>
-</div>
-<div class="portfolio-caption">
-           Fig 10.1: Posing with burst-tested flight tank at HyPerComp
-          </div>
-<div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 10.1: Posing with burst-tested flight tank at HyPerComp" data-src="imager/rocketry_photos/block2/tank_burst_pose.png" title="Fig 10.1: Posing with burst-tested flight tank at HyPerComp" type="button">
-<img alt="Fig 10.1: Posing with burst-tested flight tank at HyPerComp" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/tank_burst_pose.png"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 1
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 10.2: Post-burst structural inspection" data-src="imager/rocketry_photos/block2/individual_with_burst_tank.jpg" title="Fig 10.2: Post-burst structural inspection" type="button">
-<img alt="Fig 10.2: Post-burst structural inspection" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/individual_with_burst_tank.jpg"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 2
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 10.3: Close-up of bulkhead yield &amp; failure region" data-src="imager/rocketry_photos/block2/tank_bulkhead_close_up.png" title="Fig 10.3: Close-up of bulkhead yield &amp; failure region" type="button">
-<img alt="Fig 10.3: Close-up of bulkhead yield &amp; failure region" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/tank_bulkhead_close_up.png"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 3
-            </div>
-</button>
-</div>
-</div>
-<div class="portfolio-content">
-<div class="portfolio-header">
-<div class="portfolio-title">
-            Block 2 Flight Tank Hydrostatic Burst Test
-           </div>
-<div class="portfolio-meta">
-            BYU Rocketry Propulsion Research · HyPerComp Engineering Test · 2026
-           </div>
-</div>
-<div class="tag-strip">
 <span class="tag">
             Aerospace
            </span>
 <span class="tag">
-            Burst Testing
+            Propulsion
            </span>
 <span class="tag">
-            Pressure Vessels
+            High-Speed Video
            </span>
 <span class="tag">
-            HyPerComp
+            Graphite Nozzle
            </span>
 <span class="tag">
-            Factor of Safety
+            Test SOPs
            </span>
 </div>
 <p class="portfolio-desc">
-           I traveled as part of a small team with BYU Propulsion Research to burst test our first flight-ready tank article. We tested up at a place called HyPerComp, which makes pressure vessels for aerospace and energy applications. Pressurizing the flight-like 6061-T6 nitrous oxide tank article to destructive failure allowed us to empirically validate our structural models, bulkhead retention margins, and actualized factor of safety prior to flight.
+           When I first joined propulsion research, I helped with propulsion system setup and high-speed camera setup and analysis. Our combustion efficiencies at this point were awful, but we were learning how to operate the system safely. This meant we did eject the all-graphite nozzle once, which helped us learn about how procedures and process documentation are so important.
           </p>
 <div class="portfolio-specs">
-           Facility: HyPerComp Engineering · Destructive Hydro-Burst Qualification · Validated Flight Tank Factor of Safety (FOS)
+           Focus: High-Speed Optical Diagnostics · Graphite Nozzle Retention Root-Cause Analysis · Pre-Test Procedure Standardization
           </div>
 </div>
 </article>
-<!-- ================= PROJECT 11: “Kintsugi” High-Power Rocket Design, Build & L1 Launch ================= -->
-<article class="portfolio-item" data-keywords="kintsugi,l1,nosecone,build_day,rocket_build" data-tags="aerospace cad leadership" id="proj-kintsugi-rocket">
-<div class="portfolio-media">
-<div class="portfolio-img-box">
-<img alt="Fig 11.1: Completed Kintsugi high-power rocket" data-fallback="imager/MilkyWay.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/kintsugi_built.jpg"/>
-<div class="portfolio-placeholder-img" style="display:none;">
-<strong class="ph-title">
-             [KINTSUGI ROCKET]
-            </strong>
-<span class="ph-sub">
-             L1 High-Power Build
-            </span>
-</div>
-</div>
-<div class="portfolio-caption">
-           Fig 11.1: Completed Kintsugi high-power rocket
-          </div>
-<div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 11.1: Completed Kintsugi high-power rocket" data-src="imager/rocketry_photos/other/kintsugi_built.jpg" title="Fig 11.1: Completed Kintsugi high-power rocket" type="button">
-<img alt="Fig 11.1: Completed Kintsugi high-power rocket" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/kintsugi_built.jpg"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 1
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 11.2: Custom 3D-printed nosecone geometry" data-src="imager/rocketry_photos/other/kintsugi_nose.PNG" title="Fig 11.2: Custom 3D-printed nosecone geometry" type="button">
-<img alt="Fig 11.2: Custom 3D-printed nosecone geometry" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/kintsugi_nose.PNG"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 2
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 11.3: OpenRocket aerodynamic stability &amp; trajectory model" data-src="imager/rocketry_photos/other/Kintsugi_Open_Rocket.png" title="Fig 11.3: OpenRocket aerodynamic stability &amp; trajectory model" type="button">
-<img alt="Fig 11.3: OpenRocket aerodynamic stability &amp; trajectory model" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/Kintsugi_Open_Rocket.png"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 3
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 11.4: Mentoring youth builders on rocket build day" data-src="imager/rocketry_photos/other/rocket_build_outreach_with_Kintsugi.JPG" title="Fig 11.4: Mentoring youth builders on rocket build day" type="button">
-<img alt="Fig 11.4: Mentoring youth builders on rocket build day" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/rocket_build_outreach_with_Kintsugi.JPG"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 4
-            </div>
-</button>
-</div>
-</div>
-<div class="portfolio-content">
-<div class="portfolio-header">
-<div class="portfolio-title">
-            “Kintsugi” High-Power Rocket Design, Build &amp; L1 Launch
-           </div>
-<div class="portfolio-meta">
-            High-Power Rocketry L1 Certification &amp; Youth Mentorship · 2025
-           </div>
-</div>
-<div class="tag-strip">
-<span class="tag">
-            Aerospace
-           </span>
-<span class="tag">
-            High-Power Rocketry
-           </span>
-<span class="tag">
-            3D Printing
-           </span>
-<span class="tag">
-            L1 Cert
-           </span>
-<span class="tag">
-            STEM Outreach
-           </span>
-</div>
-<p class="portfolio-desc">
-           I built my first high-power rocket “Kintsugi” as an L1 certification attempt. I also experimented with 3D printing the nosecone. While I built Kintsugi, I also guided 7 kids in a “rocket build day” and explained to them the basics of rocketry.
-          </p>
-<div class="portfolio-specs">
-           Vehicle: L1 High-Power Rocket “Kintsugi” · Custom 3D-Printed Nosecone · Guided 7 Youth Builders in STEM Rocket Build Day
-          </div>
-</div>
-</article>
-<!-- ================= PROJECT 12: Self-Balancing PID Robot Experiment ================= -->
+<!-- ================= PROJECT 8: Self-Balancing PID Robot Experiment ================= -->
 <article class="portfolio-item" data-keywords="bot,robot,pid,balancing,arduino" data-tags="mechanical" id="proj-self-balancing-bot">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Fig 12.1: Two-wheel self-balancing robot hardware build" data-fallback="imager/Aura.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/balance_bot/balance_bot.jpg"/>
+<img alt="Two-wheel self-balancing robot hardware build" data-fallback="imager/Aura.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/balance_bot/balance_bot.jpg"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
              [PID BALANCING BOT]
@@ -1822,25 +1593,25 @@
 </div>
 </div>
 <div class="portfolio-caption">
-           Fig 12.1: Two-wheel self-balancing robot hardware build
+           Two-wheel self-balancing robot hardware build
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 12.1: Two-wheel self-balancing robot hardware build" data-src="imager/personal_projects/balance_bot/balance_bot.jpg" title="Fig 12.1: Two-wheel self-balancing robot hardware build" type="button">
-<img alt="Fig 12.1: Two-wheel self-balancing robot hardware build" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/balance_bot/balance_bot.jpg"/>
+<button class="portfolio-thumb active" data-cap="Two-wheel self-balancing robot hardware build" data-src="imager/personal_projects/balance_bot/balance_bot.jpg" title="Two-wheel self-balancing robot hardware build" type="button">
+<img alt="Two-wheel self-balancing robot hardware build" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/balance_bot/balance_bot.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 12.2: Arduino PID loop implementation code &amp; tuning" data-src="imager/personal_projects/balance_bot/PID_implementation.png" title="Fig 12.2: Arduino PID loop implementation code &amp; tuning" type="button">
-<img alt="Fig 12.2: Arduino PID loop implementation code &amp; tuning" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/balance_bot/PID_implementation.png"/>
+<button class="portfolio-thumb" data-cap="Arduino PID loop implementation code &amp; tuning" data-src="imager/personal_projects/balance_bot/PID_implementation.png" title="Arduino PID loop implementation code &amp; tuning" type="button">
+<img alt="Arduino PID loop implementation code &amp; tuning" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/balance_bot/PID_implementation.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 12.3: 3D CAD model of chassis and motor mounts" data-src="imager/personal_projects/balance_bot/cad.png" title="Fig 12.3: 3D CAD model of chassis and motor mounts" type="button">
-<img alt="Fig 12.3: 3D CAD model of chassis and motor mounts" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/balance_bot/cad.png"/>
+<button class="portfolio-thumb" data-cap="3D CAD model of chassis and motor mounts" data-src="imager/personal_projects/balance_bot/cad.png" title="3D CAD model of chassis and motor mounts" type="button">
+<img alt="3D CAD model of chassis and motor mounts" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/balance_bot/cad.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 3
+             Photo 3
             </div>
 </button>
 </div>
@@ -1879,11 +1650,419 @@
           </div>
 </div>
 </article>
-<!-- ================= PROJECT 13: Large-Scale 45ft Engineered Rope Swing ================= -->
+<!-- ================= PROJECT 9: 2026 “Sauceathon” OSH-Cut Hackathon [FEATURED] ================= -->
+<article class="portfolio-item" data-keywords="sauceathon,oshcut,osh,opensauce,gocart,kart,hackathon,pedal" data-tags="featured mechanical cad" id="proj-sauceathon-2026">
+<div class="portfolio-media">
+<div class="portfolio-img-box">
+<img alt="24-hour pedal-powered go-cart build at OSH-Cut" data-fallback="imager/rolling%20sunset.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/engineering_hackathon/hackathon.jpg"/>
+<div class="portfolio-placeholder-img" style="display:none;">
+<strong class="ph-title">
+             [SAUCEATHON KART]
+            </strong>
+<span class="ph-sub">
+             24-Hour OSH-Cut Build
+            </span>
+</div>
+</div>
+<div class="portfolio-caption">
+           24-hour pedal-powered go-cart build at OSH-Cut
+          </div>
+<div class="portfolio-thumbs">
+<button class="portfolio-thumb active" data-cap="24-hour pedal-powered go-cart build at OSH-Cut" data-src="imager/personal_projects/engineering_hackathon/hackathon.jpg" title="24-hour pedal-powered go-cart build at OSH-Cut" type="button">
+<img alt="24-hour pedal-powered go-cart build at OSH-Cut" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/engineering_hackathon/hackathon.jpg"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 1
+            </div>
+</button>
+</div>
+</div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">
+            2026 “Sauceathon” OSH-Cut Hackathon
+           </div>
+<div class="portfolio-meta">
+            OpenSauce &amp; OSH-Cut · Engineering Team Lead · 2026
+           </div>
+</div>
+<div class="tag-strip">
+<span class="tag tag-featured">
+            Featured
+           </span>
+<span class="tag">
+            Mechanical
+           </span>
+<span class="tag">
+            Hackathon
+           </span>
+<span class="tag">
+            Sheet Metal DFM
+           </span>
+<span class="tag">
+            Rapid Prototyping
+           </span>
+<span class="tag">
+            5th Place
+           </span>
+</div>
+<p class="portfolio-desc">
+           I was selected to participate in “Sauceathon 2026”, an engineering hackathon. Hosted by OpenSauce and OSH-cut, I spent 24 hours in a state-of-the-art manufacturing facility with unlimited budget and the simple challenge: make a light, compact, pedal powered go-cart to race at the end of the 24 hours. I managed a team of 4 and we got 5th place despite a crash mid-race. I had fun, got to meet several engineering you-tubers, and learned a lot about DFM. I also got a whole 1.5 hours of sleep!
+          </p>
+<div class="portfolio-specs">
+           Challenge: 24-Hour Build · Pedal-Powered Racing Go-Cart · Laser-Cut &amp; Bent Sheet Metal DFM · 5th Place Finish
+          </div>
+</div>
+</article>
+<!-- ================= PROJECT 10: Block 2 Flight Tank Hydrostatic Burst Test ================= -->
+<article class="portfolio-item" data-keywords="burst,hypercomp,tank_burst,rupture,vessel" data-tags="aerospace fluids testing" id="proj-block2-burst-test">
+<div class="portfolio-media">
+<div class="portfolio-img-box">
+<img alt="Posing with burst-tested flight tank at HyPerComp" data-fallback="imager/rocks.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/tank_burst_pose.png"/>
+<div class="portfolio-placeholder-img" style="display:none;">
+<strong class="ph-title">
+             [TANK BURST TEST]
+            </strong>
+<span class="ph-sub">
+             HyPerComp Test Chamber
+            </span>
+</div>
+</div>
+<div class="portfolio-caption">
+           Posing with burst-tested flight tank at HyPerComp
+          </div>
+<div class="portfolio-thumbs">
+<button class="portfolio-thumb active" data-cap="Posing with burst-tested flight tank at HyPerComp" data-src="imager/rocketry_photos/block2/tank_burst_pose.png" title="Posing with burst-tested flight tank at HyPerComp" type="button">
+<img alt="Posing with burst-tested flight tank at HyPerComp" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/tank_burst_pose.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 1
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Post-burst structural inspection" data-src="imager/rocketry_photos/block2/individual_with_burst_tank.jpg" title="Post-burst structural inspection" type="button">
+<img alt="Post-burst structural inspection" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/individual_with_burst_tank.jpg"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 2
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Close-up of bulkhead yield &amp; failure region" data-src="imager/rocketry_photos/block2/tank_bulkhead_close_up.png" title="Close-up of bulkhead yield &amp; failure region" type="button">
+<img alt="Close-up of bulkhead yield &amp; failure region" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/tank_bulkhead_close_up.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 3
+            </div>
+</button>
+</div>
+</div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">
+            Block 2 Flight Tank Hydrostatic Burst Test
+           </div>
+<div class="portfolio-meta">
+            BYU Rocketry Propulsion Research · HyPerComp Engineering Test · 2026
+           </div>
+</div>
+<div class="tag-strip">
+<span class="tag">
+            Aerospace
+           </span>
+<span class="tag">
+            Burst Testing
+           </span>
+<span class="tag">
+            Pressure Vessels
+           </span>
+<span class="tag">
+            HyPerComp
+           </span>
+<span class="tag">
+            Factor of Safety
+           </span>
+</div>
+<p class="portfolio-desc">
+           I traveled as part of a small team with BYU Propulsion Research to burst test our first flight-ready tank article. We tested up at a place called HyPerComp, which makes pressure vessels for aerospace and energy applications. Pressurizing the flight-like 6061-T6 nitrous oxide tank article to destructive failure allowed us to empirically validate our structural models, bulkhead retention margins, and actualized factor of safety prior to flight.
+          </p>
+<div class="portfolio-specs">
+           Facility: HyPerComp Engineering · Destructive Hydro-Burst Qualification · Validated Flight Tank Factor of Safety (FOS)
+          </div>
+</div>
+</article>
+<!-- ================= PROJECT 11: 140-Kip Hydraulic Press Commissioning & Operations Manual ================= -->
+<article class="portfolio-item" data-keywords="press,140kip,hydraulic,anvil,metallurgy" data-tags="mechanical" id="proj-hydraulic-press-140kip">
+<div class="portfolio-media">
+<div class="portfolio-img-box">
+<img alt="High-pressure hydraulic machinery setup" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/shock_rebuild/shock_installed.jpg"/>
+<div class="portfolio-placeholder-img" style="display:none;">
+<strong class="ph-title">
+             [140-KIP PRESS]
+            </strong>
+<span class="ph-sub">
+             Powder Metallurgy Setup
+            </span>
+</div>
+</div>
+<div class="portfolio-caption">
+           High-pressure hydraulic machinery setup
+          </div>
+<div class="portfolio-thumbs">
+<button class="portfolio-thumb active" data-cap="High-pressure hydraulic machinery setup" data-src="imager/personal_projects/shock_rebuild/shock_installed.jpg" title="High-pressure hydraulic machinery setup" type="button">
+<img alt="High-pressure hydraulic machinery setup" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/shock_rebuild/shock_installed.jpg"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 1
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Load frame tooling &amp; materials testing" data-src="imager/rocketry_photos/block2/bolt_pullout_testing.png" title="Load frame tooling &amp; materials testing" type="button">
+<img alt="Load frame tooling &amp; materials testing" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/bolt_pullout_testing.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 2
+            </div>
+</button>
+</div>
+</div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">
+            140-Kip Hydraulic Press Commissioning &amp; Operations Manual
+           </div>
+<div class="portfolio-meta">
+            BYU Engineering Department · Technical Trainer · May 2025 – Present
+           </div>
+</div>
+<div class="tag-strip">
+<span class="tag">
+            Mechanical
+           </span>
+<span class="tag">
+            Tool Steel Heat Treat
+           </span>
+<span class="tag">
+            Hydraulics
+           </span>
+<span class="tag">
+            Technical Writing
+           </span>
+</div>
+<p class="portfolio-desc">
+           Commissioned a 140,000 lbf industrial hydraulic press for powder metallurgy and materials compression testing. Machined and heat-treated custom compression anvils to specified Rockwell C hardness and programmed pressure control routines. Authored a comprehensive 12-page operations and process safety manual currently utilized by over 140 mechanical engineering students per semester for core curriculum lab work.
+          </p>
+<div class="portfolio-specs">
+           Output: 140,000 lbf Press Restored · Custom Heat-Treated Tool Steel Anvils · 12-Page Lab SOP Manual
+          </div>
+</div>
+</article>
+<!-- ================= PROJECT 12: Transparent GOX-Acrylic Hybrid Motor Demonstrator ================= -->
+<article class="portfolio-item" data-keywords="acrylic,gox,demonstrator,transparent" data-tags="aerospace propulsion fluids" id="proj-gox-acrylic-demo">
+<div class="portfolio-media">
+<div class="portfolio-img-box">
+<img alt="Transparent acrylic fuel grain combustion demonstrator" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/demomotor.png"/>
+<div class="portfolio-placeholder-img" style="display:none;">
+<strong class="ph-title">
+             [GOX-ACRYLIC MOTOR]
+            </strong>
+<span class="ph-sub">
+             Optical Flame Testbed
+            </span>
+</div>
+</div>
+<div class="portfolio-caption">
+           Transparent acrylic fuel grain combustion demonstrator
+          </div>
+<div class="portfolio-thumbs">
+<button class="portfolio-thumb active" data-cap="Transparent acrylic fuel grain combustion demonstrator" data-src="imager/rocketry_photos/other/demomotor.png" title="Transparent acrylic fuel grain combustion demonstrator" type="button">
+<img alt="Transparent acrylic fuel grain combustion demonstrator" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/demomotor.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 1
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Borescope inspection of feed line &amp; injector orifice" data-src="imager/rocketry_photos/block2/FOD_issue.png" title="Borescope inspection of feed line &amp; injector orifice" type="button">
+<img alt="Borescope inspection of feed line &amp; injector orifice" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/FOD_issue.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 2
+            </div>
+</button>
+</div>
+</div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">
+            Transparent GOX-Acrylic Hybrid Motor Demonstrator
+           </div>
+<div class="portfolio-meta">
+            BYU Rocketry Propulsion Research · Head of Fluids Team · 2025
+           </div>
+</div>
+<div class="tag-strip">
+<span class="tag">
+            Aerospace
+           </span>
+<span class="tag">
+            Optical Diagnostics
+           </span>
+<span class="tag">
+            Swagelok
+           </span>
+<span class="tag">
+            High-Speed Video
+           </span>
+</div>
+<p class="portfolio-desc">
+           Constructed a miniature demonstration hybrid motor based on NASA and Northrop Grumman designs utilizing gaseous oxygen (GOX) and an optically clear cast acrylic fuel grain. Because acrylic is transparent, researchers and students can visually observe flame kernel ignition, diffusion boundary layer formation, and fuel regression from oxidizer-rich to fuel-rich conditions in real time. Captured high-speed video frames during test fires to map fuel regression rates and evaluate new grain geometries.
+          </p>
+<div class="portfolio-specs">
+           Architecture: GOX + Cast Acrylic · Oxygen-Cleaned Swagelok Run Lines · High-Speed Optical Flame Diagnostics
+          </div>
+</div>
+</article>
+<!-- ================= PROJECT 13: Memorial Skateboard Rings (CNC Router) ================= -->
+<article class="portfolio-item" data-keywords="ring,skateboard,memorial,cnc,wood" data-tags="mechanical cad" id="proj-skateboard-rings">
+<div class="portfolio-media">
+<div class="portfolio-img-box">
+<img alt="Collection of finished memorial skateboard rings" data-fallback="imager/Rope.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/brian_rings/brian_many.jpg"/>
+<div class="portfolio-placeholder-img" style="display:none;">
+<strong class="ph-title">
+             [SKATEBOARD RINGS]
+            </strong>
+<span class="ph-sub">
+             Finished Maple Ply Rings
+            </span>
+</div>
+</div>
+<div class="portfolio-caption">
+           Collection of finished memorial skateboard rings
+          </div>
+<div class="portfolio-thumbs">
+<button class="portfolio-thumb active" data-cap="Collection of finished memorial skateboard rings" data-src="imager/personal_projects/brian_rings/brian_many.jpg" title="Collection of finished memorial skateboard rings" type="button">
+<img alt="Collection of finished memorial skateboard rings" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/brian_rings/brian_many.jpg"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 1
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Finished ring showing multi-ply maple grain" data-src="imager/personal_projects/brian_rings/brian_single.jpg" title="Finished ring showing multi-ply maple grain" type="button">
+<img alt="Finished ring showing multi-ply maple grain" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/brian_rings/brian_single.jpg"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 2
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="CNC router blanks cut from skateboard deck" data-src="imager/personal_projects/brian_rings/brian_cut.jpg" title="CNC router blanks cut from skateboard deck" type="button">
+<img alt="CNC router blanks cut from skateboard deck" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/brian_rings/brian_cut.jpg"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 3
+            </div>
+</button>
+</div>
+</div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">
+            Memorial Skateboard Rings (CNC Router)
+           </div>
+<div class="portfolio-meta">
+            Personal Manufacturing Project · CNC Routing &amp; Finishing · Jan 2026
+           </div>
+</div>
+<div class="tag-strip">
+<span class="tag">
+            Mechanical
+           </span>
+<span class="tag">
+            CNC Router
+           </span>
+<span class="tag">
+            CAM Toolpaths
+           </span>
+<span class="tag">
+            Woodworking
+           </span>
+</div>
+<p class="portfolio-desc">
+           My uncle unexpectedly passed away in January, 2026. He was an avid skateboarder who did a lot of community outreach, so to help memorialize him, I used a CNC router to cut out several rings of one of his old boards. These rings were then sanded and finished, then given to friends and family.
+          </p>
+<div class="portfolio-specs">
+           Manufacturing: Multi-Ply Maple Skateboard Deck · CNC Contour Profiling · Hand-Turned Sanding &amp; Sealed Finish
+          </div>
+</div>
+</article>
+<!-- ================= PROJECT 14: “Kintsugi” High-Power Rocket Design, Build & L1 Launch ================= -->
+<article class="portfolio-item" data-keywords="kintsugi,l1,nosecone,build_day,rocket_build" data-tags="aerospace cad leadership" id="proj-kintsugi-rocket">
+<div class="portfolio-media">
+<div class="portfolio-img-box">
+<img alt="Completed Kintsugi high-power rocket" data-fallback="imager/MilkyWay.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/kintsugi_built.jpg"/>
+<div class="portfolio-placeholder-img" style="display:none;">
+<strong class="ph-title">
+             [KINTSUGI ROCKET]
+            </strong>
+<span class="ph-sub">
+             L1 High-Power Build
+            </span>
+</div>
+</div>
+<div class="portfolio-caption">
+           Completed Kintsugi high-power rocket
+          </div>
+<div class="portfolio-thumbs">
+<button class="portfolio-thumb active" data-cap="Completed Kintsugi high-power rocket" data-src="imager/rocketry_photos/other/kintsugi_built.jpg" title="Completed Kintsugi high-power rocket" type="button">
+<img alt="Completed Kintsugi high-power rocket" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/kintsugi_built.jpg"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 1
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Custom 3D-printed nosecone geometry" data-src="imager/rocketry_photos/other/kintsugi_nose.PNG" title="Custom 3D-printed nosecone geometry" type="button">
+<img alt="Custom 3D-printed nosecone geometry" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/kintsugi_nose.PNG"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 2
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="OpenRocket aerodynamic stability &amp; trajectory model" data-src="imager/rocketry_photos/other/Kintsugi_Open_Rocket.png" title="OpenRocket aerodynamic stability &amp; trajectory model" type="button">
+<img alt="OpenRocket aerodynamic stability &amp; trajectory model" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/Kintsugi_Open_Rocket.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 3
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Mentoring youth builders on rocket build day" data-src="imager/rocketry_photos/other/rocket_build_outreach_with_Kintsugi.JPG" title="Mentoring youth builders on rocket build day" type="button">
+<img alt="Mentoring youth builders on rocket build day" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/rocket_build_outreach_with_Kintsugi.JPG"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 4
+            </div>
+</button>
+</div>
+</div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">
+            “Kintsugi” High-Power Rocket Design, Build &amp; L1 Launch
+           </div>
+<div class="portfolio-meta">
+            High-Power Rocketry L1 Certification &amp; Youth Mentorship · 2025
+           </div>
+</div>
+<div class="tag-strip">
+<span class="tag">
+            Aerospace
+           </span>
+<span class="tag">
+            High-Power Rocketry
+           </span>
+<span class="tag">
+            3D Printing
+           </span>
+<span class="tag">
+            L1 Cert
+           </span>
+<span class="tag">
+            STEM Outreach
+           </span>
+</div>
+<p class="portfolio-desc">
+           I built my first high-power rocket “Kintsugi” as an L1 certification attempt. I also experimented with 3D printing the nosecone. While I built Kintsugi, I also guided 7 kids in a “rocket build day” and explained to them the basics of rocketry.
+          </p>
+<div class="portfolio-specs">
+           Vehicle: L1 High-Power Rocket “Kintsugi” · Custom 3D-Printed Nosecone · Guided 7 Youth Builders in STEM Rocket Build Day
+          </div>
+</div>
+</article>
+<!-- ================= PROJECT 15: Large-Scale 45ft Engineered Rope Swing ================= -->
 <article class="portfolio-item" data-keywords="swing,rope,idaho,rigging,maple,belay" data-tags="mechanical" id="proj-engineered-swing">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Fig 13.1: Completed 45ft engineered rope swing in rural Idaho" data-fallback="imager/Rope.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/swing/swing_done.jpg"/>
+<img alt="Completed 45ft engineered rope swing in rural Idaho" data-fallback="imager/Rope.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/swing/swing_done.jpg"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
              [45FT ROPE SWING]
@@ -1894,25 +2073,25 @@
 </div>
 </div>
 <div class="portfolio-caption">
-           Fig 13.1: Completed 45ft engineered rope swing in rural Idaho
+           Completed 45ft engineered rope swing in rural Idaho
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 13.1: Completed 45ft engineered rope swing in rural Idaho" data-src="imager/personal_projects/swing/swing_done.jpg" title="Fig 13.1: Completed 45ft engineered rope swing in rural Idaho" type="button">
-<img alt="Fig 13.1: Completed 45ft engineered rope swing in rural Idaho" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/swing/swing_done.jpg"/>
+<button class="portfolio-thumb active" data-cap="Completed 45ft engineered rope swing in rural Idaho" data-src="imager/personal_projects/swing/swing_done.jpg" title="Completed 45ft engineered rope swing in rural Idaho" type="button">
+<img alt="Completed 45ft engineered rope swing in rural Idaho" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/swing/swing_done.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 13.2: High-angle tree rigging and steel cable tows" data-src="imager/personal_projects/swing/swing_up_high.jpg" title="Fig 13.2: High-angle tree rigging and steel cable tows" type="button">
-<img alt="Fig 13.2: High-angle tree rigging and steel cable tows" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/swing/swing_up_high.jpg"/>
+<button class="portfolio-thumb" data-cap="High-angle tree rigging and steel cable tows" data-src="imager/personal_projects/swing/swing_up_high.jpg" title="High-angle tree rigging and steel cable tows" type="button">
+<img alt="High-angle tree rigging and steel cable tows" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/swing/swing_up_high.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 13.3: Arc prediction &amp; load measuring" data-src="imager/personal_projects/swing/swing_measure.jpg" title="Fig 13.3: Arc prediction &amp; load measuring" type="button">
-<img alt="Fig 13.3: Arc prediction &amp; load measuring" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/swing/swing_measure.jpg"/>
+<button class="portfolio-thumb" data-cap="Arc prediction &amp; load measuring" data-src="imager/personal_projects/swing/swing_measure.jpg" title="Arc prediction &amp; load measuring" type="button">
+<img alt="Arc prediction &amp; load measuring" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/swing/swing_measure.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 3
+             Photo 3
             </div>
 </button>
 </div>
@@ -1951,80 +2130,11 @@
           </div>
 </div>
 </article>
-<!-- ================= PROJECT 14: Aurora Chasing & Space Weather Astrophotography ================= -->
-<article class="portfolio-item" data-keywords="aurora,milkyway,astro,night,sky,stars" data-tags="aerospace" id="proj-aurora-chasing">
-<div class="portfolio-media">
-<div class="portfolio-img-box">
-<img alt="Fig 14.1: Purple &amp; red oxygen emission auroral pillars" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/aurora_chasing/aurora_purple.jpg"/>
-<div class="portfolio-placeholder-img" style="display:none;">
-<strong class="ph-title">
-             [MID-LATITUDE AURORA]
-            </strong>
-<span class="ph-sub">
-             Coronal Mass Ejection Event
-            </span>
-</div>
-</div>
-<div class="portfolio-caption">
-           Fig 14.1: Purple &amp; red oxygen emission auroral pillars
-          </div>
-<div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 14.1: Purple &amp; red oxygen emission auroral pillars" data-src="imager/personal_projects/aurora_chasing/aurora_purple.jpg" title="Fig 14.1: Purple &amp; red oxygen emission auroral pillars" type="button">
-<img alt="Fig 14.1: Purple &amp; red oxygen emission auroral pillars" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/aurora_chasing/aurora_purple.jpg"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 1
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 14.2: Vibrant green/teal mid-latitude aurora arc" data-src="imager/personal_projects/aurora_chasing/aurora_teal.jpg" title="Fig 14.2: Vibrant green/teal mid-latitude aurora arc" type="button">
-<img alt="Fig 14.2: Vibrant green/teal mid-latitude aurora arc" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/aurora_chasing/aurora_teal.jpg"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 2
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 14.3: Deep red high-altitude auroral storm" data-src="imager/personal_projects/aurora_chasing/aurora_red.jpg" title="Fig 14.3: Deep red high-altitude auroral storm" type="button">
-<img alt="Fig 14.3: Deep red high-altitude auroral storm" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/aurora_chasing/aurora_red.jpg"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 3
-            </div>
-</button>
-</div>
-</div>
-<div class="portfolio-content">
-<div class="portfolio-header">
-<div class="portfolio-title">
-            Aurora Chasing &amp; Space Weather Astrophotography
-           </div>
-<div class="portfolio-meta">
-            Space Weather Monitoring &amp; Low-Bortle Photography · 2022 – Present
-           </div>
-</div>
-<div class="tag-strip">
-<span class="tag">
-            Astrophotography
-           </span>
-<span class="tag">
-            Space Weather
-           </span>
-<span class="tag">
-            CME Forecasting
-           </span>
-<span class="tag">
-            Sony a6500
-           </span>
-</div>
-<p class="portfolio-desc">
-           Since 2022, I have been chasing and photographing auroral events. I used a Canon EOS Rebel XS to start and now use a Sony a6500. To catch aurora at mid-altitude, you have to monitor space weather for high-energy coronal mass ejections and watch NOAA SWPC and 3rd-party predictions. You then have to go to low-Bortle areas for minimal light pollution with little warning. It is a fun hobby and even if the aurora don’t show, you can do normal astrophotography.
-          </p>
-<div class="portfolio-specs">
-           Equipment: Sony a6500 &amp; Canon EOS Rebel XS · NOAA SWPC &amp; Solar Wind Magnetometer Tracking · Bortle 1–2 Dark Sky Field Operations
-          </div>
-</div>
-</article>
-<!-- ================= PROJECT 15: Rocket Test Stand Upgrades & NOx Heater ================= -->
+<!-- ================= PROJECT 16: Rocket Test Stand Upgrades & NOx Thermal Conditioning ================= -->
 <article class="portfolio-item" data-keywords="stand,heater,weld,load_cell,bottle,vapor" data-tags="aerospace fluids mechanical" id="proj-test-stand-improvements">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Nitrous supply bottle heater wrap" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/tank_heater.jpg"/>
+<img alt="Nitrous supply bottle thermal conditioning wrap" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/tank_heater.jpg"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
              [LOAD CELL MOUNT]
@@ -2035,25 +2145,25 @@
 </div>
 </div>
 <div class="portfolio-caption">
-           Nitrous supply bottle heater wrap
+           Nitrous supply bottle thermal conditioning wrap
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Nitrous supply bottle heater wrap" data-src="imager/rocketry_photos/other/tank_heater.jpg" title="Nitrous supply bottle heater wrap" type="button">
-<img alt="Nitrous supply bottle heater wrap" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/tank_heater.jpg"/>
+<button class="portfolio-thumb active" data-cap="Nitrous supply bottle thermal conditioning wrap" data-src="imager/rocketry_photos/other/tank_heater.jpg" title="Nitrous supply bottle thermal conditioning wrap" type="button">
+<img alt="Nitrous supply bottle thermal conditioning wrap" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/tank_heater.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 15.2: Welded structural load cell holder on stand" data-src="imager/rocketry_photos/other/load_cell_weld.jpg" title="Fig 15.2: Welded structural load cell holder on stand" type="button">
-<img alt="Fig 15.2: Welded structural load cell holder on stand" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/load_cell_weld.jpg"/>
+<button class="portfolio-thumb" data-cap="Welded structural load cell holder on stand" data-src="imager/rocketry_photos/other/load_cell_weld.jpg" title="Welded structural load cell holder on stand" type="button">
+<img alt="Welded structural load cell holder on stand" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/load_cell_weld.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 15.3: Post-hotfire thermal evaluation" data-src="imager/rocketry_photos/block2/checking_heat_post_test_block2.JPG" title="Fig 15.3: Post-hotfire thermal evaluation" type="button">
-<img alt="Fig 15.3: Post-hotfire thermal evaluation" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/checking_heat_post_test_block2.JPG"/>
+<button class="portfolio-thumb" data-cap="Post-hotfire thermal evaluation" data-src="imager/rocketry_photos/block2/checking_heat_post_test_block2.JPG" title="Post-hotfire thermal evaluation" type="button">
+<img alt="Post-hotfire thermal evaluation" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/checking_heat_post_test_block2.JPG"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 3
+             Photo 3
             </div>
 </button>
 </div>
@@ -2061,7 +2171,7 @@
 <div class="portfolio-content">
 <div class="portfolio-header">
 <div class="portfolio-title">
-            Rocket Test Stand Upgrades &amp; NOx Heater
+            Rocket Test Stand Upgrades &amp; NOx Thermal Conditioning
            </div>
 <div class="portfolio-meta">
             BYU Rocketry Propulsion Research · Propulsion Team Member · 2025
@@ -2075,7 +2185,7 @@
             Thermodynamics
            </span>
 <span class="tag">
-            MIG Welding
+            TIG/MIG Welding
            </span>
 <span class="tag">
             Two-Phase NOx
@@ -2092,77 +2202,11 @@
           </div>
 </div>
 </article>
-<!-- ================= PROJECT 16: “Deep Space Network” (DSN) Mid-Power Rocket Design, Build & Launch ================= -->
-<article class="portfolio-item" data-keywords="dsn,deep_space,openrocket,1943,midpower" data-tags="aerospace cad" id="proj-dsn-rocket">
-<div class="portfolio-media">
-<div class="portfolio-img-box">
-<img alt="Fig 16.1: DSN rocket launch on AeroTech G-74W (1,943 ft apogee)" data-fallback="imager/ymount.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/DSNlaunch.PNG"/>
-<div class="portfolio-placeholder-img" style="display:none;">
-<strong class="ph-title">
-             [DSN ROCKET]
-            </strong>
-<span class="ph-sub">
-             1,943 ft Apogee Winner
-            </span>
-</div>
-</div>
-<div class="portfolio-caption">
-           Fig 16.1: DSN rocket launch on AeroTech G-74W (1,943 ft apogee)
-          </div>
-<div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 16.1: DSN rocket launch on AeroTech G-74W (1,943 ft apogee)" data-src="imager/rocketry_photos/other/DSNlaunch.PNG" title="Fig 16.1: DSN rocket launch on AeroTech G-74W (1,943 ft apogee)" type="button">
-<img alt="Fig 16.1: DSN rocket launch on AeroTech G-74W (1,943 ft apogee)" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/DSNlaunch.PNG"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 1
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 16.2: DSN on the launch pad prior to flight" data-src="imager/rocketry_photos/other/DSN_on_pad.JPG" title="Fig 16.2: DSN on the launch pad prior to flight" type="button">
-<img alt="Fig 16.2: DSN on the launch pad prior to flight" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/DSN_on_pad.JPG"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 2
-            </div>
-</button>
-</div>
-</div>
-<div class="portfolio-content">
-<div class="portfolio-header">
-<div class="portfolio-title">
-            “Deep Space Network” (DSN) Mid-Power Rocket Design, Build &amp; Launch
-           </div>
-<div class="portfolio-meta">
-            Amateur Rocketry Competition Team · Highest Altitude Award (1,943 ft)
-           </div>
-</div>
-<div class="tag-strip">
-<span class="tag">
-            Aerospace
-           </span>
-<span class="tag">
-            OpenRocket
-           </span>
-<span class="tag">
-            AeroTech G-74W
-           </span>
-<span class="tag">
-            1,943 ft Apogee
-           </span>
-<span class="tag">
-            Award Winner
-           </span>
-</div>
-<p class="portfolio-desc">
-           In my first foray into amateur rocketry, I participated with a team to design, build, and fly a mid-power rocket from scratch. We built “Deep Space Network”, a mid-power rocket flown on an AeroTech G-74W. We won the highest altitude award, at 1,943 ft. I learned that simulations are only as good as you make them—we were aiming for the target altitude of 1,700 ft, so we way overshot. I learned how to use OpenRocket to design and simulate rockets.
-          </p>
-<div class="portfolio-specs">
-           Motor: AeroTech G-74W · Measured Apogee: 1,943 ft (Highest Altitude Award) · OpenRocket Aerodynamic Simulation
-          </div>
-</div>
-</article>
 <!-- ================= PROJECT 17: Cannondale Mountain Bike Rear Shock Rebuild & Custom Tooling ================= -->
 <article class="portfolio-item" data-keywords="bike,shock,cannondale,lefty,damper" data-tags="mechanical fluids" id="proj-bike-shock-rebuild">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Fig 17.1: Internal hydraulic damper teardown &amp; custom spanners" data-fallback="imager/rolling%20sunset.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/shock_rebuild/shock_rebuild.PNG"/>
+<img alt="Internal hydraulic damper teardown &amp; custom spanners" data-fallback="imager/rolling%20sunset.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/shock_rebuild/shock_rebuild.PNG"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
              [SHOCK REBUILD]
@@ -2173,19 +2217,19 @@
 </div>
 </div>
 <div class="portfolio-caption">
-           Fig 17.1: Internal hydraulic damper teardown &amp; custom spanners
+           Internal hydraulic damper teardown &amp; custom spanners
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 17.1: Internal hydraulic damper teardown &amp; custom spanners" data-src="imager/personal_projects/shock_rebuild/shock_rebuild.PNG" title="Fig 17.1: Internal hydraulic damper teardown &amp; custom spanners" type="button">
-<img alt="Fig 17.1: Internal hydraulic damper teardown &amp; custom spanners" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/shock_rebuild/shock_rebuild.PNG"/>
+<button class="portfolio-thumb active" data-cap="Internal hydraulic damper teardown &amp; custom spanners" data-src="imager/personal_projects/shock_rebuild/shock_rebuild.PNG" title="Internal hydraulic damper teardown &amp; custom spanners" type="button">
+<img alt="Internal hydraulic damper teardown &amp; custom spanners" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/shock_rebuild/shock_rebuild.PNG"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 17.2: Rebuilt damper installed on Cannondale Lefty 3" data-src="imager/personal_projects/shock_rebuild/shock_installed.jpg" title="Fig 17.2: Rebuilt damper installed on Cannondale Lefty 3" type="button">
-<img alt="Fig 17.2: Rebuilt damper installed on Cannondale Lefty 3" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/shock_rebuild/shock_installed.jpg"/>
+<button class="portfolio-thumb" data-cap="Rebuilt damper installed on Cannondale Lefty 3" data-src="imager/personal_projects/shock_rebuild/shock_installed.jpg" title="Rebuilt damper installed on Cannondale Lefty 3" type="button">
+<img alt="Rebuilt damper installed on Cannondale Lefty 3" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/shock_rebuild/shock_installed.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
             </div>
 </button>
 </div>
@@ -2224,153 +2268,11 @@
           </div>
 </div>
 </article>
-<!-- ================= PROJECT 18: Block 1 Hybrid Rocket Motor Testing & High-Speed Analysis ================= -->
-<article class="portfolio-item" data-keywords="block1,block_1,nozzle,graphite,eject" data-tags="aerospace propulsion testing" id="proj-block1-testing">
+<!-- ================= PROJECT 18: Oculus Quest Next-Generation VR Headset Redesign (25 hrs) [FEATURED] ================= -->
+<article class="portfolio-item" data-keywords="oculus,quest,vr,headset,exploded" data-tags="featured cad mechanical" id="proj-oculus-quest-cad">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Fig 18.1: Block 1 hybrid motor static test fire" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block1/block1fire.png"/>
-<div class="portfolio-placeholder-img" style="display:none;">
-<strong class="ph-title">
-             [BLOCK 1 HOTFIRE]
-            </strong>
-<span class="ph-sub">
-             Early Hybrid Test Campaign
-            </span>
-</div>
-</div>
-<div class="portfolio-caption">
-           Fig 18.1: Block 1 hybrid motor static test fire
-          </div>
-<div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 18.1: Block 1 hybrid motor static test fire" data-src="imager/rocketry_photos/block1/block1fire.png" title="Fig 18.1: Block 1 hybrid motor static test fire" type="button">
-<img alt="Fig 18.1: Block 1 hybrid motor static test fire" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block1/block1fire.png"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 1
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 18.2: Fracture inspection of ejected pure-graphite nozzle" data-src="imager/rocketry_photos/block2/exploded_graphite_nozzle.png" title="Fig 18.2: Fracture inspection of ejected pure-graphite nozzle" type="button">
-<img alt="Fig 18.2: Fracture inspection of ejected pure-graphite nozzle" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/exploded_graphite_nozzle.png"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 2
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 18.3: Early propulsion team at the static test bunker" data-src="imager/rocketry_photos/block1/groupblock1.JPG" title="Fig 18.3: Early propulsion team at the static test bunker" type="button">
-<img alt="Fig 18.3: Early propulsion team at the static test bunker" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block1/groupblock1.JPG"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 3
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 18.4: Propulsion hardware setup on Block 1" data-src="imager/rocketry_photos/block1/poseblock1.JPG" title="Fig 18.4: Propulsion hardware setup on Block 1" type="button">
-<img alt="Fig 18.4: Propulsion hardware setup on Block 1" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block1/poseblock1.JPG"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 4
-            </div>
-</button>
-</div>
-</div>
-<div class="portfolio-content">
-<div class="portfolio-header">
-<div class="portfolio-title">
-            Block 1 Hybrid Rocket Motor Testing &amp; High-Speed Analysis
-           </div>
-<div class="portfolio-meta">
-            BYU Rocketry Propulsion Research · Test Operations &amp; Diagnostics · 2025
-           </div>
-</div>
-<div class="tag-strip">
-<span class="tag">
-            Aerospace
-           </span>
-<span class="tag">
-            Propulsion
-           </span>
-<span class="tag">
-            High-Speed Video
-           </span>
-<span class="tag">
-            Graphite Nozzle
-           </span>
-<span class="tag">
-            Test SOPs
-           </span>
-</div>
-<p class="portfolio-desc">
-           When I first joined propulsion research, I helped with propulsion system setup and high-speed camera setup and analysis. Our combustion efficiencies at this point were awful, but we were learning how to operate the system safely. This meant we did eject the all-graphite nozzle once, which helped us learn about how procedures and process documentation are so important.
-          </p>
-<div class="portfolio-specs">
-           Focus: High-Speed Optical Diagnostics · Graphite Nozzle Retention Root-Cause Analysis · Pre-Test Procedure Standardization
-          </div>
-</div>
-</article>
-
-<!-- ================= PROJECT 20: Folding Camera Drone with 3-Axis Gimbal System (40 hrs) ================= -->
-<article class="portfolio-item" data-keywords="drone,gimbal,quadcopter,folding" data-tags="cad mechanical aerospace" id="proj-folding-camera-drone">
-<div class="portfolio-media">
-<div class="portfolio-img-box">
-<img alt="Fig 20.1: Quadcopter folding kinematics &amp; specification sheet" data-fallback="imager/Aura.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/drone_info.png"/>
-<div class="portfolio-placeholder-img" style="display:none;">
-<strong class="ph-title">
-             [FOLDING DRONE CAD]
-            </strong>
-<span class="ph-sub">
-             Final Assembly Render
-            </span>
-</div>
-</div>
-<div class="portfolio-caption">
-           Fig 20.1: Quadcopter folding kinematics &amp; specification sheet
-          </div>
-<div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 20.1: Quadcopter folding kinematics &amp; specification sheet" data-src="imager/personal_projects/cad%20projects/drone_info.png" title="Fig 20.1: Quadcopter folding kinematics &amp; specification sheet" type="button">
-<img alt="Fig 20.1: Quadcopter folding kinematics &amp; specification sheet" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/drone_info.png"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 1
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 20.2: 3-axis gimbal &amp; injection-molded internal ribs" data-src="imager/personal_projects/cad%20projects/drone_detail.png" title="Fig 20.2: 3-axis gimbal &amp; injection-molded internal ribs" type="button">
-<img alt="Fig 20.2: 3-axis gimbal &amp; injection-molded internal ribs" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/drone_detail.png"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 2
-            </div>
-</button>
-</div>
-</div>
-<div class="portfolio-content">
-<div class="portfolio-header">
-<div class="portfolio-title">
-            Folding Camera Drone with 3-Axis Gimbal System (40 hrs)
-           </div>
-<div class="portfolio-meta">
-            BYU CAD Program · Modern Drone Team Project Lead
-           </div>
-</div>
-<div class="tag-strip">
-<span class="tag">
-            CAD
-           </span>
-<span class="tag">
-            SolidWorks
-           </span>
-<span class="tag">
-            Injection Molding DFM
-           </span>
-<span class="tag">
-            Kinematics
-           </span>
-</div>
-<p class="portfolio-desc">
-           Led a student CAD design team to develop a compact, high-endurance folding quadcopter aimed at outdoor adventurers. Designed folding arm linkages that collapse flush into the fuselage, an internal structural ribbing matrix optimized for injection molding (uniform 2.5mm wall thicknesses, 1.5° draft angles), and a 3-axis stabilized camera gimbal housing dual wide and telephoto lenses. Managed CAD master assemblies, corrected team interferences, and produced photorealistic contextual renderings.
-          </p>
-<div class="portfolio-specs">
-           Tooling: SolidWorks · 40 Project Hours · Full Assembly Interference Checked · DFM Verified
-          </div>
-</div>
-</article>
-<!-- ================= PROJECT 21: Oculus Quest Next-Generation VR Headset Redesign (25 hrs) ================= -->
-<article class="portfolio-item" data-keywords="oculus,quest,vr,headset,exploded" data-tags="cad mechanical" id="proj-oculus-quest-cad">
-<div class="portfolio-media">
-<div class="portfolio-img-box">
-<img alt="Fig 21.1: Next-gen VR headset &amp; controller hero rendering" data-fallback="imager/ymount.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/headset_hero.png"/>
+<img alt="Next-gen VR headset &amp; controller hero rendering" data-fallback="imager/ymount.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/headset_hero.png"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
              [VR HEADSET CAD]
@@ -2381,31 +2283,31 @@
 </div>
 </div>
 <div class="portfolio-caption">
-           Fig 21.1: Next-gen VR headset &amp; controller hero rendering
+           Next-gen VR headset &amp; controller hero rendering
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 21.1: Next-gen VR headset &amp; controller hero rendering" data-src="imager/personal_projects/cad%20projects/headset_hero.png" title="Fig 21.1: Next-gen VR headset &amp; controller hero rendering" type="button">
-<img alt="Fig 21.1: Next-gen VR headset &amp; controller hero rendering" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/headset_hero.png"/>
+<button class="portfolio-thumb active" data-cap="Next-gen VR headset &amp; controller hero rendering" data-src="imager/personal_projects/cad%20projects/headset_hero.png" title="Next-gen VR headset &amp; controller hero rendering" type="button">
+<img alt="Next-gen VR headset &amp; controller hero rendering" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/headset_hero.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 21.2: Exploded view of 20+ internal mechanical parts" data-src="imager/personal_projects/cad%20projects/headset_detail.png" title="Fig 21.2: Exploded view of 20+ internal mechanical parts" type="button">
-<img alt="Fig 21.2: Exploded view of 20+ internal mechanical parts" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/headset_detail.png"/>
+<button class="portfolio-thumb" data-cap="Exploded view of 20+ internal mechanical parts" data-src="imager/personal_projects/cad%20projects/headset_detail.png" title="Exploded view of 20+ internal mechanical parts" type="button">
+<img alt="Exploded view of 20+ internal mechanical parts" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/headset_detail.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 21.3: Class-A ergonomic surfacing &amp; facial curvature" data-src="imager/personal_projects/cad%20projects/headset_design.png" title="Fig 21.3: Class-A ergonomic surfacing &amp; facial curvature" type="button">
-<img alt="Fig 21.3: Class-A ergonomic surfacing &amp; facial curvature" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/headset_design.png"/>
+<button class="portfolio-thumb" data-cap="Class-A ergonomic surfacing &amp; facial curvature" data-src="imager/personal_projects/cad%20projects/headset_design.png" title="Class-A ergonomic surfacing &amp; facial curvature" type="button">
+<img alt="Class-A ergonomic surfacing &amp; facial curvature" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/headset_design.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 3
+             Photo 3
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 21.4: CAD process planning &amp; production drawing sheet" data-src="imager/personal_projects/cad%20projects/headset_info.png" title="Fig 21.4: CAD process planning &amp; production drawing sheet" type="button">
-<img alt="Fig 21.4: CAD process planning &amp; production drawing sheet" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/headset_info.png"/>
+<button class="portfolio-thumb" data-cap="CAD process planning &amp; production drawing sheet" data-src="imager/personal_projects/cad%20projects/headset_info.png" title="CAD process planning &amp; production drawing sheet" type="button">
+<img alt="CAD process planning &amp; production drawing sheet" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/headset_info.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 4
+             Photo 4
             </div>
 </button>
 </div>
@@ -2420,6 +2322,9 @@
            </div>
 </div>
 <div class="tag-strip">
+<span class="tag tag-featured">
+            Featured
+           </span>
 <span class="tag">
             CAD
            </span>
@@ -2441,34 +2346,34 @@
           </div>
 </div>
 </article>
-<!-- ================= PROJECT 22: Transparent GOX-Acrylic Hybrid Motor Demonstrator ================= -->
-<article class="portfolio-item" data-keywords="acrylic,gox,demonstrator,transparent" data-tags="aerospace propulsion fluids" id="proj-gox-acrylic-demo">
+<!-- ================= PROJECT 19: Air-Powered Engine (Pipsqueak Engine) ================= -->
+<article class="portfolio-item" data-keywords="pipsqueak,air,cylinder,machining,lathe,mill,manufacturing" data-tags="mechanical cad" id="proj-pipsqueak-engine">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Fig 22.1: Transparent acrylic fuel grain combustion demonstrator" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/demomotor.png"/>
+<img alt="Machined pneumatic cylinder and valve block" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/pipsqueak_engine/pipsqueak_cyl.jpg"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
-             [GOX-ACRYLIC MOTOR]
+             [PIPSQUEAK ENGINE]
             </strong>
 <span class="ph-sub">
-             Optical Flame Testbed
+             Single-Cylinder Pneumatic
             </span>
 </div>
 </div>
 <div class="portfolio-caption">
-           Fig 22.1: Transparent acrylic fuel grain combustion demonstrator
+           Machined pneumatic cylinder and valve block
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 22.1: Transparent acrylic fuel grain combustion demonstrator" data-src="imager/rocketry_photos/other/demomotor.png" title="Fig 22.1: Transparent acrylic fuel grain combustion demonstrator" type="button">
-<img alt="Fig 22.1: Transparent acrylic fuel grain combustion demonstrator" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/demomotor.png"/>
+<button class="portfolio-thumb active" data-cap="Machined pneumatic cylinder and valve block" data-src="imager/personal_projects/pipsqueak_engine/pipsqueak_cyl.jpg" title="Machined pneumatic cylinder and valve block" type="button">
+<img alt="Machined pneumatic cylinder and valve block" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/pipsqueak_engine/pipsqueak_cyl.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 22.2: Borescope inspection of feed line &amp; injector orifice" data-src="imager/rocketry_photos/block2/FOD_issue.png" title="Fig 22.2: Borescope inspection of feed line &amp; injector orifice" type="button">
-<img alt="Fig 22.2: Borescope inspection of feed line &amp; injector orifice" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/FOD_issue.png"/>
+<button class="portfolio-thumb" data-cap="Turned flywheel &amp; piston assembly" data-src="imager/personal_projects/pipsqueak_engine/pipsqueak_flywheel.jpg" title="Turned flywheel &amp; piston assembly" type="button">
+<img alt="Turned flywheel &amp; piston assembly" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/pipsqueak_engine/pipsqueak_flywheel.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
             </div>
 </button>
 </div>
@@ -2476,73 +2381,10 @@
 <div class="portfolio-content">
 <div class="portfolio-header">
 <div class="portfolio-title">
-            Transparent GOX-Acrylic Hybrid Motor Demonstrator
+            Air-Powered Engine (Pipsqueak Engine)
            </div>
 <div class="portfolio-meta">
-            BYU Rocketry Propulsion Research · Head of Fluids Team · 2025
-           </div>
-</div>
-<div class="tag-strip">
-<span class="tag">
-            Aerospace
-           </span>
-<span class="tag">
-            Optical Diagnostics
-           </span>
-<span class="tag">
-            Swagelok
-           </span>
-<span class="tag">
-            High-Speed Video
-           </span>
-</div>
-<p class="portfolio-desc">
-           Constructed a miniature demonstration hybrid motor based on NASA and Northrop Grumman designs utilizing gaseous oxygen (GOX) and an optically clear cast acrylic fuel grain. Because acrylic is transparent, researchers and students can visually observe flame kernel ignition, diffusion boundary layer formation, and fuel regression from oxidizer-rich to fuel-rich conditions in real time. Captured high-speed video frames during test fires to map fuel regression rates and evaluate new grain geometries.
-          </p>
-<div class="portfolio-specs">
-           Architecture: GOX + Cast Acrylic · Oxygen-Cleaned Swagelok Run Lines · High-Speed Optical Flame Diagnostics
-          </div>
-</div>
-</article>
-<!-- ================= PROJECT 23: 140-Kip Hydraulic Press Commissioning & Operations Manual ================= -->
-<article class="portfolio-item" data-keywords="press,140kip,hydraulic,anvil,metallurgy" data-tags="mechanical" id="proj-hydraulic-press-140kip">
-<div class="portfolio-media">
-<div class="portfolio-img-box">
-<img alt="Fig 23.1: High-pressure hydraulic machinery setup" data-fallback="imager/telephone%20pole.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/shock_rebuild/shock_installed.jpg"/>
-<div class="portfolio-placeholder-img" style="display:none;">
-<strong class="ph-title">
-             [140-KIP PRESS]
-            </strong>
-<span class="ph-sub">
-             Powder Metallurgy Setup
-            </span>
-</div>
-</div>
-<div class="portfolio-caption">
-           Fig 23.1: High-pressure hydraulic machinery setup
-          </div>
-<div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 23.1: High-pressure hydraulic machinery setup" data-src="imager/personal_projects/shock_rebuild/shock_installed.jpg" title="Fig 23.1: High-pressure hydraulic machinery setup" type="button">
-<img alt="Fig 23.1: High-pressure hydraulic machinery setup" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/shock_rebuild/shock_installed.jpg"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 1
-            </div>
-</button>
-<button class="portfolio-thumb" data-cap="Fig 23.2: Load frame tooling &amp; materials testing" data-src="imager/rocketry_photos/block2/bolt_pullout_testing.png" title="Fig 23.2: Load frame tooling &amp; materials testing" type="button">
-<img alt="Fig 23.2: Load frame tooling &amp; materials testing" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/bolt_pullout_testing.png"/>
-<div class="thumb-fallback" style="display:none;">
-             Fig 2
-            </div>
-</button>
-</div>
-</div>
-<div class="portfolio-content">
-<div class="portfolio-header">
-<div class="portfolio-title">
-            140-Kip Hydraulic Press Commissioning &amp; Operations Manual
-           </div>
-<div class="portfolio-meta">
-            BYU Engineering Department · Technical Trainer · May 2025 – Present
+            BYU Mechanical Engineering · Manufacturing Processes · Fall 2025
            </div>
 </div>
 <div class="tag-strip">
@@ -2550,28 +2392,94 @@
             Mechanical
            </span>
 <span class="tag">
-            Tool Steel Heat Treat
+            Machining
            </span>
 <span class="tag">
-            Hydraulics
+            DFM
            </span>
 <span class="tag">
-            Technical Writing
+            Pneumatics
+           </span>
+<span class="tag">
+            Lathe &amp; Mill
            </span>
 </div>
 <p class="portfolio-desc">
-           Commissioned a 140,000 lbf industrial hydraulic press for powder metallurgy and materials compression testing. Machined and heat-treated custom compression anvils to specified Rockwell C hardness and programmed pressure control routines. Authored a comprehensive 12-page operations and process safety manual currently utilized by over 140 mechanical engineering students per semester for core curriculum lab work.
+           For my manufacturing processes class, we built an air-powered single cylinder engine in order to learn about different manufacturing processes. I learned about DFM and got practice machining components.
           </p>
 <div class="portfolio-specs">
-           Output: 140,000 lbf Press Restored · Custom Heat-Treated Tool Steel Anvils · 12-Page Lab SOP Manual
+           Processes: Manual Lathe Turning · Vertical Milling · Precision Bore Tolerancing · Pneumatic Valve Timing · DFM
           </div>
 </div>
 </article>
-<!-- ================= PROJECT 24: Nuclear Flow Demonstrator 3D Modeling & Manufacturing Prints ================= -->
+<!-- ================= PROJECT 20: Cincinnati Union Station Lego Architecture Model (25 hrs) ================= -->
+<article class="portfolio-item" data-keywords="lego,cincinnati,union_station,parametric" data-tags="cad" id="proj-union-station-lego">
+<div class="portfolio-media">
+<div class="portfolio-img-box">
+<img alt="Art Deco limestone rotunda Lego architecture assembly" data-fallback="imager/belay.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/lego_architecture.png"/>
+<div class="portfolio-placeholder-img" style="display:none;">
+<strong class="ph-title">
+             [PARAMETRIC LEGO]
+            </strong>
+<span class="ph-sub">
+             Cincinnati Union Station
+            </span>
+</div>
+</div>
+<div class="portfolio-caption">
+           Art Deco limestone rotunda Lego architecture assembly
+          </div>
+<div class="portfolio-thumbs">
+<button class="portfolio-thumb active" data-cap="Art Deco limestone rotunda Lego architecture assembly" data-src="imager/personal_projects/cad%20projects/lego_architecture.png" title="Art Deco limestone rotunda Lego architecture assembly" type="button">
+<img alt="Art Deco limestone rotunda Lego architecture assembly" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/lego_architecture.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 1
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="Parametric brick equation &amp; stud tolerancing" data-src="imager/personal_projects/cad%20projects/slideruler.png" title="Parametric brick equation &amp; stud tolerancing" type="button">
+<img alt="Parametric brick equation &amp; stud tolerancing" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/slideruler.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 2
+            </div>
+</button>
+</div>
+</div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">
+            Cincinnati Union Station Lego Architecture Model (25 hrs)
+           </div>
+<div class="portfolio-meta">
+            BYU CAD Program · Parametric Design Project
+           </div>
+</div>
+<div class="tag-strip">
+<span class="tag">
+            CAD
+           </span>
+<span class="tag">
+            Parametric Modeling
+           </span>
+<span class="tag">
+            Architecture
+           </span>
+<span class="tag">
+            SolidWorks
+           </span>
+</div>
+<p class="portfolio-desc">
+           Converted Cincinnati's historic Art Deco Union Terminal into a buildable modular Lego Architecture product. Developed parametric equations and design tables in SolidWorks to generate custom brick geometries, interlocking studs, and curved arch profiles matching the 1933 landmark's limestone half-dome rotunda.
+          </p>
+<div class="portfolio-specs">
+           Modeling: SolidWorks Parametric Tables · Custom Stud Mates · 25 Project Hours
+          </div>
+</div>
+</article>
+<!-- ================= PROJECT 21: Nuclear Flow Demonstrator 3D Modeling & Manufacturing Prints ================= -->
 <article class="portfolio-item" data-keywords="micronuclear,reactor,draftsman,demonstrator" data-tags="nuclear cad" id="proj-micronuclear-cad">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Fig 24.1: Technical parametric tooling &amp; drawing scale" data-fallback="imager/rocks.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/slideruler.png"/>
+<img alt="Technical parametric tooling &amp; drawing scale" data-fallback="imager/rocks.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/slideruler.png"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
              [NUCLEAR CAD]
@@ -2582,19 +2490,19 @@
 </div>
 </div>
 <div class="portfolio-caption">
-           Fig 24.1: Technical parametric tooling &amp; drawing scale
+           Technical parametric tooling &amp; drawing scale
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 24.1: Technical parametric tooling &amp; drawing scale" data-src="imager/personal_projects/cad%20projects/slideruler.png" title="Fig 24.1: Technical parametric tooling &amp; drawing scale" type="button">
-<img alt="Fig 24.1: Technical parametric tooling &amp; drawing scale" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/slideruler.png"/>
+<button class="portfolio-thumb active" data-cap="Technical parametric tooling &amp; drawing scale" data-src="imager/personal_projects/cad%20projects/slideruler.png" title="Technical parametric tooling &amp; drawing scale" type="button">
+<img alt="Technical parametric tooling &amp; drawing scale" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/slideruler.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 24.2: Full-scale system flow assembly CAD model" data-src="imager/rocketry_photos/block2/block2overallcad.png" title="Fig 24.2: Full-scale system flow assembly CAD model" type="button">
-<img alt="Fig 24.2: Full-scale system flow assembly CAD model" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/block2overallcad.png"/>
+<button class="portfolio-thumb" data-cap="Full-scale system flow assembly CAD model" data-src="imager/rocketry_photos/block2/block2overallcad.png" title="Full-scale system flow assembly CAD model" type="button">
+<img alt="Full-scale system flow assembly CAD model" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/block2/block2overallcad.png"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
             </div>
 </button>
 </div>
@@ -2633,34 +2541,34 @@
           </div>
 </div>
 </article>
-<!-- ================= PROJECT 25: Cincinnati Union Station Lego Architecture Model (25 hrs) ================= -->
-<article class="portfolio-item" data-keywords="lego,cincinnati,union_station,parametric" data-tags="cad" id="proj-union-station-lego">
+<!-- ================= PROJECT 22: “Deep Space Network” (DSN) Mid-Power Rocket Design, Build & Launch ================= -->
+<article class="portfolio-item" data-keywords="dsn,deep_space,openrocket,1943,midpower" data-tags="aerospace cad" id="proj-dsn-rocket">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Fig 25.1: Art Deco limestone rotunda Lego architecture assembly" data-fallback="imager/belay.jpg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/lego_architecture.png"/>
+<img alt="DSN rocket launch on AeroTech G-74W (1,943 ft apogee)" data-fallback="imager/ymount.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/DSNlaunch.PNG"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
-             [PARAMETRIC LEGO]
+             [DSN ROCKET]
             </strong>
 <span class="ph-sub">
-             Cincinnati Union Station
+             1,943 ft Apogee Winner
             </span>
 </div>
 </div>
 <div class="portfolio-caption">
-           Fig 25.1: Art Deco limestone rotunda Lego architecture assembly
+           DSN rocket launch on AeroTech G-74W (1,943 ft apogee)
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 25.1: Art Deco limestone rotunda Lego architecture assembly" data-src="imager/personal_projects/cad%20projects/lego_architecture.png" title="Fig 25.1: Art Deco limestone rotunda Lego architecture assembly" type="button">
-<img alt="Fig 25.1: Art Deco limestone rotunda Lego architecture assembly" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/lego_architecture.png"/>
+<button class="portfolio-thumb active" data-cap="DSN rocket launch on AeroTech G-74W (1,943 ft apogee)" data-src="imager/rocketry_photos/other/DSNlaunch.PNG" title="DSN rocket launch on AeroTech G-74W (1,943 ft apogee)" type="button">
+<img alt="DSN rocket launch on AeroTech G-74W (1,943 ft apogee)" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/DSNlaunch.PNG"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 25.2: Parametric brick equation &amp; stud tolerancing" data-src="imager/personal_projects/cad%20projects/slideruler.png" title="Fig 25.2: Parametric brick equation &amp; stud tolerancing" type="button">
-<img alt="Fig 25.2: Parametric brick equation &amp; stud tolerancing" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/slideruler.png"/>
+<button class="portfolio-thumb" data-cap="DSN on the launch pad prior to flight" data-src="imager/rocketry_photos/other/DSN_on_pad.JPG" title="DSN on the launch pad prior to flight" type="button">
+<img alt="DSN on the launch pad prior to flight" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/other/DSN_on_pad.JPG"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
             </div>
 </button>
 </div>
@@ -2668,10 +2576,76 @@
 <div class="portfolio-content">
 <div class="portfolio-header">
 <div class="portfolio-title">
-            Cincinnati Union Station Lego Architecture Model (25 hrs)
+            “Deep Space Network” (DSN) Mid-Power Rocket Design, Build &amp; Launch
            </div>
 <div class="portfolio-meta">
-            BYU CAD Program · Parametric Design Project
+            Amateur Rocketry Competition Team · Highest Altitude Award (1,943 ft)
+           </div>
+</div>
+<div class="tag-strip">
+<span class="tag">
+            Aerospace
+           </span>
+<span class="tag">
+            OpenRocket
+           </span>
+<span class="tag">
+            AeroTech G-74W
+           </span>
+<span class="tag">
+            1,943 ft Apogee
+           </span>
+<span class="tag">
+            Award Winner
+           </span>
+</div>
+<p class="portfolio-desc">
+           In my first foray into amateur rocketry, I participated with a team to design, build, and fly a mid-power rocket from scratch. We built “Deep Space Network”, a mid-power rocket flown on an AeroTech G-74W. We won the highest altitude award, at 1,943 ft. I learned that simulations are only as good as you make them—we were aiming for the target altitude of 1,700 ft, so we way overshot. I learned how to use OpenRocket to design and simulate rockets.
+          </p>
+<div class="portfolio-specs">
+           Motor: AeroTech G-74W · Measured Apogee: 1,943 ft (Highest Altitude Award) · OpenRocket Aerodynamic Simulation
+          </div>
+</div>
+</article>
+<!-- ================= PROJECT 23: Folding Camera Drone with 3-Axis Gimbal System (40 hrs) ================= -->
+<article class="portfolio-item" data-keywords="drone,gimbal,quadcopter,folding" data-tags="cad mechanical aerospace" id="proj-folding-camera-drone">
+<div class="portfolio-media">
+<div class="portfolio-img-box">
+<img alt="Quadcopter folding kinematics &amp; specification sheet" data-fallback="imager/Aura.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/drone_info.png"/>
+<div class="portfolio-placeholder-img" style="display:none;">
+<strong class="ph-title">
+             [FOLDING DRONE CAD]
+            </strong>
+<span class="ph-sub">
+             Final Assembly Render
+            </span>
+</div>
+</div>
+<div class="portfolio-caption">
+           Quadcopter folding kinematics &amp; specification sheet
+          </div>
+<div class="portfolio-thumbs">
+<button class="portfolio-thumb active" data-cap="Quadcopter folding kinematics &amp; specification sheet" data-src="imager/personal_projects/cad%20projects/drone_info.png" title="Quadcopter folding kinematics &amp; specification sheet" type="button">
+<img alt="Quadcopter folding kinematics &amp; specification sheet" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/drone_info.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 1
+            </div>
+</button>
+<button class="portfolio-thumb" data-cap="3-axis gimbal &amp; injection-molded internal ribs" data-src="imager/personal_projects/cad%20projects/drone_detail.png" title="3-axis gimbal &amp; injection-molded internal ribs" type="button">
+<img alt="3-axis gimbal &amp; injection-molded internal ribs" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cad%20projects/drone_detail.png"/>
+<div class="thumb-fallback" style="display:none;">
+             Photo 2
+            </div>
+</button>
+</div>
+</div>
+<div class="portfolio-content">
+<div class="portfolio-header">
+<div class="portfolio-title">
+            Folding Camera Drone with 3-Axis Gimbal System (40 hrs)
+           </div>
+<div class="portfolio-meta">
+            BYU CAD Program · Modern Drone Team Project Lead
            </div>
 </div>
 <div class="tag-strip">
@@ -2679,28 +2653,28 @@
             CAD
            </span>
 <span class="tag">
-            Parametric Modeling
-           </span>
-<span class="tag">
-            Architecture
-           </span>
-<span class="tag">
             SolidWorks
+           </span>
+<span class="tag">
+            Injection Molding DFM
+           </span>
+<span class="tag">
+            Kinematics
            </span>
 </div>
 <p class="portfolio-desc">
-           Converted Cincinnati's historic Art Deco Union Terminal into a buildable modular Lego Architecture product. Developed parametric equations and design tables in SolidWorks to generate custom brick geometries, interlocking studs, and curved arch profiles matching the 1933 landmark's limestone half-dome rotunda.
+           Led a student CAD design team to develop a compact, high-endurance folding quadcopter aimed at outdoor adventurers. Designed folding arm linkages that collapse flush into the fuselage, an internal structural ribbing matrix optimized for injection molding (uniform 2.5mm wall thicknesses, 1.5° draft angles), and a 3-axis stabilized camera gimbal housing dual wide and telephoto lenses. Managed CAD master assemblies, corrected team interferences, and produced photorealistic contextual renderings.
           </p>
 <div class="portfolio-specs">
-           Modeling: SolidWorks Parametric Tables · Custom Stud Mates · 25 Project Hours
+           Tooling: SolidWorks · 40 Project Hours · Full Assembly Interference Checked · DFM Verified
           </div>
 </div>
 </article>
-<!-- ================= PROJECT 26: Cricut Vinyl Cutter Reverse-Engineering & Firmware Reflash ================= -->
+<!-- ================= PROJECT 24: Cricut Vinyl Cutter Reverse-Engineering & Firmware Reflash ================= -->
 <article class="portfolio-item" data-keywords="cricut,vinyl,avr,avrdude,sticker" data-tags="mechanical" id="proj-cricut-rebuild">
 <div class="portfolio-media">
 <div class="portfolio-img-box">
-<img alt="Fig 26.1: Custom NASA Mars rover stickers cut on rebuilt machine" data-fallback="imager/Rope.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cricut/stickers.jpg"/>
+<img alt="Custom NASA Mars rover stickers cut on rebuilt machine" data-fallback="imager/Rope.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cricut/stickers.jpg"/>
 <div class="portfolio-placeholder-img" style="display:none;">
 <strong class="ph-title">
              [HARDWARE REBUILD]
@@ -2711,19 +2685,19 @@
 </div>
 </div>
 <div class="portfolio-caption">
-           Fig 26.1: Custom NASA Mars rover stickers cut on rebuilt machine
+           Custom NASA Mars rover stickers cut on rebuilt machine
           </div>
 <div class="portfolio-thumbs">
-<button class="portfolio-thumb active" data-cap="Fig 26.1: Custom NASA Mars rover stickers cut on rebuilt machine" data-src="imager/personal_projects/cricut/stickers.jpg" title="Fig 26.1: Custom NASA Mars rover stickers cut on rebuilt machine" type="button">
-<img alt="Fig 26.1: Custom NASA Mars rover stickers cut on rebuilt machine" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cricut/stickers.jpg"/>
+<button class="portfolio-thumb active" data-cap="Custom NASA Mars rover stickers cut on rebuilt machine" data-src="imager/personal_projects/cricut/stickers.jpg" title="Custom NASA Mars rover stickers cut on rebuilt machine" type="button">
+<img alt="Custom NASA Mars rover stickers cut on rebuilt machine" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cricut/stickers.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 1
+             Photo 1
             </div>
 </button>
-<button class="portfolio-thumb" data-cap="Fig 26.2: Reassembled gantry mechanism &amp; AVR ISP programming" data-src="imager/personal_projects/cricut/cricut_reassembly.jpg" title="Fig 26.2: Reassembled gantry mechanism &amp; AVR ISP programming" type="button">
-<img alt="Fig 26.2: Reassembled gantry mechanism &amp; AVR ISP programming" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cricut/cricut_reassembly.jpg"/>
+<button class="portfolio-thumb" data-cap="Reassembled gantry mechanism &amp; AVR ISP programming" data-src="imager/personal_projects/cricut/cricut_reassembly.jpg" title="Reassembled gantry mechanism &amp; AVR ISP programming" type="button">
+<img alt="Reassembled gantry mechanism &amp; AVR ISP programming" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/cricut/cricut_reassembly.jpg"/>
 <div class="thumb-fallback" style="display:none;">
-             Fig 2
+             Photo 2
             </div>
 </button>
 </div>
@@ -2759,6 +2733,158 @@
           </div>
 </div>
 </article>
+<!-- ================= UNLISTED / ARCHIVED PROJECTS ================= -->
+<!-- ARCHIVED: Aurora Chasing & Space Weather Astrophotography
+        <article class="portfolio-item" data-keywords="aurora,milkyway,astro,night,sky,stars" data-tags="aerospace" id="proj-aurora-chasing">
+         <div class="portfolio-media">
+          <div class="portfolio-img-box">
+           <img alt="Purple &amp; red oxygen emission auroral pillars" data-fallback="imager/Aurora.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/aurora_chasing/aurora_purple.jpg"/>
+           <div class="portfolio-placeholder-img" style="display:none;">
+            <strong class="ph-title">
+             [MID-LATITUDE AURORA]
+            </strong>
+            <span class="ph-sub">
+             Coronal Mass Ejection Event
+            </span>
+           </div>
+          </div>
+          <div class="portfolio-caption">
+           Purple &amp; red oxygen emission auroral pillars
+          </div>
+          <div class="portfolio-thumbs">
+           <button class="portfolio-thumb active" data-cap="Purple &amp; red oxygen emission auroral pillars" data-src="imager/personal_projects/aurora_chasing/aurora_purple.jpg" title="Purple &amp; red oxygen emission auroral pillars" type="button">
+            <img alt="Purple &amp; red oxygen emission auroral pillars" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/aurora_chasing/aurora_purple.jpg"/>
+            <div class="thumb-fallback" style="display:none;">
+             Photo 1
+            </div>
+           </button>
+           <button class="portfolio-thumb" data-cap="Vibrant green/teal mid-latitude aurora arc" data-src="imager/personal_projects/aurora_chasing/aurora_teal.jpg" title="Vibrant green/teal mid-latitude aurora arc" type="button">
+            <img alt="Vibrant green/teal mid-latitude aurora arc" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/aurora_chasing/aurora_teal.jpg"/>
+            <div class="thumb-fallback" style="display:none;">
+             Photo 2
+            </div>
+           </button>
+           <button class="portfolio-thumb" data-cap="Deep red high-altitude auroral storm" data-src="imager/personal_projects/aurora_chasing/aurora_red.jpg" title="Deep red high-altitude auroral storm" type="button">
+            <img alt="Deep red high-altitude auroral storm" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/personal_projects/aurora_chasing/aurora_red.jpg"/>
+            <div class="thumb-fallback" style="display:none;">
+             Photo 3
+            </div>
+           </button>
+          </div>
+         </div>
+         <div class="portfolio-content">
+          <div class="portfolio-header">
+           <div class="portfolio-title">
+            Aurora Chasing &amp; Space Weather Astrophotography
+           </div>
+           <div class="portfolio-meta">
+            Space Weather Monitoring &amp; Low-Bortle Photography · 2022 – Present
+           </div>
+          </div>
+          <div class="tag-strip">
+           <span class="tag">
+            Astrophotography
+           </span>
+           <span class="tag">
+            Space Weather
+           </span>
+           <span class="tag">
+            CME Forecasting
+           </span>
+           <span class="tag">
+            Sony a6500
+           </span>
+          </div>
+          <p class="portfolio-desc">
+           Since 2022, I have been chasing and photographing auroral events. I used a Canon EOS Rebel XS to start and now use a Sony a6500. To catch aurora at mid-altitude, you have to monitor space weather for high-energy coronal mass ejections and watch NOAA SWPC and 3rd-party predictions. You then have to go to low-Bortle areas for minimal light pollution with little warning. It is a fun hobby and even if the aurora don’t show, you can do normal astrophotography.
+          </p>
+          <div class="portfolio-specs">
+           Equipment: Sony a6500 &amp; Canon EOS Rebel XS · NOAA SWPC &amp; Solar Wind Magnetometer Tracking · Bortle 1–2 Dark Sky Field Operations
+          </div>
+         </div>
+        </article>
+        
+        -->
+<!-- ARCHIVED: Propulsion Research Organizational & Systems Management Overhaul
+        <article class="portfolio-item" data-keywords="org,management,tracking,trl,mrl,chart,president" data-tags="aerospace leadership" id="proj-propulsion-org-management">
+         <div class="portfolio-media">
+          <div class="portfolio-img-box">
+           <img alt="Reorganized team hierarchy &amp; chain of command" data-fallback="imager/View%20from%20rock%20canyon.JPG" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/leadership/organizationalrestructure.png"/>
+           <div class="portfolio-placeholder-img" style="display:none;">
+            <strong class="ph-title">
+             [SYSTEMS TRACKER]
+            </strong>
+            <span class="ph-sub">
+             TRL/MRL &amp; Risk Matrix
+            </span>
+           </div>
+          </div>
+          <div class="portfolio-caption">
+           Reorganized team hierarchy &amp; chain of command
+          </div>
+          <div class="portfolio-thumbs">
+           <button class="portfolio-thumb active" data-cap="Reorganized team hierarchy &amp; chain of command" data-src="imager/rocketry_photos/leadership/organizationalrestructure.png" title="Reorganized team hierarchy &amp; chain of command" type="button">
+            <img alt="Reorganized team hierarchy &amp; chain of command" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/leadership/organizationalrestructure.png"/>
+            <div class="thumb-fallback" style="display:none;">
+             Photo 1
+            </div>
+           </button>
+           <button class="portfolio-thumb" data-cap="Adopted project tracking matrix &amp; TRL/MRL gates" data-src="imager/rocketry_photos/leadership/projecttrackingdoc.png" title="Adopted project tracking matrix &amp; TRL/MRL gates" type="button">
+            <img alt="Adopted project tracking matrix &amp; TRL/MRL gates" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/leadership/projecttrackingdoc.png"/>
+            <div class="thumb-fallback" style="display:none;">
+             Photo 2
+            </div>
+           </button>
+           <button class="portfolio-thumb" data-cap="Subsystem readiness radar assessment sheet" data-src="imager/rocketry_photos/leadership/radarsheet.png" title="Subsystem readiness radar assessment sheet" type="button">
+            <img alt="Subsystem readiness radar assessment sheet" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/leadership/radarsheet.png"/>
+            <div class="thumb-fallback" style="display:none;">
+             Photo 3
+            </div>
+           </button>
+           <button class="portfolio-thumb" data-cap="Propulsion knowledge-base &amp; safety documentation" data-src="imager/rocketry_photos/leadership/propulsionlearningsdoc.png" title="Propulsion knowledge-base &amp; safety documentation" type="button">
+            <img alt="Propulsion knowledge-base &amp; safety documentation" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="imager/rocketry_photos/leadership/propulsionlearningsdoc.png"/>
+            <div class="thumb-fallback" style="display:none;">
+             Photo 4
+            </div>
+           </button>
+          </div>
+         </div>
+         <div class="portfolio-content">
+          <div class="portfolio-header">
+           <div class="portfolio-title">
+            Propulsion Research Organizational &amp; Systems Management Overhaul
+           </div>
+           <div class="portfolio-meta">
+            BYU Rocketry Propulsion Research · Head of Systems Integration · 2025 – 2026
+           </div>
+          </div>
+          <div class="tag-strip">
+           <span class="tag">
+            Aerospace
+           </span>
+           <span class="tag">
+            Leadership
+           </span>
+           <span class="tag">
+            Systems Engineering
+           </span>
+           <span class="tag">
+            TRL/MRL Tracking
+           </span>
+           <span class="tag">
+            Risk Matrix
+           </span>
+          </div>
+          <p class="portfolio-desc">
+           While I was Integration Lead for BYU Propulsion Research, I became frustrated by the lack of project management, accountability, and documentation. I talked with industry professionals at Blue Origin, Northrop Grumman, and GE Aerospace and developed a project tracking system, knowledge base document, risk assessment system, and reorganized the group so that there was a proper chain of command. This reorganization allowed for the onboarding of more students to the team and allowed for multiple projects to run in parallel, while rewarding documentation and safety procedures.
+          </p>
+          <div class="portfolio-specs">
+           Deliverables: TRL/MRL Readiness Gates · Standardized PDR/CDR Templates · Weekly Risk Assessment Matrix · Adopted Across R&amp;D Division (BYU Rocketry Service Award)
+          </div>
+         </div>
+        </article>
+        
+        -->
 </div>
 </section>
 <!-- ================= 3. RESUME PAGE ================= -->
@@ -2989,7 +3115,7 @@
 <section class="page-section" id="page-photos"><h2>Photography Portfolio</h2><div class="photos-toolbar"><button class="btn-action" id="back-to-about-btn" type="button">← Back to About Me</button><span id="photo-gallery-status">Source: imager/photography_portfolio/ (Auto-indexed via GitHub API)</span></div><div class="photo-gallery-grid" id="photo-gallery-grid"></div></section></main>
 <footer><div class="footer-inner"><span>Samuel Christensen</span><span>·</span><a href="mailto:Samuel.christensen240@gmail.com">Samuel.christensen240@gmail.com</a><span>·</span><span>BYU Mechanical Engineering</span></div></footer>
 <!-- ================= LOGIC SCRIPT ================= -->
-<div class="lightbox-backdrop no-print" id="photo-lightbox"><div class="lightbox-box"><div class="lightbox-top"><span id="lightbox-title">Photo Preview</span><button class="lightbox-close" id="lightbox-close-btn" type="button">Close [ESC]</button></div><div class="lightbox-img-wrap"><img alt="Full resolution photo" id="lightbox-img" src=""/></div><div class="lightbox-bottom-bar"><div class="lightbox-nav-controls"><button class="lightbox-btn" id="lightbox-prev-btn" type="button">◄ Prev</button><span class="lightbox-counter" id="lightbox-counter">Image 1 of 1</span><button class="lightbox-btn" id="lightbox-next-btn" type="button">Next ►</button></div><div class="lightbox-caption-text" id="lightbox-caption">Figure Description</div></div></div></div><script>
+<div class="lightbox-backdrop no-print" id="photo-lightbox"><div class="lightbox-box"><div class="lightbox-top"><span id="lightbox-title">Photo Preview</span><button class="lightbox-close" id="lightbox-close-btn" type="button">Close [ESC]</button></div><div class="lightbox-img-wrap"><img alt="Full resolution photo" id="lightbox-img" src=""/></div><div class="lightbox-bottom-bar"><div class="lightbox-nav-controls"><button class="lightbox-btn" id="lightbox-prev-btn" type="button">◄ Prev</button><span class="lightbox-counter" id="lightbox-counter">Image 1 of 1</span><button class="lightbox-btn" id="lightbox-next-btn" type="button">Next ►</button></div><div class="lightbox-caption-text" id="lightbox-caption">Photo Caption</div></div></div></div><script>
     // ================= 1. OPTION C: UTILITY LIGHTBOX NAVIGATION CONTROLLER =================
     const lightbox = document.getElementById('photo-lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
